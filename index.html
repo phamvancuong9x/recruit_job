@@ -34,21 +34,26 @@
         font-size: 20px;
       "
     >
-    <div class="logo">  <a href="index.html"><img src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png" alt=""> </a></div>
-    <div class="nav__menu">
-      <a href="index.html">Cơ hội việc làm</a>
-      <a href="createNews.html">Nhà tuyển dụng</a>
-      <a href="#"><i class="fa-solid fa-user"></i></a>
-    </div>
-  
+      <div class="logo">
+        <a href="index.html"
+          ><img
+            src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="nav__menu">
+        <a href="index.html">Cơ hội việc làm</a>
+        <a href="createNews.html">Nhà tuyển dụng</a>
+        <a href="#"><i class="fa-solid fa-user"></i></a>
+      </div>
     </header>
     <!-- content -->
     <div class="container">
-      
       <div class="search__job">
-        <div class="row margin-left-0">
+        <form action="index.html" class="row margin-left-0">
           <div class="col-12 col-sm-8 filter">
-            <form action="index.html" id="search-form">
+            <div id="search-form">
               <div class="form-search">
                 <label class="label-search" for="keyword">
                   <i class="fas fa-search"></i
@@ -58,43 +63,42 @@
                   id="keyword"
                   placeholder="Tìm kiếm cơ hội việc làm"
                 />
-               <div class="clear-search"> <i class="fa-sharp fa-solid fa-xmark"></i></div>
+                <div class="clear-search">
+                  <i class="fa-sharp fa-solid fa-xmark"></i>
+                </div>
               </div>
               <div class="remove-search-keyword">
                 <i class="fas fa-times fa-2x"></i>
               </div>
-            
+            </div>
           </div>
           <div class="col-7 col-sm-2 search-location-group">
-        
             <input
-            type="text"
-            id="input__working-form"
-            name="location"
-            class="input-select input_create-job search-location"
-            placeholder="Tất cả địa điểm"
-            readonly
-          />
+              type="text"
+              id="input__working-form"
+              name="location"
+              class="input-select input_create-job search-location"
+              placeholder="Tất cả địa điểm"
+              readonly=""
+            />
 
-          <div class="input__title-option">
-            <div class="input__title-option-item">Tất cả địa điểm</div>
-            <div class="input__title-option-item">Hà Nội</div>
-            <div class="input__title-option-item">Hồ Chí Minh</div>
-            <div class="input__title-option-item">Đà Nẵng</div>
-          </div>
-           
+            <div class="input__title-option">
+              <div class="input__title-option-item">Tất cả địa điểm</div>
+              <div class="input__title-option-item">Hà Nội</div>
+              <div class="input__title-option-item">Hồ Chí Minh</div>
+              <div class="input__title-option-item">Đà Nẵng</div>
+            </div>
+
             <div class="select-icon">
               <i class="fa-solid fa-chevron-down"></i>
             </div>
-         
-        </div>
+          </div>
           <div class="col-5 col-sm-2 btn-search-group">
             <button type="submit" class="btn btn-primary btn-search">
               Tìm kiếm
             </button>
           </div>
         </form>
-        
       </div>
 
       <div class="list__job">
@@ -262,13 +266,17 @@
             <nav aria-label="Page navigation example">
               <ul class="pagination">
                 <li class="page-item">
-                  <p class="page-link" >Trước</p>
+                  <p class="page-link">Trước</p>
                 </li>
-                <li  class="page-item"><p id="page1" class="page-link" >1</p></li>
-                <li  class="page-item"><p id="page2" class="page-link" >2</p></li>
-                <li  id="1" class="page-item"><p id="page3" class="page-link">3</p></li>
                 <li class="page-item">
-                  <a class="page-link" >Sau</a>
+                  <p id="page1" class="page-link page-active">1</p>
+                </li>
+                <li class="page-item"><p id="page2" class="page-link">2</p></li>
+                <li id="1" class="page-item">
+                  <p id="page3" class="page-link">3</p>
+                </li>
+                <li class="page-item">
+                  <a class="page-link">Sau</a>
                 </li>
               </ul>
             </nav>
