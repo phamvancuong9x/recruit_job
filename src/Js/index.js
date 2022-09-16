@@ -60,7 +60,6 @@ function updateQueryParamPage() {
   const pageParam = getParameterByName("page", url);
   const ElmPageCurrent = document.querySelector(`#page${pageParam}`);
   const ElmPage1 = document.querySelector(`#page1`);
-  console.log(pageParam === "");
   const numberOfPage = ElmPageList.length - 2;
   if (pageParam === "" || pageParam === "1") {
     ElmPage1.classList.add("page-active");
