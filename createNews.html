@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng Tin Tuyển dụng</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="src/css/createNews.css" />
+    <link rel="stylesheet" href="src/css/base.css" />
+    <script src="https://cdn.ckeditor.com/4.19.1/basic/ckeditor.js"></script>
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-date-picker/3.2.3/tiny-date-picker.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-date-picker/3.2.3/tiny-date-picker.min.js"></script> -->
+  </head>
+  <body>
+    <!-- header -->
+    <header
+      style="
+        height: 54px;
+        background-color: #30598c;
+        color: #fff;
+        text-align: center;
+        line-height: 54px;
+        font-size: 20px;
+      "
+    >
+      <div class="logo">
+        <a href="index.html">
+          <img
+            src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="nav__menu">
+        <a href="index.html">Cơ hội việc làm</a>
+        <a href="createNews.html">Nhà tuyển dụng</a>
+        <a href="#"><i class="fa-solid fa-user"></i></a>
+      </div>
+    </header>
+    <!-- content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="create-new-content">
+            <div class="create-tab-title">
+              <div
+                class="tab__create-job-active create-tab-title__tab create-tab-title__tab1"
+              >
+                Tạo tin ứng tuyển
+              </div>
+              <div class="create-tab-title__tab create-tab-title__tab2">
+                Danh sách tin đã đăng
+              </div>
+              <div class="create-tab-title__tab create-tab-title__tab3">
+                Thông tin công ty
+              </div>
+            </div>
+
+            <!-- Nôi dung tab 1 -->
+            <div class="tab1__content">
+              <div class="progres">
+                <span class="progres__number progres__number1">1</span>
+                <span class="progres__text1">Nhập thông tin</span>
+                <div class="Divider"></div>
+                <span class="progres__number progres__number2">2</span>
+                <span class="progres__text2">Xem trước thông tin</span>
+              </div>
+              <form id="form-tab1" action="">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="input-group">
+                      <div class="input__title">
+                        Vị trí đăng tuyển <span class="text-red-500"> *</span>
+                      </div>
+                      <input
+                        id="input__position_recruit"
+                        class="input_create-job"
+                        type="text"
+                        placeholder="Nhập"
+                      />
+                      <p class="input_error">Vui lòng nhập vị trí đăng tuyển</p>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <div class="input-group">
+                      <div class="input__title">
+                        Hình thức làm việc <span class="text-red-500"> *</span>
+                      </div>
+
+                      <input
+                        type="text"
+                        id="input__working-form"
+                        class="input-select input_create-job"
+                        placeholder="Chọn"
+                        readonly
+                      />
+
+                      <div class="input__title-option">
+                        <div class="input__title-option-item">Full Time</div>
+                        <div class="input__title-option-item">Part Time</div>
+                        <div class="input__title-option-item">Khác</div>
+                      </div>
+                      <p class="input_error">
+                        Vui lòng chọn hình thức làm việc
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <div class="input-group">
+                      <div class="input__title">
+                        Bằng cấp <span class="text-red-500"> *</span>
+                      </div>
+                      <input
+                        type="text"
+                        id="input__degree"
+                        class="input-select input_create-job"
+                        placeholder="Chọn"
+                        readonly
+                      />
+
+                      <div class="input__title-option">
+                        <div class="input__title-option-item">
+                          Không Yêu cầu
+                        </div>
+                        <div class="input__title-option-item">Trung cấp</div>
+                        <div class="input__title-option-item">Cao đẳng</div>
+                        <div class="input__title-option-item">Đại học</div>
+                        <div class="input__title-option-item">Trên đại học</div>
+                      </div>
+                      <p class="input_error">Vui lòng chọn bằng cấp</p>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <div class="input-group">
+                      <div class="input__title">
+                        Kinh nghiệm <span class="text-red-500"> *</span>
+                      </div>
+                      <input
+                        type="text"
+                        id="input__experience"
+                        class="input-select input_create-job"
+                        placeholder="Chọn"
+                        readonly
+                      />
+                      <div class="input__title-option">
+                        <div class="input__title-option-item">
+                          Chưa có kinh nghiệm
+                        </div>
+                        <div class="input__title-option-item">Dưới 1 năm</div>
+                        <div class="input__title-option-item">1 Năm</div>
+                        <div class="input__title-option-item">2 Năm</div>
+                        <div class="input__title-option-item">3 Năm</div>
+                        <div class="input__title-option-item">4 Năm</div>
+                        <div class="input__title-option-item">5 Năm</div>
+                        <div class="input__title-option-item">Trên 5 năm</div>
+                      </div>
+                      <p class="input_error">Vui lòng chọn kinh nghiệm</p>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <div class="input-group">
+                      <p class="input_error input_error-deadline1">
+                        Ngày chọn phải lớn hơn ngày hiện tại
+                      </p>
+                      <div class="input__title">
+                        Hạn nộp hồ sơ <span class="text-red-500"> *</span>
+                      </div>
+                      <input
+                        id="input__submit-deadline"
+                        class="input_create-job"
+                        type="date"
+                      />
+
+                      <p class="input_error input_error-deadline2">
+                        Vui lòng chọn ngày
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <div class="input-group">
+                      <p class="input_error input_error-min-salary1">
+                        *Lương tối thiểu phải nhỏ hơn lương tối đa
+                      </p>
+                      <div class="input__title">
+                        Mức lương tối thiểu <span class="text-red-500"> *</span>
+                      </div>
+                      <input
+                        type="text"
+                        placeholder="Nhập"
+                        id="input__min-salary"
+                        class="input-select input_create-job"
+                        readonly
+                      />
+                      <div class="input__title-option input__salary-min"></div>
+                      <p class="input_error input_error-min-salary2">
+                        Vui lòng nhập mức lương tối thiểu
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <div class="input-group">
+                      <p class="input_error input_error-max-salary1">
+                        *Lương tối đa phải lớn hơn lương tối thiểu
+                      </p>
+                      <div class="input__title">Mức lương tối đa</div>
+                      <input
+                        type="text"
+                        placeholder="Nhập"
+                        id="input__max-salary"
+                        class="input-select input_create-job"
+                        readonly
+                      />
+                      <div class="input__title-option input__salary-max"></div>
+                      <p class="input_error input_error-max-salary2">
+                        Vui lòng nhập mức lương tối đa
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <div class="input-group">
+                      <div class="input__title">
+                        Nơi làm việc <span class="text-red-500"> *</span>
+                      </div>
+                      <input
+                        type="text"
+                        id="input__workplace"
+                        class="input-select input_create-job"
+                        placeholder="Chọn"
+                        readonly
+                      />
+
+                      <div class="input__title-option">
+                        <div class="input__title-option-item">Hà Nội</div>
+                        <div class="input__title-option-item">Đà Nẵng</div>
+                        <div class="input__title-option-item">Hồ Chí Minh</div>
+                      </div>
+                      <p class="input_error">Vui lòng chọn nơi làm việc</p>
+                    </div>
+                  </div>
+
+                  <!-- mô tả công việc -->
+
+                  <div class="col-12 input__describe">
+                    <div class="input__describe-job">
+                      <div class="input__title">
+                        Mô tả công việc <span class="text-red-500"> *</span>
+                      </div>
+                      <p class="input__note">
+                        Thông tin cho vị trí công việc yêu cầu, trách nhiệm mà
+                        ứng viên có thể đảm nhận khi làm việc ở công ty
+                      </p>
+
+                      <textarea name="editor1" id="editor1" rows="10" cols="80">
+                      </textarea>
+                      <p class="input_error error-editor error-editor1">
+                        Vui lòng nhập mô tả
+                      </p>
+                    </div>
+                    <div class="input__request-job">
+                      <div class="input__title">
+                        Yêu cầu công việc <span class="text-red-500"> *</span>
+                      </div>
+                      <p class="input__note">
+                        Kỹ năng chuyên môn hoặc kỹ năng mềm cần thiết với công
+                        việc mà ứng viên cần quan tâm
+                      </p>
+                      <textarea
+                        name="editor2"
+                        id="editor2"
+                        rows="10"
+                        cols="80"
+                      ></textarea>
+                      <p class="input_error error-editor error-editor2">
+                        Vui lòng nhập yêu cầu công việc
+                      </p>
+                    </div>
+                    <div class="input__benefit-job">
+                      <div class="input__title">
+                        Quyền lợi <span class="text-red-500"> *</span>
+                      </div>
+                      <p class="input__note">
+                        Những quyền lợi, lợi ích với công việc cho ứng viên với
+                        vị trí đăng tuyển
+                      </p>
+                      <textarea
+                        name="editor3"
+                        id="editor3"
+                        rows="10"
+                        cols="80"
+                      ></textarea>
+                      <p class="input_error error-editor error-editor3">
+                        Vui lòng nhập quyền lợi
+                      </p>
+                    </div>
+                  </div>
+                  <!-- <div class="col-12 info-contact">
+                    <h5>Thông tin người liên hệ</h5>
+                    <div class="row">
+                      <div class="col-12 col-sm-6 col-md-4">
+                        <div class="input__title">
+                          Họ và tên <span class="text-red-500"> *</span>
+                        </div>
+                        <input type="text" placeholder="Nhập" />
+                      </div>
+                      <div class="col-12 col-sm-6 col-md-4">
+                        <div class="input__title">
+                          Email <span class="text-red-500"> *</span>
+                        </div>
+                        <input type="text" placeholder="Nhập" />
+                      </div>
+                      <div class="col-12 col-sm-6 col-md-4">
+                        <div class="input__title">
+                          Số điện thoại <span class="text-red-500"> *</span>
+                        </div>
+                        <input type="text" placeholder="Nhập" />
+                      </div>
+                      <div class="col-12 col-sm-6">
+                        <div class="input__title">
+                          Địa chỉ liên hệ <span class="text-red-500"> *</span>
+                        </div>
+                        <input type="text" placeholder="Nhập" />
+                      </div>
+                    </div>
+                  </div> -->
+                  <div class="col-12 d-flex justify-content-end mt-3">
+                    <!-- <button type="button" class="btn btn-light btn-cannel">
+                      Hủy bỏ
+                    </button> -->
+                    <button type="button" class="btn btn-primary btn-continue">
+                      Tiếp tục
+                    </button>
+                  </div>
+                </div>
+              </form>
+              <div class="tab1_preview">
+                <div class="tab1_preview-content">
+                  <span class="tag-preview">Xem trước</span>
+
+                  <h3 class="preview__position_recruit">Lập trình viên</h3>
+                  <div class="row">
+                    <div class="col-md-6 col-lg-5 col-12">
+                      <div class="row pt-1 pb-1">
+                        <div class="col-6">
+                          <div class="preview__title">Hình thức làm việc:</div>
+                        </div>
+                        <div class="col-6">
+                          <div class="preview__working-form">Fulltime</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-5 col-12">
+                      <div class="row pt-1 pb-1">
+                        <div class="col-6">
+                          <div class="preview__title">Bằng cấp :</div>
+                        </div>
+                        <div class="col-6">
+                          <div class="preview_text preview__degree">
+                            Không yêu cầu
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-5 col-12">
+                      <div class="row pt-1 pb-1">
+                        <div class="col-6">
+                          <div class="preview__title">Kinh nghiệm :</div>
+                        </div>
+                        <div class="col-6">
+                          <div class="preview_text preview__experience"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-5 col-12">
+                      <div class="row pt-1 pb-1">
+                        <div class="col-6">
+                          <div class="preview__title">Thời hạn nộp :</div>
+                        </div>
+                        <div class="col-6">
+                          <div
+                            class="preview_text preview__submit-deadline"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-5 col-12">
+                      <div class="row pt-1 pb-1">
+                        <div class="col-6">
+                          <div class="preview__title">
+                            Mức lương tối thiểu :
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="preview_text preview__min-salary"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-5 col-12">
+                      <div class="row pt-1 pb-1">
+                        <div class="col-6">
+                          <div class="preview__title">Mức lương tối đa :</div>
+                        </div>
+                        <div class="col-6">
+                          <div class="preview_text preview__max-salary"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-5 col-12">
+                      <div class="row pt-1 pb-1">
+                        <div class="col-6">
+                          <div class="preview__title">Nơi làm việc :</div>
+                        </div>
+                        <div class="col-6">
+                          <div class="preview_text preview__workplace"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="preview__describe-job">
+                    <h5 class="">Mô tả công việc</h5>
+                    <div class="preview__describe-job-text"></div>
+                  </div>
+                  <div class="preview__request-job">
+                    <h5 class="">Yêu cầu công việc</h5>
+                    <div class="preview__request-job-text"></div>
+                  </div>
+                  <div class="preview__benefit-job">
+                    <h5 class="">Quyền lợi</h5>
+                    <div class="preview__benefit-job-text"></div>
+                  </div>
+                </div>
+                <!--  -->
+                <div class="tab1_preview-btn">
+                  <button type="button" class="btn btn-light preview__btn-edit">
+                    Chỉnh sửa
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary preview__btn-submit"
+                  >
+                    Hoàn thành
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="tab2__content">
+              <table>
+                <tr>
+                  <th>Tên tin đăng</th>
+                  <th>Ngày đăng</th>
+                  <th>Thời hạn nộp</th>
+                  <th>Lượt nộp</th>
+                  <th>Lượt xem</th>
+                  <th>Trạng thái</th>
+                  <th>Xóa tin</th>
+                </tr>
+                <tr>
+                  <td>Lập trình viên FullStack PHP</td>
+                  <td>16/9/2022</td>
+                  <td>16/10/2022</td>
+                  <td>0</td>
+                  <td>1</td>
+                  <td><span>Đang duyệt</span></td>
+                  <td><i class="fa-solid fa-trash-can"></i></td>
+                </tr>
+              </table>
+            </div>
+            <div class="tab3__content">
+              <div class="update__info-company">
+                <div class="row">
+                  <div class="col-12 col-lg-8">
+                    <form action="">
+                      <div class="row">
+                        <label
+                          for="tax_number"
+                          class="col-12 col-md-3 info-company__item-title"
+                        >
+                          Mã số thuế <span class="text-red-500">*</span>
+                        </label>
+                        <div class="col-12 col-md-9">
+                          <input
+                            type="text"
+                            placeholder=" Nhập"
+                            id="tax_number"
+                            class="input__info-company"
+                            name="tax number"
+                          />
+                        </div>
+                        <label
+                          for="tax_number"
+                          class="col-12 col-md-3 info-company__item-title"
+                        >
+                          Quy mô nhân sự <span class="text-red-500">*</span>
+                        </label>
+                        <div class="col-12 col-md-9">
+                          <input
+                            type="text"
+                            placeholder=" Nhập"
+                            class="input__info-company"
+                            id="tax_number"
+                            name="tax number"
+                          />
+                        </div>
+
+                        <label
+                          for="tax_number"
+                          class="col-12 col-md-3 info-company__item-title"
+                        >
+                          Tên công ty <span class="text-red-500">*</span>
+                        </label>
+                        <div class="col-12 col-md-9">
+                          <input
+                            type="text"
+                            placeholder=" Nhập"
+                            class="input__info-company"
+                            value="Công ty TNHH ABC"
+                            id="tax_number"
+                            name="tax number"
+                            readonly
+                          />
+                        </div>
+                        <label
+                          for="tax_number"
+                          class="col-12 col-md-3 info-company__item-title"
+                        >
+                          Địa điểm <span class="text-red-500">*</span>
+                        </label>
+                        <div class="col-12 col-md-9">
+                          <input
+                            type="text"
+                            placeholder=" Nhập"
+                            class="input__info-company"
+                            id="tax_number"
+                            name="tax number"
+                            readonly
+                          />
+                        </div>
+                        <label
+                          for="tax_number"
+                          class="col-12 col-md-3 info-company__item-title"
+                        >
+                          Địa Chỉ <span class="text-red-500">*</span>
+                        </label>
+                        <div class="col-12 col-md-9">
+                          <input
+                            type="text"
+                            placeholder=" Nhập"
+                            class="input__info-company"
+                            id="tax_number"
+                            name="tax number"
+                            readonly
+                          />
+                        </div>
+                        <label
+                          for="tax_number"
+                          class="col-12 col-md-3 info-company__item-title"
+                        >
+                          Điện thoại cố định <span class="text-red-500">*</span>
+                        </label>
+                        <div class="col-12 col-md-9">
+                          <input
+                            type="text"
+                            placeholder=" Nhập"
+                            class="input__info-company"
+                            id="tax_number"
+                            name="tax number"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer style=""></footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script src="src/Js/createNews.js"></script>
+  </body>
+</html>

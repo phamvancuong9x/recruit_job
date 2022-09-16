@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tin Tuyển dụng</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="src/css/base.css" />
+    <link rel="stylesheet" href="src/css/jobDetail.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header
+      style="
+        height: 54px;
+        background-color: #30598c;
+        color: #fff;
+        text-align: center;
+        line-height: 54px;
+        font-size: 20px;
+      "
+    >
+      <div class="logo">
+        <a href="index.html">
+          <img
+            src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="nav__menu">
+        <a href="index.html">Cơ hội việc làm</a>
+        <a href="createNews.html">Nhà tuyển dụng</a>
+        <a href="#"><i class="fa-solid fa-user"></i></a>
+      </div>
+    </header>
+    <!-- content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-12">
+          <div class="job">
+            <div class="job__header box-shadow-primary">
+              <div class="job__title d-flex">
+                <div class="job__title-img">
+                  <img
+                    src="https://cdn1.vieclam24h.vn/images/default/2021/03/26/images/img_vieclam24h_vn_161674524265.png?v=220513"
+                    alt="Logo cong ty"
+                  />
+                </div>
+                <div class="job__title-group">
+                  <h4 class="job__title-company-name">
+                    Công Ty Tnhh Thương Mại Và Trực Tuyến FTECH
+                  </h4>
+                  <div class="job__title-numberPerson">Dưới 20 người</div>
+                </div>
+              </div>
+              <div class="job__info-base">
+                <h4 class="job-name">Lập Trình Viên PHP Wordpress</h4>
+                <div class="job__info-base-group">
+                  <div class="job__time me-3">
+                    <span class="job__time-icon color-icon-primary me-1">
+                      <i class="fa-solid fa-calendar-days"></i>
+                    </span>
+                    <span>Hạn nộp : </span>
+                    <span class="job__time-text"> 20/09/2022</span>
+                  </div>
+                  <div class="job__view me-3">
+                    <span class="job__view-icon color-icon-primary me-1">
+                      <i class="fa-regular fa-eye"></i>
+                    </span>
+                    <span>Lượt xem : </span>
+                    <span class="job__view-text"> 39</span>
+                  </div>
+                  <div class="job__dateSubmit">
+                    <span class="job__dateSubmit-icon color-icon-primary me-1">
+                      <i class="fa-regular fa-clock"></i>
+                    </span>
+                    <span>Đăng ngày : </span>
+                    <span class="job__dateSubmit-text"> 10/09/2022</span>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  class="job__submit-file btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#exampleModal"
+                >
+                  Nộp hồ sơ
+                </button>
+              </div>
+              <div class="job__info-base-list row">
+                <div class="job__info-base-item col-sm-3 col-6">
+                  <span>Yêu cầu kinh nghiệm</span>
+                  <p class="mb-0">1 năm</p>
+                </div>
+                <div class="job__info-base-item col-sm-3 col-6">
+                  <span>Mức lương</span>
+                  <p class="mb-0">10-15 triệu</p>
+                </div>
+                <div class="job__info-base-item col-sm-3 col-6">
+                  <span>Bằng cấp </span>
+                  <p class="mb-0">Không yêu cầu</p>
+                </div>
+                <div class="job__info-base-item col-sm-3 col-6">
+                  <span>Hình thức làm việc</span>
+                  <p class="mb-0">Fulltime</p>
+                </div>
+              </div>
+            </div>
+            <div class="job__content">
+              <div class="job__content-tab d-flex">
+                <div class="job__content-tab1 tab-active">
+                  Chi tiết tuyển dụng
+                </div>
+                <div class="job__content-tab2">Về công ty</div>
+              </div>
+              <!-- tab1 content -->
+              <div class="job__tab1-content">
+                <div class="describe_job">
+                  <div class="describe_job-title">Mô tả công việc</div>
+                  <div class="describe_job-text">
+                    <p>
+                      - Lập trình thiết kế landing page, website, theme trên nền
+                      tảng WordPress theo yêu cầu, chuẩn SEO, responsive mobile
+                      - tương thích với tất cả các thiết bị di động và trình
+                      duyệt, biết sử dụng các nền tảng builder
+                      (Elementor,Flatsome,ACF),…
+                    </p>
+                    <p>
+                      - Tham gia phát triển các tính năng back-end cho website
+                      như: thiết lập SMTP email,tạo post meta , sử dụng linh
+                      hoạt function wordpress.
+                    </p>
+                  </div>
+                </div>
+                <div class="describe_job">
+                  <div class="describe_job-title">Mô tả công việc</div>
+                  <div class="describe_job-text">
+                    <p>- Tuổi từ 22-30 tuổi</p>
+                    <p>
+                      - Đã có kinh nghiệm làm việc với WordPress (back-end và
+                      front-end)
+                    </p>
+                  </div>
+                </div>
+                <div class="describe_job">
+                  <div class="describe_job-title">Quyền lợi</div>
+                  <div class="describe_job-text">
+                    <p>- Ngày nghỉ: Các ngày Lễ/ Tết</p>
+                    <p>
+                      - Thưởng nóng theo trách nhiệm và hiệu quả công việc,
+                      Thưởng lễ Tết,…
+                    </p>
+                  </div>
+                </div>
+                <div class="describe_job">
+                  <div class="describe_job-title">Địa điểm làm việc</div>
+                  <div class="describe_job-text">
+                    <p>102 Hoàng đạo thành , Kim Giang, Thanh Xuân , Hà Nội</p>
+                  </div>
+                </div>
+              </div>
+              <!-- tab2 content -->
+
+              <div class="job__tab2-content">
+                <div class="describe_job">
+                  <div class="describe_job-title">Giới thiệu công ty</div>
+                  <div class="describe_job-text">
+                    <p>
+                      Công Ty Tnhh Thương Mại Và Trực Tuyến FTECH là công ty
+                      hoạt động trong lĩnh vực thiết kế website và xuất bản phần
+                      mềm, đã và đang khẳng định mình như một công ty trẻ đầy
+                      sáng tạo.Mục tiêu giúp cho khách hàng có thể sở hữu
+                      website nhanh chóng đáp ứng được nhu cầu thị trường
+                    </p>
+                    <p>
+                      Công ty tự hào mang tới cho khách hàng các sản phẩm – dịch
+                      vụ:
+                    </p>
+                    <p>Thiết kế sáng tạo</p>
+                    <p>Thiết kế và phát triển Website</p>
+                  </div>
+                </div>
+                <div class="describe_job">
+                  <div class="describe_job-title">Quy mô công ty</div>
+                  <div class="describe_job-text">
+                    <div class="address-company">
+                      <span class="address-company-icon">
+                        <i class="fa-solid fa-location-pin"></i>
+                      </span>
+                      <span class="address-company-text">
+                        Địa chỉ làm việc :
+                      </span>
+                      <span class="address-company-text">
+                        Số 2a , Ngách 51 , Ngõ 102 Hoàng Đạo Thành , Kim Giang ,
+                        Thanh Xuân , Hà Nội
+                      </span>
+                    </div>
+                    <div class="number-company">
+                      <span class="number-company-icon">
+                        <i class="fa-solid fa-users"></i>
+                      </span>
+                      <span class="number-company-text"> Quy mô : </span>
+                      <span class="number-company-text"> Dưới 20 người </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12">
+          <div class="job-similar box-shadow-primary">
+            <div class="job-similar__title">Việc làm tương tự</div>
+            <div class="row job__list-item">
+              <div class="col-2 col-md-1 col-lg-2 image-logo">
+                <img
+                  src="https://cdn1.vieclam24h.vn/images/default/2021/03/26/images/img_vieclam24h_vn_161674524265.png?v=220513"
+                  alt="Logo cong ty"
+                />
+              </div>
+              <div class="col-10 col-md-11 col-lg-10 job-item__content">
+                <div class="job-item__name-job">
+                  Lập trình viên PHP Wordpress
+                </div>
+                <div class="job-item__name-company">
+                  Công Ty TNHH Thương Mại Và Trực Tuyến Ftech
+                </div>
+                <div class="flex">
+                  <span class="job-salary">
+                    <span class="job-salary-icon">
+                      <i class="fa-solid fa-money-bill"></i>
+                    </span>
+                    <span class="job-salary__text">15 - 25 triệu</span>
+                  </span>
+                  <span class="workplace">
+                    <span class="workplace-icon">
+                      <i class="fa-solid fa-location-pin"></i>
+                    </span>
+                    <span class="workplace-text"> Hà Nội </span>
+                  </span>
+                  <div class="job__time">
+                    <span class="job__time-icon">
+                      <i class="fa-solid fa-calendar-days"></i>
+                    </span>
+                    <span>Hạn nộp : </span>
+                    <span class="job__time-text"> 20/09/2022</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row job__list-item">
+              <div class="col-2 col-md-1 col-lg-2 image-logo">
+                <img
+                  src="https://cdn1.vieclam24h.vn/images/default/2021/03/26/images/img_vieclam24h_vn_161674524265.png?v=220513"
+                  alt="Logo cong ty"
+                />
+              </div>
+              <div class="col-10 col-md-11 col-lg-10 job-item__content">
+                <div class="job-item__name-job">
+                  Lập trình viên PHP Wordpress
+                </div>
+                <div class="job-item__name-company">
+                  Công Ty TNHH Thương Mại Và Trực Tuyến Ftech
+                </div>
+                <div class="flex">
+                  <span class="job-salary">
+                    <span class="job-salary-icon">
+                      <i class="fa-solid fa-money-bill"></i>
+                    </span>
+                    <span class="job-salary__text">15 - 25 triệu</span>
+                  </span>
+                  <span class="workplace">
+                    <span class="workplace-icon">
+                      <i class="fa-solid fa-location-pin"></i>
+                    </span>
+                    <span class="workplace-text"> Hà Nội </span>
+                  </span>
+                  <div class="job__time">
+                    <span class="job__time-icon">
+                      <i class="fa-solid fa-calendar-days"></i>
+                    </span>
+                    <span>Hạn nộp : </span>
+                    <span class="job__time-text"> 20/09/2022</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-header-group">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Ứng tuyển vào vị trí
+              </h5>
+              <h3 class="modal-job-name">Lập Trình Viên PHP Wordpress</h3>
+              <h4 class="modal-job-company-name">
+                Công Ty Tnhh Thương Mại Và Trực Tuyến FTECH
+              </h4>
+            </div>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="">
+              <label for="user-name">Họ và Tên</label>
+              <input id="user-name" value="Nguyễn Văn A" readonly />
+              <label for="user-email">Email</label>
+              <input id="user-email" value="anhcuong@gmail.com" readonly />
+              <label for="user-phone">Số điện thoại</label>
+              <input id="user-phone" value="016821234" readonly />
+              <label class="label-update-file" for="upload-file"
+                >Tải lên hồ sơ</label
+              >
+              <input type="file" name="Tải lên hồ sơ" id="update-file" />
+            </form>
+          </div>
+          <div class="modal-footer">
+            <div class="row">
+              <div class="col-6">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Hủy bỏ
+                </button>
+              </div>
+              <div class="col-6">
+                <button type="button" class="btn btn-primary">Nộp hồ sơ</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer style=""></footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+    <script src="src/js/jobDetail.js"></script>
+  </body>
+</html>

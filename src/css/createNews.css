@@ -1,0 +1,301 @@
+/* css */
+.text-red-500 {
+  color: red;
+}
+textarea {
+  width: 100%;
+  height: 200px;
+}
+a {
+  color: unset;
+}
+.margin-left-0 {
+  margin-left: 0;
+}
+
+.color-icon-primary {
+  color: rgb(166, 164, 164);
+}
+.box-shadow-primary {
+  box-shadow: 0px 0px 5px 2px rgba(230, 229, 229, 0.531);
+}
+.container > .row {
+  padding: 0 16px;
+}
+body {
+  background-color: #f4f7fa;
+  color: #464646;
+}
+.container {
+  max-width: 1320px;
+}
+
+.tab__create-job-active {
+  color: #505ab4;
+  border-bottom: 3px solid #505ab4;
+}
+
+/*  */
+.create-new-content {
+  background-color: #fff;
+  padding: 24px 32px;
+}
+.create-tab-title {
+  display: flex;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #ccc;
+}
+
+.create-tab-title__tab1,
+.create-tab-title__tab2 {
+  margin-right: 15px;
+}
+.create-tab-title__tab1,
+.create-tab-title__tab2,
+.create-tab-title__tab3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.create-tab-title__tab1:hover,
+.create-tab-title__tab2:hover,
+.create-tab-title__tab3:hover {
+  color: #505ab4;
+  border-bottom: 3px solid #505ab4;
+  cursor: pointer;
+}
+.progres {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+  font-weight: 500;
+}
+.progres span {
+  margin: 0 6px;
+  font-size: 14px;
+}
+.progres__number {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progres__number1 {
+  background-color: rgb(183, 250, 233);
+  color: #451da0;
+}
+.progres__text1 {
+  color: #451da0;
+}
+.progres__number2 {
+  background-color: #f2f3f7;
+}
+.Divider {
+  width: 38px;
+  height: 2px;
+  background-color: #ccc;
+  margin: 0 10px;
+}
+
+.input__title {
+  font-weight: 700;
+  font-size: 14px;
+  padding: 24px 0 12px;
+}
+.input-group1 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.create-new-content input {
+  padding: 8px 15px;
+  border: none;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  width: 100%;
+}
+.input__note {
+  margin-bottom: 10px;
+  color: #666;
+}
+.input__describe {
+  padding: 30px 0;
+}
+.info-contact {
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.btn-cannel {
+  margin-right: 10px;
+}
+.btn-cannel,
+.btn-continue {
+  width: 140px;
+}
+
+.input__title-option {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 100%;
+  z-index: 10;
+  max-height: 250px;
+  overflow-y: auto;
+}
+.input__title-option-item {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.input__title-option-item:hover {
+  background-color: rgb(240, 240, 240);
+  transition: all 0.3s linear;
+}
+
+.input_error {
+  display: none;
+  color: red;
+  font-size: 13px;
+  padding-top: 5px;
+  position: absolute;
+  top: 96%;
+}
+.error-editor {
+  padding-top: 15px;
+}
+.input__describe-job,
+.input__request-job,
+.input__benefit-job {
+  position: relative;
+}
+
+#form-tab1 {
+  /* display: none; */
+}
+
+/* phần preview */
+.tab1_preview {
+  display: none;
+}
+.tab1_preview-content {
+  position: relative;
+  border: 1px solid #ccc;
+  padding: 32px 36px;
+  border-radius: 10px;
+  min-height: 700px;
+  max-width: 1000px;
+  margin: auto;
+}
+.tag-preview {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  padding: 8px 20px;
+  border: 1px solid #ccc;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: #f2f2f2;
+  font-weight: 600;
+  font-size: 14px;
+}
+.preview__position_recruit {
+  padding: 30px 0;
+  color: #000;
+}
+.preview__title {
+  color: rgba(117, 117, 117, 1);
+  font-weight: 600;
+}
+.preview_text {
+  color: #000;
+}
+.preview__describe-job {
+  padding-top: 35px;
+}
+.preview__describe-job h5,
+.preview__request-job h5,
+.preview__benefit-job h5 {
+  color: #000;
+  margin: 20px 0;
+}
+.tab1_preview-btn {
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+}
+.preview__btn-edit {
+  margin-right: 20px;
+  background-color: #bcf1ed;
+}
+.preview__btn-edit,
+.preview__btn-submit {
+  font-weight: 600;
+  width: 140px;
+}
+
+/* Phần danh sách tin đã đăng*/
+
+.tab2__content {
+  display: none;
+}
+.tab2__content table {
+  width: 100%;
+}
+.tab2__content table tr {
+  border-bottom: 0.5px solid #ccc;
+}
+.tab2__content table tr th {
+  color: #000;
+  font-weight: 700;
+  padding: 10px 0;
+  font-size: 14px;
+}
+.tab2__content table tr td:first-child {
+  width: 30%;
+}
+.tab2__content table tr td {
+  padding: 30px 0;
+  color: #000;
+}
+
+/* tab3_content Cập nhật thông tin công ty */
+.tab3__content {
+  display: none;
+  padding-top: 35px;
+}
+.info-company__item-title {
+  color: #000;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.input__info-company {
+  margin-bottom: 20px;
+  /* background-color: rgb(243, 243, 243); */
+}
+/* reposive */
+@media (max-width: 414px) {
+  .menu__featureJob-item {
+    font-size: 22px;
+  }
+}
+@media (max-width: 376px) {
+  .menu__featureJob-item {
+    font-size: 20px;
+  }
+  .image-logo img {
+    width: 48px;
+    height: 48px;
+  }
+}
+@media (max-width: 340px) {
+  .menu__featureJob-item {
+    font-size: 18px;
+  }
+}
