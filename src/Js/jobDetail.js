@@ -21,4 +21,4 @@ function ckeckLogin() {
       e.stopPropagation();
     };
 }
-ckeckLogin();
+// ckeckLogin();
