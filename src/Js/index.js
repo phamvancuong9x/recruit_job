@@ -1,27 +1,20 @@
 const ElmInputSelect = document.querySelector("#input__working-form");
 const ElmInputSelectOption = document.querySelector(".input__title-option");
 const ElmPagination = document.querySelector(".pagination");
+const url = window.location.href;
+const pageParam = getParameterByName("page", url) || 1;
+const totalPage = +document.querySelector("#total_page").innerText;
+$("#pagination-demo").twbsPagination({
+  totalPages: totalPage,
+  visiblePages: 7,
+  startPage: +pageParam,
+  last: "Cuối",
+  next: "Tiếp",
+  prev: "Trước",
+  first: "Đầu",
 
-// render số trang
-function renderPage() {
-  const totalPage = +document.querySelector("#total_page").innerText;
-  let html = "";
-  for (let i = 1; i <= totalPage; i++) {
-    html += `<li class="page-item">
-    <p id="page${i}" class="page-link">${i}</p>
-  </li>`;
-  }
-  const newHtml =
-    `<li class="page-item">
-  <p class="page-link">Trước</p>
-</li>` +
-    html +
-    `<li class="page-item">
-<p class="page-link">Sau</p>
-</li>`;
-  ElmPagination.innerHTML = newHtml;
-}
-renderPage();
+  onPageClick: function (event, page) {},
+});
 
 function showSelect() {
   console.log(ElmInputSelect);
@@ -45,7 +38,9 @@ function getValueSelect() {
   );
   for (let i = 0; i < ElmInputSelectOptionItem?.length; i++) {
     ElmInputSelectOptionItem[i].onclick = function () {
-      ElmInputSelect.value = ElmInputSelectOptionItem[i].innerText;
+      if (ElmInputSelectOptionItem[i].innerText !== "Tất cả địa điểm") {
+        ElmInputSelect.value = ElmInputSelectOptionItem[i].innerText;
+      }
       ElmInputSelectOption.style.display = "none";
     };
   }
@@ -72,7 +67,7 @@ function clearSearch() {
   };
 }
 clearSearch();
-const ElmPageList = document.querySelectorAll(".page-link");
+let ElmPageList = document.querySelectorAll(".page-link");
 
 function updateQueryParamPage() {
   const url = window.location.href;
@@ -81,13 +76,8 @@ function updateQueryParamPage() {
   const locationParam = getParameterByName("location", url);
   const pageParam = getParameterByName("page", url);
   const ElmPageCurrent = document.querySelector(`#page${pageParam}`);
-  const ElmPage1 = document.querySelector(`#page1`);
   const numberOfPage = ElmPageList.length - 2;
-  if (pageParam === "" || pageParam === "1") {
-    ElmPage1.classList.add("page-active");
-  } else {
-    ElmPageCurrent?.classList.add("page-active");
-  }
+
   ElmPageList.forEach((element) => {
     element.onclick = function () {
       Number.isInteger(+element.innerText);
@@ -101,11 +91,19 @@ function updateQueryParamPage() {
             +pageParam - 1
           }`
         );
-      } else if (element.innerText === "Sau" && +pageParam < +numberOfPage) {
+      } else if (element.innerText === "Tiếp" && +pageParam <= +numberOfPage) {
         window.location.assign(
           `${pathNameUrl}?keyword=${keywordParam}&location=${locationParam}&page=${
             +pageParam + 1
           }`
+        );
+      } else if (element.innerText === "Cuối") {
+        window.location.assign(
+          `${pathNameUrl}?keyword=${keywordParam}&location=${locationParam}&page=${totalPage}`
+        );
+      } else if (element.innerText === "Đầu") {
+        window.location.assign(
+          `${pathNameUrl}?keyword=${keywordParam}&location=${locationParam}&page=${1}`
         );
       }
     };

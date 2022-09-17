@@ -71,15 +71,15 @@ header {
 .container {
   margin-top: 50px;
 }
-.header__mobile {
+.header__content-mobile {
   display: none;
 }
 
 @media (max-width: 576px) {
-  .header__desktop {
+  .header__content-desktop {
     display: none;
   }
-  .header__mobile {
+  .header__content-mobile {
     display: block;
   }
 }

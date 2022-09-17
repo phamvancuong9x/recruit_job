@@ -19,6 +19,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <link rel="stylesheet" href="src/css/index.css" />
     <link rel="stylesheet" href="src/css/base.css" />
   </head>
@@ -45,6 +51,31 @@
           </a>
         </div>
         <div class="nav__menu">
+          <a href="index.html">Cơ hội việc làm</a>
+          <a href="createNews.html">Nhà tuyển dụng</a>
+          <a href="#"><i class="fa-solid fa-user"></i></a>
+        </div>
+      </div>
+      <div
+        class="header__content header__content-mobile"
+        style="
+          height: 60px;
+          background-color: #0f5298;
+          color: #fff;
+          text-align: center;
+          line-height: 70px;
+          font-size: 20px;
+        "
+      >
+        <div class="logo">
+          <a href="index.html"
+            ><img
+              src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="nav__menu-mobile">
           <a href="index.html">Cơ hội việc làm</a>
           <a href="createNews.html">Nhà tuyển dụng</a>
           <a href="#"><i class="fa-solid fa-user"></i></a>
@@ -266,9 +297,11 @@
             </div>
           </div>
           <div style="display: none" id="total_page">10</div>
+
           <div class="panigation d-flex justify-content-center mt-4">
-            <nav aria-label="Page navigation">
-              <ul class="pagination">
+            <ul id="pagination-demo" class="pagination-sm"></ul>
+            <!-- <nav aria-label="Page navigation"> -->
+            <!-- <ul class="pagination">
                 <li class="page-item">
                   <p class="page-link">Trước</p>
                 </li>
@@ -282,14 +315,20 @@
                 <li class="page-item">
                   <a class="page-link">Sau</a>
                 </li>
-              </ul>
-            </nav>
+              </ul> -->
+            <!-- </nav> -->
           </div>
         </div>
       </div>
     </div>
     <!-- footer -->
     <footer style=""></footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"
+      integrity="sha512-frFP3ZxLshB4CErXkPVEXnd5ingvYYtYhE5qllGdZmcOlRKNEPbufyupfdSTNmoF5ICaQNO6SenXzOZvoGkiIA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
