@@ -71,3 +71,15 @@ header {
 .container {
   margin-top: 50px;
 }
+.header__mobile {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .header__desktop {
+    display: none;
+  }
+  .header__mobile {
+    display: block;
+  }
+}
