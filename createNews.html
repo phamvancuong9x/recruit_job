@@ -52,6 +52,9 @@
         <a href="index.html">Cơ hội việc làm</a>
         <a href="createNews.html">Nhà tuyển dụng</a>
         <a href="#"><i class="fa-solid fa-user"></i></a>
+        <button type="button" class="job__submit-file btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
+          Nộp hồ sơ
+        </button>
       </div>
     </header>
     <!-- content -->
@@ -625,46 +628,30 @@
 
     <!-- Modal -->
     <!-- Modal Đăng kí công ty-->
-    <!-- <div
-      class="modal fade"
-      id="exampleModal"
+    <div
+      class="modal fade show"
+      id="#exampleModalLive1"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <div class="modal-header-group">
-              <h5 class="modal-title" id="exampleModalLabel">
-                Ứng tuyển vào vị trí
-              </h5>
-              <h3 class="modal-job-name">Lập Trình Viên PHP Wordpress</h3>
-              <h4 class="modal-job-company-name">
-                Công Ty Tnhh Thương Mại Và Trực Tuyến FTECH
-              </h4>
-            </div>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
+      <div class="company-info-register">
+        <h3 class="company-info-register__title">Đăng kí thông tin công ty</h3>
+             
+          <div class="company-info-register__title modal-body">
             <form action="">
-              <label for="user-name">Họ và Tên</label>
-              <input id="user-name" placeholder="Nhập" />
-              <label for="user-email" placeholder="Nhập">Email</label>
+              <label for="user-name">Tên công ty</label>
+              <input id="user-name" placeholder="Tên công ty theo giấy phép kinh doanh" />
+              <label for="user-email" placeholder="Nhập">Mã số thuế</label>
               <input id="user-email" />
-              <label for="user-phone" placeholder="Nhập">Số điện thoại</label>
+              <label for="user-phone" placeholder="Nhập">Quy mô nhân sự</label>
               <input id="user-phone" />
-              <label class="label-update-file" for="upload-file"
-                >Tải lên hồ sơ</label
-              >
-              <input type="file" name="Tải lên hồ sơ" id="update-file" />
+              <label for="user-phone" placeholder="Nhập">Địa điểm</label>
+              <input id="user-phone" />
+              <label for="user-phone" placeholder="Nhập">Địa chỉ công ty</label>
+              <input id="user-phone" />
+             
+             
             </form>
           </div>
           <div class="modal-footer">
@@ -685,12 +672,22 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
       crossorigin="anonymous"
     ></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"
+  ></script>
     <script src="src/Js/createNews.js"></script>
   </body>
 </html>

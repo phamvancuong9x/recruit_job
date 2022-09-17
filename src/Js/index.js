@@ -1,5 +1,27 @@
 const ElmInputSelect = document.querySelector("#input__working-form");
 const ElmInputSelectOption = document.querySelector(".input__title-option");
+const ElmPagination = document.querySelector(".pagination");
+
+// render số trang
+function renderPage() {
+  const totalPage = +document.querySelector("#total_page").innerText;
+  let html = "";
+  for (let i = 1; i <= totalPage; i++) {
+    html += `<li class="page-item">
+    <p id="page${i}" class="page-link">${i}</p>
+  </li>`;
+  }
+  const newHtml =
+    `<li class="page-item">
+  <p class="page-link">Trước</p>
+</li>` +
+    html +
+    `<li class="page-item">
+<p class="page-link">Sau</p>
+</li>`;
+  ElmPagination.innerHTML = newHtml;
+}
+renderPage();
 
 function showSelect() {
   console.log(ElmInputSelect);
