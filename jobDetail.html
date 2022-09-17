@@ -335,16 +335,24 @@
           </div>
           <div class="modal-body">
             <form action="">
-              <label for="user-name">Họ và Tên</label>
-              <input id="user-name" placeholder="Nhập" />
-              <label for="user-email" placeholder="Nhập">Email</label>
-              <input id="user-email" />
-              <label for="user-phone" placeholder="Nhập">Số điện thoại</label>
-              <input id="user-phone" />
-              <label class="label-update-file" for="upload-file"
-                >Tải lên hồ sơ</label
-              >
-              <input type="file" name="Tải lên hồ sơ" id="update-file" />
+              <div class="input__group">
+                <label style="margin-top: 0" for="user-name">Họ và Tên</label>
+                <input id="user-name" value="Nguyễn Văn A" readonly />
+              </div>
+              <div class="input__group">
+                <label for="user-email">Email</label>
+                <input id="user-email" value="nguyenvana@gmail.com" readonly />
+              </div>
+              <div class="input__group">
+                <label for="user-phone">Số điện thoại</label>
+                <input id="user-phone" value="012345677" readonly />
+              </div>
+              <div class="input__group">
+                <label class="label-update-file" for="upload-file"
+                  >Tải lên hồ sơ</label
+                >
+                <input type="file" name="Tải lên hồ sơ" id="update-file" />
+              </div>
             </form>
           </div>
           <div class="modal-footer">

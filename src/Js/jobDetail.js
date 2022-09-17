@@ -14,3 +14,11 @@ ElmTab1Title.onclick = function tab() {
   ElmTab1Title.classList.add("tab-active");
   ElmTab2Title.classList.remove("tab-active");
 };
+
+function ckeckLogin() {
+  if (true)
+    document.querySelector(".job__submit-file").onclick = function (e) {
+      e.stopPropagation();
+    };
+}
+ckeckLogin();

@@ -225,8 +225,9 @@ body {
 .modal-body label {
   margin: 15px 0 5px 0;
 }
-.modal-body label:first-child {
-  margin: 0 0 5px 0;
+
+.input_error {
+  color: red;
 }
 .modal-body .label-update-file {
   display: block;
