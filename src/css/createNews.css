@@ -9,6 +9,16 @@ textarea {
 a {
   color: unset;
 }
+select {
+  margin-left: -1px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 8px 15px;
+  border: none;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  width: 100%;
+}
 .margin-left-0 {
   margin-left: 0;
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đăng Tin Tuyển dụng</title>
+    <title>Nhà tuyển dụng</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
@@ -77,13 +77,13 @@
             </div>
             <!-- Nôi dung tab 1 -->
             <div class="tab1__content">
-              <div class="progres">
+              <!-- <div class="progres">
                 <span class="progres__number progres__number1">1</span>
                 <span class="progres__text1">Nhập thông tin</span>
                 <div class="Divider"></div>
                 <span class="progres__number progres__number2">2</span>
                 <span class="progres__text2">Xem trước thông tin</span>
-              </div>
+              </div> -->
               <form id="form-tab1" action="">
                 <div class="row">
                   <div class="col-12">
@@ -105,20 +105,26 @@
                       <div class="input__title">
                         Hình thức làm việc <span class="text-red-500"> *</span>
                       </div>
-
-                      <input
-                        type="text"
+                      <select
                         id="input__working-form"
                         class="input-select input_create-job"
-                        placeholder="Chọn"
-                        readonly
-                      />
-
-                      <div class="input__title-option">
-                        <div class="input__title-option-item">Full Time</div>
-                        <div class="input__title-option-item">Part Time</div>
-                        <div class="input__title-option-item">Khác</div>
-                      </div>
+                      >
+                        <option class="input__title-option-item" value="">
+                          Chọn
+                        </option>
+                        <option
+                          class="input__title-option-item"
+                          value="fulltime"
+                        >
+                          Full Time
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          Part Time
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          Khác
+                        </option>
+                      </select>
                       <p class="input_error">
                         Vui lòng chọn hình thức làm việc
                       </p>
@@ -130,23 +136,29 @@
                       <div class="input__title">
                         Bằng cấp <span class="text-red-500"> *</span>
                       </div>
-                      <input
-                        type="text"
+                      <select
                         id="input__degree"
                         class="input-select input_create-job"
-                        placeholder="Chọn"
-                        readonly
-                      />
-
-                      <div class="input__title-option">
-                        <div class="input__title-option-item">
+                      >
+                        <option class="input__title-option-item" value="">
+                          Chọn
+                        </option>
+                        <option class="input__title-option-item" value="1">
                           Không Yêu cầu
-                        </div>
-                        <div class="input__title-option-item">Trung cấp</div>
-                        <div class="input__title-option-item">Cao đẳng</div>
-                        <div class="input__title-option-item">Đại học</div>
-                        <div class="input__title-option-item">Trên đại học</div>
-                      </div>
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          Trung cấp
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          Cao đẳng
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          Đại học
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          Trên đại học
+                        </option>
+                      </select>
                       <p class="input_error">Vui lòng chọn bằng cấp</p>
                     </div>
                   </div>
@@ -155,25 +167,38 @@
                       <div class="input__title">
                         Kinh nghiệm <span class="text-red-500"> *</span>
                       </div>
-                      <input
-                        type="text"
+                      <select
                         id="input__experience"
                         class="input-select input_create-job"
-                        placeholder="Chọn"
-                        readonly
-                      />
-                      <div class="input__title-option">
-                        <div class="input__title-option-item">
+                      >
+                        <option class="input__title-option-item" value="">
+                          Chọn
+                        </option>
+                        <option class="input__title-option-item" value="1">
                           Chưa có kinh nghiệm
-                        </div>
-                        <div class="input__title-option-item">Dưới 1 năm</div>
-                        <div class="input__title-option-item">1 Năm</div>
-                        <div class="input__title-option-item">2 Năm</div>
-                        <div class="input__title-option-item">3 Năm</div>
-                        <div class="input__title-option-item">4 Năm</div>
-                        <div class="input__title-option-item">5 Năm</div>
-                        <div class="input__title-option-item">Trên 5 năm</div>
-                      </div>
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          Dưới 1 năm
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          1 Năm
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          2 Năm
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          3 Năm
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          4 Năm
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          5 Năm
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          Trên 5 Năm
+                        </option>
+                      </select>
                       <p class="input_error">Vui lòng chọn kinh nghiệm</p>
                     </div>
                   </div>
@@ -205,14 +230,11 @@
                       <div class="input__title">
                         Mức lương tối thiểu <span class="text-red-500"> *</span>
                       </div>
-                      <input
-                        type="text"
-                        placeholder="Nhập"
+                      <select
                         id="input__min-salary"
-                        class="input-select input_create-job"
-                        readonly
-                      />
-                      <div class="input__title-option input__salary-min"></div>
+                        class="input-select input_create-job input__salary"
+                      ></select>
+
                       <p class="input_error input_error-min-salary2">
                         Vui lòng nhập mức lương tối thiểu
                       </p>
@@ -224,14 +246,11 @@
                         *Lương tối đa phải lớn hơn lương tối thiểu
                       </p>
                       <div class="input__title">Mức lương tối đa</div>
-                      <input
-                        type="text"
-                        placeholder="Nhập"
+                      <select
                         id="input__max-salary"
-                        class="input-select input_create-job"
-                        readonly
-                      />
-                      <div class="input__title-option input__salary-max"></div>
+                        class="input-select input_create-job input__salary"
+                      ></select>
+
                       <p class="input_error input_error-max-salary2">
                         Vui lòng nhập mức lương tối đa
                       </p>
@@ -242,19 +261,25 @@
                       <div class="input__title">
                         Nơi làm việc <span class="text-red-500"> *</span>
                       </div>
-                      <input
-                        type="text"
+
+                      <select
                         id="input__workplace"
                         class="input-select input_create-job"
-                        placeholder="Chọn"
-                        readonly
-                      />
+                      >
+                        <option class="input__title-option-item" value="">
+                          Chọn
+                        </option>
+                        <option class="input__title-option-item" value="1">
+                          Hà Nội
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          Đà Nẵng
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          Hồ Chí Minh
+                        </option>
+                      </select>
 
-                      <div class="input__title-option">
-                        <div class="input__title-option-item">Hà Nội</div>
-                        <div class="input__title-option-item">Đà Nẵng</div>
-                        <div class="input__title-option-item">Hồ Chí Minh</div>
-                      </div>
                       <p class="input_error">Vui lòng chọn nơi làm việc</p>
                     </div>
                   </div>
@@ -348,12 +373,12 @@
                       Hủy bỏ
                     </button> -->
                     <button type="button" class="btn btn-primary btn-continue">
-                      Tiếp tục
+                      Hoàn thành
                     </button>
                   </div>
                 </div>
               </form>
-              <div class="tab1_preview">
+              <!-- <div class="tab1_preview">
                 <div class="tab1_preview-content">
                   <span class="tag-preview">Xem trước</span>
 
@@ -449,7 +474,7 @@
                     <div class="preview__benefit-job-text"></div>
                   </div>
                 </div>
-                <!--  -->
+
                 <div class="tab1_preview-btn">
                   <button type="button" class="btn btn-light preview__btn-edit">
                     Chỉnh sửa
@@ -461,7 +486,7 @@
                     Hoàn thành
                   </button>
                 </div>
-              </div>
+              </div> -->
             </div>
             <div class="tab2__content">
               <table>
@@ -637,57 +662,58 @@
     >
       <div class="company-info-register">
         <h3 class="company-info-register__title">Đăng kí thông tin công ty</h3>
-             
-          <div class="company-info-register__title modal-body">
-            <form action="">
-              <label for="user-name">Tên công ty</label>
-              <input id="user-name" placeholder="Tên công ty theo giấy phép kinh doanh" />
-              <label for="user-email" placeholder="Nhập">Mã số thuế</label>
-              <input id="user-email" />
-              <label for="user-phone" placeholder="Nhập">Quy mô nhân sự</label>
-              <input id="user-phone" />
-              <label for="user-phone" placeholder="Nhập">Địa điểm</label>
-              <input id="user-phone" />
-              <label for="user-phone" placeholder="Nhập">Địa chỉ công ty</label>
-              <input id="user-phone" />
-             
-             
-            </form>
-          </div>
-          <div class="modal-footer">
-            <div class="row">
-              <div class="col-6">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-dismiss="modal"
-                >
-                  Hủy bỏ
-                </button>
-              </div>
-              <div class="col-6">
-                <button type="button" class="btn btn-primary">Nộp hồ sơ</button>
-              </div>
+
+        <div class="company-info-register__title modal-body">
+          <form action="">
+            <label for="user-name">Tên công ty</label>
+            <input
+              id="user-name"
+              placeholder="Tên công ty theo giấy phép kinh doanh"
+            />
+            <label for="user-email" placeholder="Nhập">Mã số thuế</label>
+            <input id="user-email" />
+            <label for="user-phone" placeholder="Nhập">Quy mô nhân sự</label>
+            <input id="user-phone" />
+            <label for="user-phone" placeholder="Nhập">Địa điểm</label>
+            <input id="user-phone" />
+            <label for="user-phone" placeholder="Nhập">Địa chỉ công ty</label>
+            <input id="user-phone" />
+          </form>
+        </div>
+        <div class="modal-footer">
+          <div class="row">
+            <div class="col-6">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Hủy bỏ
+              </button>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-primary">Nộp hồ sơ</button>
             </div>
           </div>
         </div>
-      </,>
-    </div>
+      </div>
+    </modal>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
       crossorigin="anonymous"
     ></script>
     <script
-    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"
-  ></script>
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
     <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-    crossorigin="anonymous"
-  ></script>
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="src/Js/base.js"></script> -->
     <script src="src/Js/createNews.js"></script>
   </body>
 </html>
