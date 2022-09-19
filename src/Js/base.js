@@ -86,44 +86,99 @@ const ElmSignInEmail = document.querySelector("#sign-in-email");
 const ElmSignInPassword = document.querySelector("#sign-in-password");
 const ElmBtnSignIn = document.querySelector("#btn-sign-in");
 
-let clickBtnSignIn = false;
-function checkValidateFormLogin() {
-  if (!ElmBtnSignIn) return;
-  ElmBtnSignIn.onclick = function (e) {
-    clickBtnSignIn = true;
-    if (!ElmSignInEmail.value.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)) {
-      ElmSignInEmail.nextElementSibling.style.display = "block";
-      e.stopPropagation();
-    } else {
-      ElmSignInEmail.nextElementSibling.style.display = "none";
-    }
-    if (ElmSignInPassword.value === "") {
-      ElmSignInPassword.nextElementSibling.style.display = "block";
-      e.stopPropagation();
-    } else {
-      ElmSignInPassword.nextElementSibling.style.display = "none";
-    }
-  };
-
-  ElmSignInEmail.oninput = function () {
-    if (!clickBtnSignIn) return;
-    if (!ElmSignInEmail.value.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)) {
-      ElmSignInEmail.nextElementSibling.style.display = "block";
-    } else {
-      ElmSignInEmail.nextElementSibling.style.display = "none";
-    }
-  };
-  ElmSignInPassword.oninput = function () {
-    if (!clickBtnSignIn) return;
-    if (ElmSignInPassword.value === "") {
-      ElmSignInPassword.nextElementSibling.style.display = "block";
-    } else {
-      ElmSignInPassword.nextElementSibling.style.display = "none";
-    }
-  };
+function validateEmail(email) {
+  var re =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
 }
-checkValidateFormLogin();
 
-// function checkValidateSignUpName() {
-//   // if()
-// }
+function validatePhone(phone) {
+  if (phone.length <= 8 || phone.length > 20) {
+    return false;
+  }
+  var re = /^\d+$/;
+  return re.test(phone);
+}
+(function checkValidateSignIn() {
+  ElmBtnSignIn.onclick = function () {
+    event.preventDefault();
+    let email, phone, fullname;
+    email = $("#sign-in-email").val();
+    phone = $("#sign-in-password").val();
+
+    if (!validateEmail(email)) {
+      toastr.warning("định dạng email không hợp lệ");
+      return;
+    }
+    if (phone == "") {
+      toastr.warning("Vui lòng nhập số điện thoại");
+      return;
+    }
+  };
+})();
+$("#btn-sign-up").on("click", function () {
+  let email = $("#sign-up-email").val();
+  let phone = $("#sign-up-phone").val();
+  let password = $("#sign-up-password").val();
+  let retype = $("#sign-up-retype-password").val();
+  let fullname = $("#sign-up-fullname").val();
+  if (!validateEmail(email)) {
+    toastr.warning("định dạng email không hợp lệ");
+    return;
+  }
+  if (!validatePhone(phone)) {
+    toastr.warning("định dạng số điện thoại không hợp lệ");
+    return;
+  }
+  if (password.length == 0) {
+    toastr.warning("vui lòng nhập mật khẩu");
+    return;
+  }
+  if (retype.length == 0) {
+    toastr.warning("Vui lòng gõ lại mật khẩu");
+    return;
+  }
+  if (retype != password) {
+    toastr.warning("Mật khẩu gõ lại chưa trùng khớp");
+    return;
+  }
+  if (fullname.length == 0) {
+    toastr.warning("Vui lòng nhập họ tên");
+    return;
+  }
+  let req = {
+    Email: email,
+    Password: password,
+    FullName: fullname,
+    Phone: phone,
+  };
+  let myJSON = JSON.stringify(req);
+
+  // $.ajax({
+  //   url: "/sign-up",
+  //   type: "POST",
+  //   contentType: "application/json; charset=utf-8",
+  //   data: myJSON,
+  //   dataType: "json",
+  //   success: function (data) {
+  //     toastr.success(
+  //       "Đăng ký tài khoản thành công. Một email kích hoạt đã được gửi vào hòm thư của bạn."
+  //     );
+  //     $("#sign-up-email").val("");
+  //     $("#sign-up-phone").val("");
+  //     $("#sign-up-password").val("");
+  //     $("#sign-up-retype-password").val("");
+  //     $("#sign-up-fullname").val("");
+  //     $("#modal-signin").modal("hide");
+  //   },
+  //   error: function (xhr) {
+  //     toastr.warning(xhr.responseJSON);
+  //   },
+  // });
+});
+function openForgotPassword() {
+  $("#loginModal").modal("hide");
+  $("#forgot-password").modal();
+}
+
+$(".forgot-password-toggler").on("click", openForgotPassword);
