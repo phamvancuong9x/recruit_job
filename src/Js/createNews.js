@@ -211,11 +211,12 @@ function submitJob() {
     if (!checkValidateForm) {
       var formData = new FormData($("#form-tab1")[0]);
       const dateUtc = moment(ElmDateline.value).toISOString();
-
-      // console.log(ElmDateline.value);
-      // console.log(dateUtc);
-      formData.append("describe_job", dataCheditor1);
       formData.set("date", dateUtc);
+      formData.set(
+        "salary",
+        ` ${ElmInputMinSalary.value}-${ElmInputMaxSalary.value}`
+      );
+      formData.append("describe_job", dataCheditor1);
       formData.append("describe_job", dataCheditor2);
       formData.append("describe_job", dataCheditor3);
 

@@ -217,10 +217,10 @@ body {
 #user-email,
 #user-phone {
   display: block;
-  background-color: rgb(243, 243, 243);
   width: 100%;
   border: none;
-  padding: 5px 10px;
+  border: 1px solid #ccc;
+  padding: 7px 10px;
 }
 .modal-body label {
   margin: 15px 0 5px 0;

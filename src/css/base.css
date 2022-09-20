@@ -49,7 +49,9 @@ header {
   background-color: #0f5298;
   position: relative;
 }
-
+.text-red-500 {
+  color: red;
+}
 .header__content {
   max-width: 1350px;
   margin: auto;
