@@ -290,10 +290,23 @@ body {
   /* background-color: rgb(243, 243, 243); */
 }
 .image-company {
-  width: 140px;
-  height: 140px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
   margin-top: 20px;
+}
+.change__image-logo {
+  display: flex;
+  align-items: center;
+  max-width: 180px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px dashed #ccc;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.change__image-logo:hover {
+  border-color: #1890ff;
 }
 /* reposive */
 @media (max-width: 414px) {

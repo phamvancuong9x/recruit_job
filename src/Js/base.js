@@ -118,24 +118,50 @@ function validatePhone(phone) {
   var re = /^\d+$/;
   return re.test(phone);
 }
-(function checkValidateSignIn() {
-  if (!ElmBtnSignIn) return;
-  ElmBtnSignIn.onclick = function () {
-    event.preventDefault();
-    let email, phone, fullname;
-    email = $("#sign-in-email").val();
-    phone = $("#sign-in-password").val();
-
-    if (!validateEmail(email)) {
-      toastr.warning("định dạng email không hợp lệ");
-      return;
-    }
-    if (phone == "") {
-      toastr.warning("Vui lòng nhập số điện thoại");
-      return;
-    }
+function signInFunc(e) {
+  event.preventDefault();
+  let email = $("#sign-in-email").val();
+  let password = $("#sign-in-password").val();
+  if (!validateEmail(email)) {
+    toastr.warning("định dạng email không hợp lệ");
+    return;
+  }
+  if (password.length == 0) {
+    toastr.warning("vui lòng nhập mật khẩu");
+    return;
+  }
+  var req = {
+    Email: email,
+    Password: password,
+    Remember: $("#sign-in-remember").prop("checked"),
   };
-})();
+  var myJSON = JSON.stringify(req);
+  $.ajax({
+    url: "/login",
+    type: "POST",
+    contentType: "application/json; charset=utf-8",
+    data: myJSON,
+    dataType: "json",
+    success: function (data) {
+      $("#modal-signin").modal("hide");
+      toastr.success("Đăng nhập thành công");
+      setTimeout(function () {
+        window.location.reload();
+      }, 500);
+    },
+    error: function (xhr) {
+      toastr.warning(xhr.responseJSON);
+    },
+  });
+}
+$("#sign-in-email, #sign-in-password").bind("enterKey", function (e) {
+  signInFunc();
+});
+$("#sign-in-email, #sign-in-password").keyup(function (e) {
+  if (e.keyCode == 13) {
+    $(this).trigger("enterKey");
+  }
+});
 $("#btn-sign-up").on("click", function () {
   let email = $("#sign-up-email").val();
   let phone = $("#sign-up-phone").val();
@@ -174,27 +200,27 @@ $("#btn-sign-up").on("click", function () {
   };
   let myJSON = JSON.stringify(req);
 
-  // $.ajax({
-  //   url: "/sign-up",
-  //   type: "POST",
-  //   contentType: "application/json; charset=utf-8",
-  //   data: myJSON,
-  //   dataType: "json",
-  //   success: function (data) {
-  //     toastr.success(
-  //       "Đăng ký tài khoản thành công. Một email kích hoạt đã được gửi vào hòm thư của bạn."
-  //     );
-  //     $("#sign-up-email").val("");
-  //     $("#sign-up-phone").val("");
-  //     $("#sign-up-password").val("");
-  //     $("#sign-up-retype-password").val("");
-  //     $("#sign-up-fullname").val("");
-  //     $("#modal-signin").modal("hide");
-  //   },
-  //   error: function (xhr) {
-  //     toastr.warning(xhr.responseJSON);
-  //   },
-  // });
+  $.ajax({
+    url: "/sign-up",
+    type: "POST",
+    contentType: "application/json; charset=utf-8",
+    data: myJSON,
+    dataType: "json",
+    success: function (data) {
+      toastr.success(
+        "Đăng ký tài khoản thành công. Một email kích hoạt đã được gửi vào hòm thư của bạn."
+      );
+      $("#sign-up-email").val("");
+      $("#sign-up-phone").val("");
+      $("#sign-up-password").val("");
+      $("#sign-up-retype-password").val("");
+      $("#sign-up-fullname").val("");
+      $("#modal-signin").modal("hide");
+    },
+    error: function (xhr) {
+      toastr.warning(xhr.responseJSON);
+    },
+  });
 });
 function openForgotPassword() {
   $("#loginModal").modal("hide");
@@ -213,21 +239,21 @@ $("#btn-forgot-password").on("click", function () {
     Email: email,
   };
   var myJSON = JSON.stringify(req);
-  // $.ajax({
-  //   url: "/forgot-password",
-  //   type: "POST",
-  //   contentType: "application/json; charset=utf-8",
-  //   data: myJSON,
-  //   dataType: "json",
-  //   success: function (data) {
-  //     toastr.success(
-  //       "Một email hướng dẫn sẽ được gửi đến bạn trong vài phút tới. Vui lòng kiểm tra email."
-  //     );
-  //     $("#forgot-password").modal("hide");
-  //     $("#forgot-password-email").val("");
-  //   },
-  //   error: function (xhr) {
-  //     toastr.warning(xhr.responseJSON);
-  //   },
-  // });
+  $.ajax({
+    url: "/forgot-password",
+    type: "POST",
+    contentType: "application/json; charset=utf-8",
+    data: myJSON,
+    dataType: "json",
+    success: function (data) {
+      toastr.success(
+        "Một email hướng dẫn sẽ được gửi đến bạn trong vài phút tới. Vui lòng kiểm tra email."
+      );
+      $("#forgot-password").modal("hide");
+      $("#forgot-password-email").val("");
+    },
+    error: function (xhr) {
+      toastr.warning(xhr.responseJSON);
+    },
+  });
 });

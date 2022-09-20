@@ -21,6 +21,7 @@ const ElmTab1Content = document.querySelector(".tab1__content");
 const ElmTab2Content = document.querySelector(".tab2__content");
 const ElmTab3Content = document.querySelector(".tab3__content");
 const ElmOption = document.querySelectorAll(".input__title-option-item");
+const ElmDateline = document.querySelector("#input__submit-deadline");
 let clickBtnSubmit = false;
 
 // khởi tạo CKEDITOR
@@ -135,8 +136,6 @@ function checkValidate() {
 }
 checkValidate();
 
-const ElmDateline = document.querySelector("#input__submit-deadline");
-
 // hiển thị error khi ngày chọn nhỏ hơn ngày hiện tại
 function checkValidateDateline() {
   const date = new Date();
@@ -156,8 +155,10 @@ checkValidateDateline();
 // Hiển thị error khi mức lương tối đa nhỏ hon mức lương tối thiểu
 function showErrorSalary() {
   ElmInputSalary.forEach((element) => {
-    element.addEventListener("change", function () {
+    element.addEventListener("input", function () {
       if (+ElmInputMinSalary.value === 0 || +ElmInputMaxSalary.value === 0) {
+        ElmErrorMinSalary1.style.display = "none";
+        ElmErrorMaxSalary1.style.display = "none";
         return;
       }
       if (+ElmInputMinSalary.value >= +ElmInputMaxSalary.value) {
@@ -209,19 +210,20 @@ function submitJob() {
 
     if (!checkValidateForm) {
       var formData = new FormData($("#form-tab1")[0]);
+      const dateUtc = moment(ElmDateline.value).toISOString();
+
+      // console.log(ElmDateline.value);
+      // console.log(dateUtc);
       formData.append("describe_job", dataCheditor1);
+      formData.set("date", dateUtc);
       formData.append("describe_job", dataCheditor2);
       formData.append("describe_job", dataCheditor3);
-      for (const [key, value] of formData) {
-        console.log([key, value]);
-      }
 
       $.ajax({
         url: "index.html",
         type: "POST",
         contentType: "application/json; charset=utf-8",
         data: formData,
-        dataType: "json",
         processData: false,
         success: function (data) {
           toastr.success("Tạo tin tuyển dụng thành công. Vui lòng chờ duyệt");
@@ -234,3 +236,26 @@ function submitJob() {
   });
 }
 submitJob();
+function previewImage() {
+  $("#image-logo")[0].onchange = (evt) => {
+    const [file] = $("#image-logo")[0].files;
+    if (file) {
+      $(".image-company")[0].src = URL.createObjectURL(file);
+    }
+  };
+}
+previewImage();
+
+(function ckeckInputSalary() {
+  ElmInputSalary.forEach((element) => {
+    element.oninput = function () {
+      if (
+        !Number.isInteger(+element.value[element.value.length - 1]) ||
+        element.value.length > 3 ||
+        +element.value < 1
+      ) {
+        element.value = element.value.slice(0, element.value.length - 1);
+      }
+    };
+  });
+})();
