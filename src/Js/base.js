@@ -11,6 +11,25 @@ const ElmHeaderUserListMobile = document.querySelector(
 const ElmBtnLogin = document.querySelector(".login");
 const ElmBtnLoginMobile = document.querySelector(".login-mobile");
 
+toastr.options = {
+  closeButton: true,
+  debug: false,
+  newestOnTop: false,
+  progressBar: false,
+  positionClass: "toast-top-center",
+  preventDuplicates: true,
+  onclick: null,
+  showDuration: "300",
+  hideDuration: "5000",
+  timeOut: "5000",
+  width: "700px",
+  extendedTimeOut: "5000",
+  showEasing: "swing",
+  hideEasing: "linear",
+  showMethod: "fadeIn",
+  hideMethod: "fadeOut",
+};
+
 (function toggleSubMenu() {
   if (!ElmBtnBar) return;
   ElmBtnBar.onclick = function () {
@@ -100,6 +119,7 @@ function validatePhone(phone) {
   return re.test(phone);
 }
 (function checkValidateSignIn() {
+  if (!ElmBtnSignIn) return;
   ElmBtnSignIn.onclick = function () {
     event.preventDefault();
     let email, phone, fullname;
@@ -182,3 +202,32 @@ function openForgotPassword() {
 }
 
 $(".forgot-password-toggler").on("click", openForgotPassword);
+
+$("#btn-forgot-password").on("click", function () {
+  let email = $("#forgot-password-email").val();
+  if (!validateEmail(email)) {
+    toastr.warning("định dạng email không hợp lệ");
+    return;
+  }
+  var req = {
+    Email: email,
+  };
+  var myJSON = JSON.stringify(req);
+  // $.ajax({
+  //   url: "/forgot-password",
+  //   type: "POST",
+  //   contentType: "application/json; charset=utf-8",
+  //   data: myJSON,
+  //   dataType: "json",
+  //   success: function (data) {
+  //     toastr.success(
+  //       "Một email hướng dẫn sẽ được gửi đến bạn trong vài phút tới. Vui lòng kiểm tra email."
+  //     );
+  //     $("#forgot-password").modal("hide");
+  //     $("#forgot-password-email").val("");
+  //   },
+  //   error: function (xhr) {
+  //     toastr.warning(xhr.responseJSON);
+  //   },
+  // });
+});

@@ -180,12 +180,9 @@ header {
 .modal-login-item {
   position: relative;
 }
-.input_error {
-  display: none;
-  position: absolute;
-  color: red;
+.fab {
+  cursor: pointer;
 }
-
 /* modal forgot password */
 #forgot-password .modal-content {
   padding: 3rem;

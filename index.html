@@ -23,8 +23,6 @@
       href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
       rel="stylesheet"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link rel="stylesheet" href="src/css/index.css" />
     <link rel="stylesheet" href="src/css/base.css" />
   </head>
@@ -373,7 +371,6 @@
               <div class="tab__login-content tab-content-active">
                 <div class="modal-login-item">
                   <input placeholder="Email" id="sign-in-email" />
-                  <p class="input_error">Định dạng email không hợp lệ</p>
                 </div>
                 <div class="modal-login-item">
                   <input
@@ -381,7 +378,6 @@
                     placeholder="Password"
                     id="sign-in-password"
                   />
-                  <p class="input_error">Vui lòng nhập mật khẩu</p>
                 </div>
                 <div class="modal-login-item-half">
                   <label style="display: none" class="checkbox-remember-me"
@@ -423,11 +419,9 @@
                 <form>
                   <div class="modal-login-item">
                     <input placeholder="Họ tên" id="sign-up-fullname" />
-                    <p class="input_error">Nhập họ tên từ 6 kí tự trở lên</p>
                   </div>
                   <div class="modal-login-item">
                     <input placeholder="Email" id="sign-up-email" required="" />
-                    <p class="input_error">Định dạng email hợp lệ</p>
                   </div>
                   <div class="modal-login-item">
                     <input
@@ -435,7 +429,6 @@
                       id="sign-up-phone"
                       required=""
                     />
-                    <p class="input_error">Định dạng SĐT không hợp lệ</p>
                   </div>
                   <div class="modal-login-item">
                     <input
@@ -444,7 +437,6 @@
                       id="sign-up-password"
                       required=""
                     />
-                    <p class="input_error">Nhập mật khẩu từ 6 kí tự trở lên</p>
                   </div>
                   <div class="modal-login-item">
                     <input
@@ -453,7 +445,6 @@
                       id="sign-up-retype-password"
                       required=""
                     />
-                    <p class="input_error">Vui lòng gõ lại mật khẩu</p>
                   </div>
                   <div class="modal-login-item">
                     <button
@@ -509,15 +500,17 @@
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
       crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"
       integrity="sha512-frFP3ZxLshB4CErXkPVEXnd5ingvYYtYhE5qllGdZmcOlRKNEPbufyupfdSTNmoF5ICaQNO6SenXzOZvoGkiIA=="
@@ -526,25 +519,5 @@
     ></script>
     <script src="src/Js/base.js"></script>
     <script src="src/Js/index.js"></script>
-    <script>
-      toastr.options = {
-        closeButton: true,
-        debug: false,
-        newestOnTop: false,
-        progressBar: false,
-        positionClass: "toast-top-center",
-        preventDuplicates: true,
-        onclick: null,
-        showDuration: "300",
-        hideDuration: "5000",
-        timeOut: "5000",
-        width: "700px",
-        extendedTimeOut: "5000",
-        showEasing: "swing",
-        hideEasing: "linear",
-        showMethod: "fadeIn",
-        hideMethod: "fadeOut",
-      };
-    </script>
   </body>
 </html>

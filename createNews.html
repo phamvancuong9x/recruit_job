@@ -19,6 +19,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="src/css/createNews.css" />
     <link rel="stylesheet" href="src/css/base.css" />
     <script src="https://cdn.ckeditor.com/4.19.1/basic/ckeditor.js"></script>
@@ -94,6 +99,7 @@
                       <input
                         id="input__position_recruit"
                         class="input_create-job"
+                        name="position_recruit"
                         type="text"
                         placeholder="Nhập"
                       />
@@ -108,6 +114,7 @@
                       <select
                         id="input__working-form"
                         class="input-select input_create-job"
+                        name="working_form"
                       >
                         <option class="input__title-option-item" value="">
                           Chọn
@@ -139,6 +146,7 @@
                       <select
                         id="input__degree"
                         class="input-select input_create-job"
+                        name="degree"
                       >
                         <option class="input__title-option-item" value="">
                           Chọn
@@ -170,6 +178,7 @@
                       <select
                         id="input__experience"
                         class="input-select input_create-job"
+                        name="experience"
                       >
                         <option class="input__title-option-item" value="">
                           Chọn
@@ -214,6 +223,7 @@
                         id="input__submit-deadline"
                         class="input_create-job"
                         type="date"
+                        name="date"
                       />
 
                       <p class="input_error input_error-deadline2">
@@ -233,6 +243,7 @@
                       <select
                         id="input__min-salary"
                         class="input-select input_create-job input__salary"
+                        name="min_salary"
                       ></select>
 
                       <p class="input_error input_error-min-salary2">
@@ -249,6 +260,7 @@
                       <select
                         id="input__max-salary"
                         class="input-select input_create-job input__salary"
+                        name="max_salary"
                       ></select>
 
                       <p class="input_error input_error-max-salary2">
@@ -265,6 +277,7 @@
                       <select
                         id="input__workplace"
                         class="input-select input_create-job"
+                        name="workplace"
                       >
                         <option class="input__title-option-item" value="">
                           Chọn
@@ -283,7 +296,6 @@
                       <p class="input_error">Vui lòng chọn nơi làm việc</p>
                     </div>
                   </div>
-
                   <!-- mô tả công việc -->
 
                   <div class="col-12 input__describe">
@@ -296,7 +308,12 @@
                         ứng viên có thể đảm nhận khi làm việc ở công ty
                       </p>
 
-                      <textarea name="editor1" id="editor1" rows="10" cols="80">
+                      <textarea
+                        name="describe_job"
+                        id="editor1"
+                        rows="10"
+                        cols="80"
+                      >
                       </textarea>
                       <p class="input_error error-editor error-editor1">
                         Vui lòng nhập mô tả
@@ -311,7 +328,7 @@
                         việc mà ứng viên cần quan tâm
                       </p>
                       <textarea
-                        name="editor2"
+                        name="request_job"
                         id="editor2"
                         rows="10"
                         cols="80"
@@ -329,7 +346,7 @@
                         vị trí đăng tuyển
                       </p>
                       <textarea
-                        name="editor3"
+                        name="benefit-job"
                         id="editor3"
                         rows="10"
                         cols="80"
@@ -372,7 +389,10 @@
                     <!-- <button type="button" class="btn btn-light btn-cannel">
                       Hủy bỏ
                     </button> -->
-                    <button type="button" class="btn btn-primary btn-continue">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-submit-job"
+                    >
                       Hoàn thành
                     </button>
                   </div>
@@ -698,22 +718,25 @@
         </div>
       </div>
     </modal>
+
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
       crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
       crossorigin="anonymous"
     ></script>
-    <!-- <script src="src/Js/base.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="src/Js/base.js"></script>
     <script src="src/Js/createNews.js"></script>
   </body>
 </html>

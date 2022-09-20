@@ -17,7 +17,6 @@ $("#pagination-demo").twbsPagination({
 });
 
 function showSelect() {
-  console.log(ElmInputSelect);
   ElmInputSelect.onclick = function (e) {
     e.stopPropagation();
     ElmInputSelectOption.style.display = "block";

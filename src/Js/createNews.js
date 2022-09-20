@@ -1,7 +1,7 @@
 const ElmInputSelect = document.querySelectorAll(".input-select");
 
 const ElmInput = document.querySelectorAll(".input_create-job");
-const ElmBtnContinue = document.querySelector(".btn-continue");
+const ElmBtnSubmit = document.querySelector(".btn-submit-job");
 // mức lương
 const ElmInputMinSalary = document.querySelector("#input__min-salary");
 const ElmInputMaxSalary = document.querySelector("#input__max-salary");
@@ -21,8 +21,7 @@ const ElmTab1Content = document.querySelector(".tab1__content");
 const ElmTab2Content = document.querySelector(".tab2__content");
 const ElmTab3Content = document.querySelector(".tab3__content");
 const ElmOption = document.querySelectorAll(".input__title-option-item");
-let clickBtnContinue = false;
-let ckeckValidateFom = false;
+let clickBtnSubmit = false;
 
 // khởi tạo CKEDITOR
 CKEDITOR.replace("editor1");
@@ -77,15 +76,14 @@ renderSalaryList();
 
 // hàm hiển thị error
 function checkValidate() {
-  ElmBtnContinue.onclick = function (e) {
+  ElmBtnSubmit.onclick = function (e) {
     var dataCheditor1 = CKEDITOR.instances.editor1.getData();
     var dataCheditor2 = CKEDITOR.instances.editor2.getData();
     var dataCheditor3 = CKEDITOR.instances.editor3.getData();
     const ElmErrorEditor1 = document.querySelector(".error-editor1");
     const ElmErrorEditor2 = document.querySelector(".error-editor2");
     const ElmErrorEditor3 = document.querySelector(".error-editor3");
-    clickBtnContinue = true;
-    let checkNextPreview = true;
+    clickBtnSubmit = true;
     for (let i = 0; i < ElmInput?.length; i++) {
       if (ElmInput[i].value === "") {
         ElmInput[i].nextElementSibling.style.display = "block";
@@ -106,13 +104,13 @@ function checkValidate() {
     } else {
       ElmErrorEditor3.style.display = "none";
     }
-    getAllElmError.forEach((element) => {
-      if (element.style.display === "block") {
-        checkNextPreview = false;
-        e.stopPropagation();
-        return;
-      }
-    });
+    // getAllElmError.forEach((element) => {
+    //   if (element.style.display === "block") {
+    //     checkNextPreview = false;
+
+    //     return;
+    //   }
+    // });
 
     // if (checkNextPreview) {
     //   ElmFormTab1.style.display = "none";
@@ -122,11 +120,9 @@ function checkValidate() {
     //   ElmProgesText2.style = "color:#451da0";
     // }
 
-    if (clickBtnContinue) {
+    if (clickBtnSubmit) {
       for (let i = 0; i < ElmInput?.length; i++) {
-        console.log();
         ElmInput[i].oninput = function () {
-          console.log(ElmInput[i].value);
           if (ElmInput[i].value === "") {
             ElmInput[i].nextElementSibling.style.display = "block";
           } else {
@@ -138,18 +134,6 @@ function checkValidate() {
   };
 }
 checkValidate();
-// hàm ẩn đi error
-
-// function hideError() {
-//   for (let i = 0; i < ElmInput?.length; i++) {
-//     ElmInput[i].oninput = function () {
-//       if (ElmInput[i].value !== "") {
-//         ElmInput[i].nextElementSibling.style.display = "none";
-//       }
-//     };
-//   }
-// }
-// hideError();
 
 const ElmDateline = document.querySelector("#input__submit-deadline");
 
@@ -194,41 +178,6 @@ function formatDate(stringDate) {
   return stringDate.split("-").reverse().join("/");
 }
 
-// // render dữ liệu ra trang preview
-// function renderDataPreview() {
-//   ElmBtnContinue.addEventListener("click", function () {
-//     var dataCheditor1 = CKEDITOR.instances.editor1.getData();
-//     var dataCheditor2 = CKEDITOR.instances.editor2.getData();
-//     var dataCheditor3 = CKEDITOR.instances.editor3.getData();
-
-//     document.querySelector(".preview__position_recruit").innerText =
-//       document.querySelector("#input__position_recruit").value;
-//     document.querySelector(".preview__working-form").innerText =
-//       document.querySelector("#input__working-form").value;
-//     document.querySelector(".preview__degree").innerText =
-//       document.querySelector("#input__degree").value;
-//     document.querySelector(".preview__experience").innerText =
-//       document.querySelector("#input__experience").value;
-//     document.querySelector(".preview__submit-deadline").innerText = formatDate(
-//       document.querySelector("#input__submit-deadline").value
-//     );
-//     document.querySelector(".preview__min-salary").innerText =
-//       document.querySelector("#input__min-salary").value;
-//     document.querySelector(".preview__max-salary").innerText =
-//       document.querySelector("#input__max-salary").value;
-//     document.querySelector(".preview__workplace").innerText =
-//       document.querySelector("#input__workplace").value;
-
-//     document.querySelector(".preview__describe-job-text").innerHTML =
-//       dataCheditor1;
-//     document.querySelector(".preview__request-job-text").innerHTML =
-//       dataCheditor2;
-//     document.querySelector(".preview__benefit-job-text").innerHTML =
-//       dataCheditor3;
-//   });
-// }
-// renderDataPreview();
-
 // chuyển từ trang preview về phần tạo tin tuyển dung
 
 // function previewSwitchCreateJob() {
@@ -240,3 +189,48 @@ function formatDate(stringDate) {
 //   };
 // }
 // previewSwitchCreateJob();
+
+function submitJob() {
+  ElmBtnSubmit.addEventListener("click", function (e) {
+    var dataCheditor1 = CKEDITOR.instances.editor1.getData();
+    var dataCheditor2 = CKEDITOR.instances.editor2.getData();
+    var dataCheditor3 = CKEDITOR.instances.editor3.getData();
+    let checkValidateForm = false;
+
+    getAllElmError.forEach((element) => {
+      if (element.style.display === "block") {
+        checkValidateForm = true;
+        return;
+      }
+    });
+    if (checkValidateForm) {
+      toastr.warning("Vui lòng nhập đầy đủ thông tin ");
+    }
+
+    if (!checkValidateForm) {
+      var formData = new FormData($("#form-tab1")[0]);
+      formData.append("describe_job", dataCheditor1);
+      formData.append("describe_job", dataCheditor2);
+      formData.append("describe_job", dataCheditor3);
+      for (const [key, value] of formData) {
+        console.log([key, value]);
+      }
+
+      $.ajax({
+        url: "index.html",
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        data: formData,
+        dataType: "json",
+        processData: false,
+        success: function (data) {
+          toastr.success("Tạo tin tuyển dụng thành công. Vui lòng chờ duyệt");
+        },
+        error: function (xhr) {
+          toastr.warning(xhr.responseJSON);
+        },
+      });
+    }
+  });
+}
+submitJob();

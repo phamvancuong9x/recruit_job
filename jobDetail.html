@@ -19,6 +19,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/css/base.css" />
     <link rel="stylesheet" href="src/css/jobDetail.css" />
   </head>
@@ -101,7 +105,6 @@
                   type="button"
                   class="job__submit-file btn btn-primary"
                   data-toggle="modal"
-                  data-target="#exampleModal"
                 >
                   Nộp hồ sơ
                 </button>
@@ -169,12 +172,6 @@
                       - Thưởng nóng theo trách nhiệm và hiệu quả công việc,
                       Thưởng lễ Tết,…
                     </p>
-                  </div>
-                </div>
-                <div class="describe_job">
-                  <div class="describe_job-title">Địa điểm làm việc</div>
-                  <div class="describe_job-text">
-                    <p>102 Hoàng đạo thành , Kim Giang, Thanh Xuân , Hà Nội</p>
                   </div>
                 </div>
               </div>
@@ -355,7 +352,12 @@
                 <label class="label-update-file" for="upload-file"
                   >Tải lên hồ sơ</label
                 >
-                <input type="file" name="Tải lên hồ sơ" id="update-file" />
+                <div class="input-group d-flex">
+                  <input type="file" name="Tải lên hồ sơ" id="update-file" />
+                  <span style="font-size: 14px; margin-top: 5px">
+                    (Định dạng file .doc, .docx, .pdf dung lượng <= 2 MB)</span
+                  >
+                </div>
               </div>
             </form>
           </div>
@@ -371,7 +373,9 @@
                 </button>
               </div>
               <div class="col-6">
-                <button type="button" class="btn btn-primary">Nộp hồ sơ</button>
+                <button type="button" id="submit-file" class="btn btn-primary">
+                  Nộp hồ sơ
+                </button>
               </div>
             </div>
           </div>
@@ -386,15 +390,17 @@
       crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
       crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="src/Js/base.js"></script>
     <script src="src/js/jobDetail.js"></script>
   </body>

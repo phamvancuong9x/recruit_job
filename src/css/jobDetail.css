@@ -257,6 +257,9 @@ body {
   font-size: 14px;
   padding: 10px;
 }
+#update-file {
+  max-width: 85px;
+}
 /* media query */
 @media (max-width: 1024px) {
   .image-logo img {
