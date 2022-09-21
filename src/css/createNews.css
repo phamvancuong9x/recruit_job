@@ -308,6 +308,26 @@ body {
 .change__image-logo:hover {
   border-color: #1890ff;
 }
+.btn-group-submit {
+  margin-top: 40px;
+}
+#submit__update-info-company,
+#cannel__info-company {
+  width: 120px;
+}
+.btn-cannel,
+.btn-cannel:hover {
+  margin-left: 10px;
+  color: #fff !important;
+  border-color: #ff4d4f;
+  background: #ff4d4f !important;
+  text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+  box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
+  transition: all 0.3s ease;
+}
+.btn-cannel:hover {
+  background: #fc3f42 !important;
+}
 /* reposive */
 @media (max-width: 414px) {
   .menu__featureJob-item {

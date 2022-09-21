@@ -222,6 +222,12 @@ body {
   border: 1px solid #ccc;
   padding: 7px 10px;
 }
+.btn-upload-file {
+  padding: 3px 20px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  color: #451da0;
+}
 .file__upload-name {
   margin-bottom: 10px;
   font-weight: 500;

@@ -557,7 +557,7 @@
                             placeholder=" Nhập"
                             id="tax_number"
                             class="input__info-company"
-                            name="tax number"
+                            name="tax_number"
                           />
                         </div>
                         <label
@@ -571,8 +571,8 @@
                             type="text"
                             placeholder=" Nhập"
                             class="input__info-company"
-                            id="tax_number"
-                            name="tax number"
+                            id="number_person"
+                            name="number_person"
                           />
                         </div>
 
@@ -588,8 +588,8 @@
                             placeholder=" Nhập"
                             class="input__info-company"
                             value="Công ty TNHH ABC"
-                            id="tax_number"
-                            name="tax number"
+                            id="name-company"
+                            name="name-company"
                             readonly
                           />
                         </div>
@@ -600,14 +600,16 @@
                           Địa điểm <span class="text-red-500">*</span>
                         </label>
                         <div class="col-12 col-md-9">
-                          <input
-                            type="text"
-                            placeholder=" Nhập"
+                          <select
                             class="input__info-company"
                             id="location__company"
-                            name="location"
-                            readonly
-                          />
+                            name="location_company"
+                          >
+                            <option value="">Chọn</option>
+                            <option value="">Hà Nội</option>
+                            <option value="">Đà Nẵng</option>
+                            <option value="">Hồ Chí Minh</option>
+                          </select>
                         </div>
                         <label
                           for="tax_number"
@@ -621,7 +623,7 @@
                             placeholder=" Nhập"
                             class="input__info-company"
                             id="address__company"
-                            name="address company"
+                            name="address_company"
                           />
                         </div>
                         <label
@@ -635,8 +637,8 @@
                             type="text"
                             placeholder=" Nhập"
                             class="input__info-company"
-                            id="phone__company"
-                            name="phone company"
+                            id="phone_company"
+                            name="phone_company"
                           />
                         </div>
                         <label
@@ -660,6 +662,7 @@
                         >
                           Logo công ty <span class="text-red-500">*</span>
                         </label>
+
                         <div class="col-12 col-md-9">
                           <img
                             class="image-company"
@@ -684,13 +687,36 @@
                                 <path
                                   d="M400 317.7h73.9V656c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V317.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 163a8 8 0 00-12.6 0l-112 141.7c-4.1 5.3-.4 13 6.3 13zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z"
                                 ></path></svg></span
-                            >Thay đổi ảnh logo</label
+                            >Thay đổi ảnh logo
+                          </label>
+                          <span
+                            >Dạng file .jpg, .jpeg, .png, dung lượng <= 300KB và
+                            kích thước tối thiểu 300x300 pixel.</span
                           >
                           <input
                             style="display: none"
                             type="file"
                             id="image-logo"
                           />
+                        </div>
+                        <div class="col-12 col-md-3"></div>
+                        <div class="col-12 col-md-9">
+                          <div class="btn-group-submit">
+                            <button
+                              type="button"
+                              id="submit__update-info-company"
+                              class="btn btn-primary"
+                            >
+                              Cập nhật
+                            </button>
+                            <button
+                              type="button"
+                              id="cannel__info-company"
+                              class="btn btn-cannel"
+                            >
+                              Hủy bỏ
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </form>
