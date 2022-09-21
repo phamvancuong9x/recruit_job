@@ -172,6 +172,7 @@ $("#btn-sign-up").on("click", function () {
     toastr.warning("định dạng email không hợp lệ");
     return;
   }
+
   if (!validatePhone(phone)) {
     toastr.warning("định dạng số điện thoại không hợp lệ");
     return;

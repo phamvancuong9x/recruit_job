@@ -335,31 +335,35 @@
             </button>
           </div>
           <div class="modal-body">
-            <form action="">
+            <form action="" id="form-submit-cv">
               <div class="input__group">
                 <label style="margin-top: 0" for="user-name"
                   >Họ và Tên<span class="text-red-500"> *</span></label
                 >
-                <input id="user-name" placeholder="Nhập" />
+                <input id="user-name" name="user_name" placeholder="Nhập" />
               </div>
               <div class="input__group">
                 <label for="user-email"
                   >Email <span class="text-red-500"> *</span></label
                 >
-                <input id="user-email" placeholder="Nhập" />
+                <input id="user-email" name="user_email" placeholder="Nhập" />
               </div>
               <div class="input__group">
-                <label for="user-phone"
+                <label for="user_phone"
                   >Số điện thoại <span class="text-red-500"> *</span></label
                 >
-                <input id="user-phone" placeholder="Nhập" />
+                <input id="user-phone" name="user_phone" placeholder="Nhập" />
               </div>
               <div class="input__group">
                 <label class="label-update-file" for="upload-file"
                   >Tải lên hồ sơ <span class="text-red-500"> *</span></label
                 >
+                <div class="file__upload-name">
+                  <i class="fa-regular fa-file"></i>
+                  <span class="file__upload-name-text"></span>
+                </div>
                 <div class="input-group d-flex">
-                  <input type="file" name="Tải lên hồ sơ" id="update-file" />
+                  <input type="file" name="file_cv" id="update-file" />
                   <span style="font-size: 14px; margin-top: 5px">
                     (Định dạng file .doc, .docx, .pdf dung lượng <= 2 MB)</span
                   >
@@ -372,6 +376,7 @@
               <div class="col-6">
                 <button
                   type="button"
+                  id="cannel__data-CV"
                   class="btn btn-secondary"
                   data-dismiss="modal"
                 >

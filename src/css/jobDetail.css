@@ -222,8 +222,17 @@ body {
   border: 1px solid #ccc;
   padding: 7px 10px;
 }
+.file__upload-name {
+  margin-bottom: 10px;
+  font-weight: 500;
+  display: none;
+}
+.file__upload-name-text {
+  margin-left: 10px;
+}
 .modal-body label {
   margin: 15px 0 5px 0;
+  font-weight: 500;
 }
 
 .input_error {
