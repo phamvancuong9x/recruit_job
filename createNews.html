@@ -543,7 +543,7 @@
               <div class="update__info-company">
                 <div class="row">
                   <div class="col-12 col-lg-8">
-                    <form action="">
+                    <form action="" id="form-update-info-company">
                       <div class="row">
                         <label
                           for="tax_number"
@@ -606,9 +606,9 @@
                             name="location_company"
                           >
                             <option value="">Chọn</option>
-                            <option value="">Hà Nội</option>
-                            <option value="">Đà Nẵng</option>
-                            <option value="">Hồ Chí Minh</option>
+                            <option value="Hà Nội">Hà Nội</option>
+                            <option value="Đà Nẵng">Đà Nẵng</option>
+                            <option value="Hồ Chí Minh">Hồ Chí Minh</option>
                           </select>
                         </div>
                         <label
@@ -642,18 +642,13 @@
                           />
                         </div>
                         <label
-                          for="tax_number"
+                          for="describe_company"
                           class="col-12 col-md-3 info-company__item-title"
                         >
                           Mô tả về công ty <span class="text-red-500">*</span>
                         </label>
                         <div class="col-12 col-md-9">
-                          <textarea
-                            name="editor4"
-                            id="editor4"
-                            rows="10"
-                            cols="80"
-                          >
+                          <textarea id="editor4" rows="10" cols="80">
                           </textarea>
                         </div>
                         <label
@@ -689,10 +684,6 @@
                                 ></path></svg></span
                             >Thay đổi ảnh logo
                           </label>
-                          <span
-                            >Dạng file .jpg, .jpeg, .png, dung lượng <= 300KB và
-                            kích thước tối thiểu 300x300 pixel.</span
-                          >
                           <input
                             style="display: none"
                             type="file"
@@ -731,53 +722,8 @@
     <!-- footer -->
     <footer style=""></footer>
 
-    <!-- Modal -->
-    <!-- Modal Đăng kí công ty-->
-    <modal
-      class="modal fade"
-      id="#exampleModal1"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="company-info-register">
-        <h3 class="company-info-register__title">Đăng kí thông tin công ty</h3>
-
-        <div class="company-info-register__title modal-body">
-          <form action="">
-            <label for="user-name">Tên công ty</label>
-            <input
-              id="user-name"
-              placeholder="Tên công ty theo giấy phép kinh doanh"
-            />
-            <label for="user-email" placeholder="Nhập">Mã số thuế</label>
-            <input id="user-email" />
-            <label for="user-phone" placeholder="Nhập">Quy mô nhân sự</label>
-            <input id="user-phone" />
-            <label for="user-phone" placeholder="Nhập">Địa điểm</label>
-            <input id="user-phone" />
-            <label for="user-phone" placeholder="Nhập">Địa chỉ công ty</label>
-            <input id="user-phone" />
-          </form>
-        </div>
-        <div class="modal-footer">
-          <div class="row">
-            <div class="col-6">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Hủy bỏ
-              </button>
-            </div>
-            <div class="col-6">
-              <button type="button" class="btn btn-primary">Nộp hồ sơ</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </modal>
+    <!-- id công ty -->
+    <div id="id_company" style="display: none">12</div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

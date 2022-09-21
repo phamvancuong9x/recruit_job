@@ -219,6 +219,7 @@ function submitJob() {
       formData.append("describe_job", dataCheditor1);
       formData.append("describe_job", dataCheditor2);
       formData.append("describe_job", dataCheditor3);
+      formData.append("id_company", $("#id_company").text());
 
       $.ajax({
         url: "index.html",
@@ -240,12 +241,52 @@ submitJob();
 function previewImage() {
   $("#image-logo")[0].onchange = (evt) => {
     const [file] = $("#image-logo")[0].files;
-    if (file) {
+    if (!file) return;
+    console.log(file);
+    const fileName = $("#image-logo")[0].value;
+
+    const idxDot = fileName.lastIndexOf(".") + 1;
+    const extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+    if (
+      extFile == "jpg" ||
+      extFile == "jpeg" ||
+      extFile == "png" ||
+      extFile == "svg"
+    ) {
       $(".image-company")[0].src = URL.createObjectURL(file);
+    } else {
+      toastr.warning(
+        "Định dạng file ảnh không đúng . Dạng file .jpg, .jpeg, .png,.svg"
+      );
     }
   };
 }
 previewImage();
+
+function submitUpdateInfoCompany() {
+  $("#submit__update-info-company")[0].addEventListener("click", function (e) {
+    var dataCheditorDescribeCompany = CKEDITOR.instances.editor4.getData();
+
+    var formData = new FormData($("#form-update-info-company")[0]);
+
+    formData.append("describe_company", dataCheditorDescribeCompany);
+
+    $.ajax({
+      url: "index.html",
+      type: "POST",
+      contentType: "application/json; charset=utf-8",
+      data: formData,
+      processData: false,
+      success: function (data) {
+        toastr.success("Cập nhật thành công");
+      },
+      error: function (xhr) {
+        toastr.warning(xhr.responseJSON);
+      },
+    });
+  });
+}
+submitUpdateInfoCompany();
 
 (function ckeckInputSalary() {
   ElmInputSalary.forEach((element) => {
