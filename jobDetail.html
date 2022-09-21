@@ -357,7 +357,7 @@
                 <input id="user-phone" name="user_phone" placeholder="Nhập" />
               </div>
               <div class="input__group">
-                <label class="label-update-file" for="upload-file"
+                <label class="label-update-file"
                   >Tải lên hồ sơ <span class="text-red-500"> *</span></label
                 >
                 <div class="file__upload-name">
@@ -365,13 +365,17 @@
                   <span class="file__upload-name-text"></span>
                 </div>
                 <div class="input-group d-flex">
-                  <input
-                    type="file"
-                    name="file_cv"
-                    id="update-file"
-                    style="display: none"
-                  />
-                  <span class="btn-upload-file">Tải file</span>
+                  <label
+                    class="btn-upload-file"
+                    for="update-file"
+                    style="cursor: pointer; margin: 0 10px 0 0"
+                    >Tải file
+                    <input
+                      type="file"
+                      name="file_cv"
+                      id="update-file"
+                      style="display: none"
+                  /></label>
                   <span style="font-size: 14px; margin-top: 5px">
                     (Định dạng file .doc, .docx, .pdf dung lượng <= 2 MB)</span
                   >

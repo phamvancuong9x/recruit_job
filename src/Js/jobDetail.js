@@ -64,8 +64,8 @@ showModal();
     }
     const fileName = $("#update-file")[0].value;
 
-    (idxDot = fileName.lastIndexOf(".") + 1),
-      (extFile = fileName.substr(idxDot, fileName.length).toLowerCase());
+    const idxDot = fileName.lastIndexOf(".") + 1;
+    const extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
     if (extFile == "doc" || extFile == "docx" || extFile == "pdf") {
       var formData = new FormData($("#form-submit-cv")[0]);
       formData.append("id_company", $("#id_company").text());
