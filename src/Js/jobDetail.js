@@ -83,16 +83,18 @@ getLinkFile();
 // ckeck validate và submit
 function checkFileUpload(linkFile) {
   $("#submit-file").click(function () {
-    console.log(linkFile);
-    if ($("#user-name").val().length < 6) {
+    const user_name_value = $("#user-name").val();
+    const user_email_value = $("#user-email").val();
+    const user_phone_value = $("#user-phone").val();
+    if (user_name_value.length < 6) {
       toastr.warning("Họ tên phải từ 6 kí tự trở lên");
       return;
     }
-    if (!validateEmail($("#user-email").val())) {
+    if (!validateEmail(user_email_value)) {
       toastr.warning("định dạng email không hợp lệ");
       return;
     }
-    if (!validatePhone($("#user-phone").val())) {
+    if (!validatePhone(user_phone_value)) {
       toastr.warning("Định dạng số điện thoại không hợp lệ");
       return;
     }
@@ -100,17 +102,24 @@ function checkFileUpload(linkFile) {
       toastr.warning("Vui lòng tải lên file CV");
       return;
     }
-    var formData = new FormData($("#form-submit-cv")[0]);
 
-    formData.append("link_file_cv", linkFile);
+    const data = {
+      user_name: user_name_value,
+      user_email: user_email_value,
+      user_phone: user_phone_value,
+      link_file_cv: linkFile,
+    };
     if (linkFile) {
       $.ajax({
         url: "index.html",
         type: "POST",
         contentType: "application/json; charset=utf-8",
-        data: formData,
+        data: JSON.stringify(data),
+        dataType: "json",
         processData: false,
         success: function (data) {
+          //close modal and send information to user
+          $("#exampleModal").modal("hide");
           toastr.success(" Gửi CV thành công !");
         },
         error: function (xhr) {

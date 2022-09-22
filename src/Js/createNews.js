@@ -246,21 +246,24 @@ function previewImage() {
 
 function submitUpdateInfoCompany(url) {
   $("#submit__update-info-company")[0].onclick = function (e) {
-    var dataCheditorDescribeCompany = CKEDITOR.instances.editor4.getData();
+    const dataCheditorDescribeCompany = CKEDITOR.instances.editor4.getData();
 
-    var formData = new FormData($("#form-update-info-company")[0]);
-    formData.append("describe_company", dataCheditorDescribeCompany);
-    if (url) {
-      formData.append("link-image-company", url);
-    } else {
-      formData.append("link-image-company", $(".image-company")[0].src);
-    }
-
+    const data = {
+      name_company: $("#name-company").val(),
+      number_person: $("#number-person").val(),
+      location_company: $("#location-company").val(),
+      address_company: $("#address-company").val(),
+      phone_company: $("#phone-company").val(),
+      link_wepsite_company: $("#link_wepsite_company").val(),
+      describe_company: dataCheditorDescribeCompany,
+      link_image_company: "" ? $(".image-company")[0].src : url,
+    };
+    console.log(data);
     $.ajax({
       url: "index.html",
       type: "POST",
       contentType: "application/json; charset=utf-8",
-      data: formData,
+      data: JSON.stringify(data),
       processData: false,
       success: function (data) {
         toastr.success("Cập nhật thành công");

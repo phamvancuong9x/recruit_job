@@ -10,6 +10,9 @@ const ElmHeaderUserListMobile = document.querySelector(
 );
 const ElmBtnLogin = document.querySelector(".login");
 const ElmBtnLoginMobile = document.querySelector(".login-mobile");
+const ElmSignInEmail = document.querySelector("#sign-in-email");
+const ElmSignInPassword = document.querySelector("#sign-in-password");
+const ElmBtnSignIn = document.querySelector("#btn-sign-in");
 
 toastr.options = {
   closeButton: true,
@@ -100,11 +103,6 @@ tabLoginRegister(
   ElmTabRegisterContent,
   ElmTabLoginContent
 );
-
-const ElmSignInEmail = document.querySelector("#sign-in-email");
-const ElmSignInPassword = document.querySelector("#sign-in-password");
-const ElmBtnSignIn = document.querySelector("#btn-sign-in");
-
 function validateEmail(email) {
   var re =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
