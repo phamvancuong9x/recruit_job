@@ -44,8 +44,46 @@ function validatePhone(phone) {
 }
 
 showModal();
-(function checkFileUpload() {
+
+// lấy linhk file
+function getLinkFile() {
+  $("#update-file")[0].onchange = function () {
+    const fileName = $("#update-file")[0].value;
+    const idxDot = fileName.lastIndexOf(".") + 1;
+    const extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+    if (extFile == "doc" || extFile == "docx" || extFile == "pdf") {
+      var data = new FormData();
+      data.append("upload", $("#update-file")[0].files[0]);
+      showNameFile();
+      (async () => {
+        const rawResponse = await fetch(
+          "http://localhost:8087/api/upload-file",
+          {
+            method: "POST",
+            body: data,
+          }
+        )
+          // .then(() => {
+          //   // showNameFile();
+          // })
+          .catch(() => toastr.warning("Upload file lỗi. Vui lòng thử lại"));
+        const content = await rawResponse.json();
+        const { url } = content;
+
+        checkFileUpload(url);
+      })();
+    } else {
+      toastr.warning(
+        "File upload không hợp lệ. File phải có định dạng .pdf, .doc, .docx và dung lượng <= 2MB)"
+      );
+    }
+  };
+}
+getLinkFile();
+// ckeck validate và submit
+function checkFileUpload(linkFile) {
   $("#submit-file").click(function () {
+    console.log(linkFile);
     if ($("#user-name").val().length < 6) {
       toastr.warning("Họ tên phải từ 6 kí tự trở lên");
       return;
@@ -62,13 +100,10 @@ showModal();
       toastr.warning("Vui lòng tải lên file CV");
       return;
     }
-    const fileName = $("#update-file")[0].value;
+    var formData = new FormData($("#form-submit-cv")[0]);
 
-    const idxDot = fileName.lastIndexOf(".") + 1;
-    const extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
-    if (extFile == "doc" || extFile == "docx" || extFile == "pdf") {
-      var formData = new FormData($("#form-submit-cv")[0]);
-
+    formData.append("link_file_cv", linkFile);
+    if (linkFile) {
       $.ajax({
         url: "index.html",
         type: "POST",
@@ -82,26 +117,22 @@ showModal();
           toastr.warning(xhr.responseJSON);
         },
       });
-    } else {
-      toastr.warning(
-        "File upload không hợp lệ. File phải có định dạng .pdf, .doc, .docx và dung lượng <= 2MB)"
-      );
-    }
-  });
-})();
-function showNameFile() {
-  $("#update-file").change(function () {
-    const fileName = $("#update-file")[0].value;
-    const fileNameDetail = fileName.split("\\").pop();
-
-    if (fileNameDetail !== "") {
-      $(".file__upload-name").css("display", "block");
-      $(".file__upload-name-text").text(fileNameDetail);
     }
   });
 }
-showNameFile();
+checkFileUpload();
 
+// hiển thị tên file upload
+function showNameFile() {
+  const fileName = $("#update-file")[0].value;
+  const fileNameDetail = fileName.split("\\").pop();
+
+  if (fileNameDetail !== "") {
+    $(".file__upload-name").css("display", "block");
+    $(".file__upload-name-text").text(fileNameDetail);
+  }
+}
+// xóa dữ liệu modal gửi cv
 function clearDataModalCV() {
   $("#cannel__data-CV").click(function () {
     $("#user-name").val("");

@@ -58,7 +58,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 30px;
+  padding: 0 10px 0 30px;
 }
 .logo img {
   width: 100px;
@@ -76,8 +76,7 @@ header {
   text-transform: uppercase;
   font-weight: 500;
 }
-.nav__menu a:first-child,
-.nav__menu a:nth-child(2) {
+.nav__menu a:first-child {
   margin-right: 20px;
 }
 .container {
@@ -133,7 +132,9 @@ header {
   border-radius: 50%;
   object-fit: cover;
 }
-
+.login a {
+  margin-right: 0 !important;
+}
 .header__user-list {
   display: none;
   position: absolute;
@@ -202,6 +203,43 @@ header {
 .modal-login-item {
   margin-bottom: 2rem;
 }
+
+/* modal */
+.modal-header,
+.modal-footer {
+  border: none;
+}
+#loginModal .modal-header {
+  padding: 0;
+}
+#loginModal .modal-dialog {
+  width: 400px;
+}
+#loginModal .tab__title {
+  width: 100%;
+}
+#tab__title-login,
+#tab__title-register {
+  background-color: rgba(30, 60, 116, 0.059);
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  color: #464646;
+  padding: 1rem;
+  text-align: center;
+  width: 50%;
+  cursor: pointer;
+}
+.tab__login-content,
+.tab__register-content {
+  display: none;
+}
+#loginModal .tab-active {
+  background-color: #fff !important;
+}
+.tab-content-active {
+  display: block !important;
+}
+
 @media (max-width: 576px) {
   header {
     background-color: #fff;

@@ -239,37 +239,22 @@ function submitJob() {
 }
 submitJob();
 function previewImage() {
-  $("#image-logo")[0].onchange = (evt) => {
-    const [file] = $("#image-logo")[0].files;
-    if (!file) return;
-    console.log(file);
-    const fileName = $("#image-logo")[0].value;
-
-    const idxDot = fileName.lastIndexOf(".") + 1;
-    const extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
-    if (
-      extFile == "jpg" ||
-      extFile == "jpeg" ||
-      extFile == "png" ||
-      extFile == "svg"
-    ) {
-      $(".image-company")[0].src = URL.createObjectURL(file);
-    } else {
-      toastr.warning(
-        "Định dạng file ảnh không đúng . Dạng file .jpg, .jpeg, .png,.svg"
-      );
-    }
-  };
+  const [file] = $("#image-logo")[0].files;
+  if (!file) return;
+  $(".image-company")[0].src = URL.createObjectURL(file);
 }
-previewImage();
 
-function submitUpdateInfoCompany() {
-  $("#submit__update-info-company")[0].addEventListener("click", function (e) {
+function submitUpdateInfoCompany(url) {
+  $("#submit__update-info-company")[0].onclick = function (e) {
     var dataCheditorDescribeCompany = CKEDITOR.instances.editor4.getData();
 
     var formData = new FormData($("#form-update-info-company")[0]);
-
     formData.append("describe_company", dataCheditorDescribeCompany);
+    if (url) {
+      formData.append("link-image-company", url);
+    } else {
+      formData.append("link-image-company", $(".image-company")[0].src);
+    }
 
     $.ajax({
       url: "index.html",
@@ -284,9 +269,9 @@ function submitUpdateInfoCompany() {
         toastr.warning(xhr.responseJSON);
       },
     });
-  });
+  };
 }
-submitUpdateInfoCompany();
+submitUpdateInfoCompany("");
 
 (function ckeckInputSalary() {
   ElmInputSalary.forEach((element) => {
@@ -301,3 +286,40 @@ submitUpdateInfoCompany();
     };
   });
 })();
+
+// submit update information company
+function getLinkFile() {
+  $("#image-logo")[0].onchange = function () {
+    const fileName = $("#image-logo")[0].value;
+    const idxDot = fileName.lastIndexOf(".") + 1;
+    const extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+    if (
+      extFile == "png" ||
+      extFile == "jpg" ||
+      extFile == "jpeg" ||
+      extFile == "gif"
+    ) {
+      previewImage();
+      var data = new FormData();
+      data.append("upload", $("#image-logo")[0].files[0]);
+      (async () => {
+        const rawResponse = await fetch(
+          "http://localhost:8087/api/upload-image",
+          {
+            method: "POST",
+            body: data,
+          }
+        ).catch(() => toastr.warning("Upload file lỗi. Vui lòng thử lại"));
+        const content = await rawResponse.json();
+        const { url } = content;
+        submitUpdateInfoCompany(url);
+      })();
+    } else {
+      toastr.warning(
+        "File upload không hợp lệ. File phải có định dạng .png, .jpg, .jpeg ,.gif)"
+      );
+    }
+  };
+}
+
+getLinkFile();

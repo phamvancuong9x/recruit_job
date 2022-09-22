@@ -23,8 +23,8 @@
       href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="src/css/index.css" />
     <link rel="stylesheet" href="src/css/base.css" />
+    <link rel="stylesheet" href="src/css/index.css" />
   </head>
   <body>
     <!-- header -->
@@ -52,7 +52,7 @@
           <a href="index.html">Cơ hội việc làm</a>
           <a href="createNews.html">Nhà tuyển dụng</a>
           <span class="login" data-toggle="modal" data-target="#loginModal">
-            <a href="#"><i class="fa-solid fa-user"></i></a>
+            <a href="login.html"><i class="fa-solid fa-user"></i></a>
           </span>
           <div class="header__user">
             <div class="header__user-info">
@@ -94,7 +94,7 @@
           </a>
         </div>
         <div class="login login-mobile">
-          <a href="#"><i class="fa-solid fa-user"></i></a>
+          <a href="login.html"><i class="fa-solid fa-user"></i></a>
         </div>
         <div class="header__user header__user-mobile">
           <div class="header__user-info">
@@ -106,9 +106,9 @@
             <li class="header__user-item">
               <a href="user.html">Thông tin tài khoản</a>
             </li>
-            <li class="header__user-item">
+            <!-- <li class="header__user-item">
               <a href="infoCmpany.html">Thông tin công ty</a>
-            </li>
+            </li> -->
 
             <li class="header__user-item">
               <span class="logout logout-mobile">Đăng xuất</span>
@@ -350,150 +350,6 @@
     <!-- footer -->
     <footer style=""></footer>
 
-    <!-- Modal  Dang ki dang nhap-->
-    <div
-      class="modal fade"
-      id="loginModal"
-      tabindex="-1"
-      aria-labelledby="loginModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <div class="tab__title d-flex">
-              <div id="tab__title-login" class="tab-active">Đăng nhập</div>
-              <div id="tab__title-register">Đăng kí</div>
-            </div>
-          </div>
-          <div class="modal-body">
-            <form action="">
-              <div class="tab__login-content tab-content-active">
-                <div class="modal-login-item">
-                  <input placeholder="Email" id="sign-in-email" />
-                </div>
-                <div class="modal-login-item">
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    id="sign-in-password"
-                  />
-                </div>
-                <div class="modal-login-item-half">
-                  <label style="display: none" class="checkbox-remember-me"
-                    >Nhớ tài khoản
-                    <input type="checkbox" id="sign-in-remember" />
-                    <span class="checkmark"></span
-                  ></label>
-                  <div style="cursor: pointer" class="forgot-password-toggler">
-                    <i class="fas fa-question-circle"></i> Quên mật khẩu
-                  </div>
-                </div>
-                <div style="margin-bottom: 2rem">
-                  <button
-                    type="button"
-                    class="btn btn-green btn-login-modal"
-                    id="btn-sign-in"
-                  >
-                    Đăng nhập
-                  </button>
-                </div>
-                <div class="text-center" style="margin-bottom: 1rem">
-                  Hoặc đăng nhập bằng
-                </div>
-                <div class="text-center">
-                  <div class="fab google-sign-in">
-                    <img src="src/image//google.png" alt="google_sign_in" />
-                  </div>
-                  <div class="fab facebook-sign-in">
-                    <img src="src/image/facebook.jpg" alt="facebook_sign_in" />
-                  </div>
-                  <div class="fab github-sign-in">
-                    <img src="src/image/github-sign.svg" alt="github_sign_in" />
-                  </div>
-                </div>
-              </div>
-            </form>
-            <form action="">
-              <div class="tab__register-content">
-                <form>
-                  <div class="modal-login-item">
-                    <input placeholder="Họ tên" id="sign-up-fullname" />
-                  </div>
-                  <div class="modal-login-item">
-                    <input placeholder="Email" id="sign-up-email" required="" />
-                  </div>
-                  <div class="modal-login-item">
-                    <input
-                      placeholder="Điện thoại"
-                      id="sign-up-phone"
-                      required=""
-                    />
-                  </div>
-                  <div class="modal-login-item">
-                    <input
-                      type="password"
-                      placeholder="Mật khẩu"
-                      id="sign-up-password"
-                      required=""
-                    />
-                  </div>
-                  <div class="modal-login-item">
-                    <input
-                      type="password"
-                      placeholder="Nhập lại mật khẩu"
-                      id="sign-up-retype-password"
-                      required=""
-                    />
-                  </div>
-                  <div class="modal-login-item">
-                    <button
-                      type="button"
-                      class="btn btn-green btn-login-modal"
-                      id="btn-sign-up"
-                    >
-                      Đăng ký
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- modal quên mật khẩu -->
-    <div
-      class="modal fade"
-      id="forgot-password"
-      tabindex="-1"
-      role="dialog"
-      aria-modal="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <form class="modal-login-form">
-            <div style="padding-top: 1px" class="modal-login-item text-center">
-              <h2>Quên mật khẩu</h2>
-            </div>
-            <div class="modal-login-item">
-              <input
-                placeholder="Email"
-                id="forgot-password-email"
-                required=""
-              />
-            </div>
-            <button
-              type="button"
-              class="btn btn-green btn-login-modal"
-              id="btn-forgot-password"
-            >
-              Gửi mail trợ giúp
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

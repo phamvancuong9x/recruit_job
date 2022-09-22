@@ -549,37 +549,6 @@
                           for="tax_number"
                           class="col-12 col-md-3 info-company__item-title"
                         >
-                          Mã số thuế <span class="text-red-500">*</span>
-                        </label>
-                        <div class="col-12 col-md-9">
-                          <input
-                            type="text"
-                            placeholder=" Nhập"
-                            id="tax_number"
-                            class="input__info-company"
-                            name="tax_number"
-                          />
-                        </div>
-                        <label
-                          for="tax_number"
-                          class="col-12 col-md-3 info-company__item-title"
-                        >
-                          Quy mô nhân sự <span class="text-red-500">*</span>
-                        </label>
-                        <div class="col-12 col-md-9">
-                          <input
-                            type="text"
-                            placeholder=" Nhập"
-                            class="input__info-company"
-                            id="number_person"
-                            name="number_person"
-                          />
-                        </div>
-
-                        <label
-                          for="tax_number"
-                          class="col-12 col-md-3 info-company__item-title"
-                        >
                           Tên công ty <span class="text-red-500">*</span>
                         </label>
                         <div class="col-12 col-md-9">
@@ -597,6 +566,29 @@
                           for="tax_number"
                           class="col-12 col-md-3 info-company__item-title"
                         >
+                          Quy mô nhân sự <span class="text-red-500">*</span>
+                        </label>
+                        <div class="col-12 col-md-9">
+                          <select
+                            class="input__info-company"
+                            id="number_person"
+                            name="number_person"
+                          >
+                            <option value="Dưới 20 người">Dưới 20 người</option>
+                            <option value="20-50 người">20-50 người</option>
+                            <option value="50-100 người">50-100 người</option>
+                            <option value="100-200 người">100-200 người</option>
+                            <option value="200-500 người">200-500 người</option>
+                            <option value="Trên 500 người">
+                              Trên 500 người
+                            </option>
+                          </select>
+                        </div>
+
+                        <label
+                          for="tax_number"
+                          class="col-12 col-md-3 info-company__item-title"
+                        >
                           Địa điểm <span class="text-red-500">*</span>
                         </label>
                         <div class="col-12 col-md-9">
@@ -605,7 +597,6 @@
                             id="location__company"
                             name="location_company"
                           >
-                            <option value="">Chọn</option>
                             <option value="Hà Nội">Hà Nội</option>
                             <option value="Đà Nẵng">Đà Nẵng</option>
                             <option value="Hồ Chí Minh">Hồ Chí Minh</option>
@@ -615,7 +606,7 @@
                           for="tax_number"
                           class="col-12 col-md-3 info-company__item-title"
                         >
-                          Địa Chỉ <span class="text-red-500">*</span>
+                          Địa Chỉ
                         </label>
                         <div class="col-12 col-md-9">
                           <input
@@ -630,11 +621,11 @@
                           for="tax_number"
                           class="col-12 col-md-3 info-company__item-title"
                         >
-                          Điện thoại cố định <span class="text-red-500">*</span>
+                          Điện thoại cố định
                         </label>
                         <div class="col-12 col-md-9">
                           <input
-                            type="text"
+                            type="number"
                             placeholder=" Nhập"
                             class="input__info-company"
                             id="phone_company"
@@ -644,13 +635,29 @@
                         <label
                           for="describe_company"
                           class="col-12 col-md-3 info-company__item-title"
+                          >Link website của công ty
+                          <span class="text-red-500"> </span>
+                        </label>
+                        <div class="col-12 col-md-9">
+                          <input
+                            type="text"
+                            placeholder=" Nhập"
+                            class="input__info-company"
+                            id="link_wepsite_company"
+                            name="link_wepsite_company"
+                          />
+                        </div>
+                        <label
+                          for="describe_company"
+                          class="col-12 col-md-3 info-company__item-title"
                         >
-                          Mô tả về công ty <span class="text-red-500">*</span>
+                          Mô tả về công ty
                         </label>
                         <div class="col-12 col-md-9">
                           <textarea id="editor4" rows="10" cols="80">
                           </textarea>
                         </div>
+
                         <label
                           for="tax_number"
                           class="col-12 col-md-3 info-company__item-title"
@@ -700,13 +707,13 @@
                             >
                               Cập nhật
                             </button>
-                            <button
+                            <!-- <button
                               type="button"
                               id="cannel__info-company"
                               class="btn btn-cannel"
                             >
                               Hủy bỏ
-                            </button>
+                            </button> -->
                           </div>
                         </div>
                       </div>
