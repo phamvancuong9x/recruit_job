@@ -116,6 +116,8 @@ function validatePhone(phone) {
   var re = /^\d+$/;
   return re.test(phone);
 }
+
+// Đăng nhập
 function signInFunc(e) {
   event.preventDefault();
   let email = $("#sign-in-email").val();
@@ -160,6 +162,13 @@ $("#sign-in-email, #sign-in-password").keyup(function (e) {
     $(this).trigger("enterKey");
   }
 });
+function clickLogin() {
+  $("#btn-sign-in").on("click", function () {
+    signInFunc();
+  });
+}
+clickLogin();
+
 $("#btn-sign-up").on("click", function () {
   let email = $("#sign-up-email").val();
   let phone = $("#sign-up-phone").val();
@@ -256,3 +265,14 @@ $("#btn-forgot-password").on("click", function () {
     },
   });
 });
+
+// switch tab logout login
+
+function switchLogoutLogin(classBtnClick, classElm1, classElm2) {
+  $(classBtnClick).on("click", function () {
+    $(classElm1).css("display", "none");
+    $(classElm2).css("display", "flex");
+  });
+}
+switchLogoutLogin(".switch-page-register", ".login-contain", ".logout-contain");
+switchLogoutLogin(".switch-page-login", ".logout-contain", ".login-contain");

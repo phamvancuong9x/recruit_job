@@ -28,7 +28,7 @@ let clickBtnSubmit = false;
 CKEDITOR.replace("editor1");
 CKEDITOR.replace("editor2");
 CKEDITOR.replace("editor3");
-CKEDITOR.replace("editor4");
+CKEDITOR.replace("editor4").setData($("#editor4").val());
 
 // Ản option Chọn
 
@@ -251,19 +251,18 @@ function submitUpdateInfoCompany(url) {
     const data = {
       name_company: $("#name-company").val(),
       number_person: $("#number-person").val(),
-      location_company: $("#location-company").val(),
       address_company: $("#address-company").val(),
       phone_company: $("#phone-company").val(),
       link_wepsite_company: $("#link_wepsite_company").val(),
       describe_company: dataCheditorDescribeCompany,
       link_image_company: "" ? $(".image-company")[0].src : url,
     };
-    console.log(data);
     $.ajax({
       url: "index.html",
       type: "POST",
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify(data),
+      dataType: "json",
       processData: false,
       success: function (data) {
         toastr.success("Cập nhật thành công");
