@@ -194,6 +194,7 @@ body {
 }
 .modal-content {
   padding: 8px;
+  margin: 0 10px;
 }
 .modal-dialog {
   max-width: 500px;

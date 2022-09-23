@@ -65,7 +65,7 @@
     <!-- content -->
     <div class="container">
       <div class="row">
-        <div class="col-12">
+        <div class="col-12 create-new-container">
           <div class="create-new-content">
             <div class="create-tab-title">
               <div
@@ -77,7 +77,7 @@
                 Danh sách tin đã đăng
               </div>
               <div class="create-tab-title__tab create-tab-title__tab3">
-                Thông tin công ty
+                Hồ sơ ứng tuyển
               </div>
             </div>
             <!-- Nôi dung tab 1 -->
@@ -238,7 +238,7 @@
                         *Lương tối thiểu phải nhỏ hơn lương tối đa
                       </p>
                       <div class="input__title">
-                        Mức lương tối thiểu (triệu đồng)
+                        Mức lương tối thiểu
                         <span class="text-red-500"> *</span>
                       </div>
                       <input
@@ -246,7 +246,7 @@
                         id="input__min-salary"
                         class="input-select input_create-job input__salary"
                         min="1"
-                        placeholder="Nhập "
+                        placeholder="Nhập ( triệu đồng )"
                       />
 
                       <p class="input_error input_error-min-salary2">
@@ -260,15 +260,13 @@
                         *Lương tối đa phải lớn hơn lương tối thiểu
                       </p>
                       <div class="input__title">
-                        Mức lương tối đa (triệu đồng)<span class="text-red-500">
-                          *</span
-                        >
+                        Mức lương tối đa<span class="text-red-500"> *</span>
                       </div>
                       <input
                         type="number"
                         id="input__max-salary"
                         class="input-select input_create-job input__salary"
-                        placeholder="Nhập "
+                        placeholder="Nhập ( triệu đồng )"
                         min="1"
                       />
 
@@ -394,7 +392,7 @@
                       </div>
                     </div>
                   </div> -->
-                  <div class="col-12 d-flex justify-content-end mt-3">
+                  <div class="col-12 d-flex justify-content-end">
                     <!-- <button type="button" class="btn btn-light btn-cannel">
                       Hủy bỏ
                     </button> -->
@@ -534,184 +532,142 @@
                   <td>16/10/2022</td>
                   <td>0</td>
                   <td>1</td>
-                  <td><span>Đang duyệt</span></td>
-                  <td><i class="fa-solid fa-trash-can"></i></td>
+                  <td>
+                    <span
+                      class="table-status status-waitting status-accept status-reject"
+                      >Chờ duyệt</span
+                    >
+                  </td>
+                  <td>
+                    <div class="news__recruitment_remove">
+                      <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                  </td>
                 </tr>
               </table>
-            </div>
-            <div class="tab3__content">
-              <div class="update__info-company">
-                <div class="row">
-                  <div class="col-12 col-lg-8">
-                    <form action="" id="form-update-info-company">
-                      <div class="row">
-                        <label
-                          for="tax_number"
-                          class="col-12 col-md-3 info-company__item-title"
-                        >
-                          Tên công ty
-                        </label>
-                        <div class="col-12 col-md-9">
-                          <input
-                            type="text"
-                            placeholder=" Nhập"
-                            class="input__info-company"
-                            value="Công ty TNHH ABC"
-                            id="name-company"
-                            name="name_company"
-                            readonly
-                          />
-                        </div>
-                        <label
-                          for="tax_number"
-                          class="col-12 col-md-3 info-company__item-title"
-                        >
-                          Quy mô nhân sự
-                        </label>
-                        <div class="col-12 col-md-9">
-                          <select
-                            class="input__info-company"
-                            id="number-person"
-                            name="number_person"
-                          >
-                            <option value="Dưới 20 người">Dưới 20 người</option>
-                            <option value="20-50 người">20-50 người</option>
-                            <option value="50-100 người">50-100 người</option>
-                            <option value="100-200 người">100-200 người</option>
-                            <option value="200-500 người">200-500 người</option>
-                            <option value="Trên 500 người">
-                              Trên 500 người
-                            </option>
-                          </select>
-                        </div>
-
-                        <label
-                          for="tax_number"
-                          class="col-12 col-md-3 info-company__item-title"
-                        >
-                          Địa Chỉ
-                        </label>
-                        <div class="col-12 col-md-9">
-                          <input
-                            type="text"
-                            placeholder=" Nhập"
-                            class="input__info-company"
-                            id="address-company"
-                            name="address_company"
-                          />
-                        </div>
-                        <label
-                          for="tax_number"
-                          class="col-12 col-md-3 info-company__item-title"
-                        >
-                          Điện thoại cố định
-                        </label>
-                        <div class="col-12 col-md-9">
-                          <input
-                            type="number"
-                            placeholder=" Nhập"
-                            class="input__info-company"
-                            id="phone-company"
-                            name="phone_company"
-                          />
-                        </div>
-                        <label
-                          for="describe_company"
-                          class="col-12 col-md-3 info-company__item-title"
-                          >Link website công ty
-                          <span class="text-red-500"> </span>
-                        </label>
-                        <div class="col-12 col-md-9">
-                          <input
-                            type="text"
-                            placeholder=" Nhập"
-                            class="input__info-company"
-                            id="link_website_company"
-                            name="link_website_company"
-                          />
-                        </div>
-                        <label
-                          for="describe_company"
-                          class="col-12 col-md-3 info-company__item-title"
-                        >
-                          Mô tả về công ty
-                        </label>
-                        <div class="col-12 col-md-9">
-                          <textarea id="editor4" rows="10" cols="80">
-                          </textarea>
-                        </div>
-
-                        <label
-                          for="tax_number"
-                          class="col-12 col-md-3 info-company__item-title"
-                        >
-                          Logo công ty
-                        </label>
-
-                        <div class="col-12 col-md-9">
-                          <img
-                            class="image-company"
-                            src="src/image/default-thumbnail.jpg"
-                            alt=""
-                          />
-
-                          <label for="image-logo" class="change__image-logo"
-                            ><span
-                              role="img"
-                              aria-label="upload"
-                              class="anticon anticon-upload"
-                              ><svg
-                                viewBox="64 64 896 896"
-                                focusable="false"
-                                data-icon="upload"
-                                width="1em"
-                                height="1em"
-                                fill="currentColor"
-                                aria-hidden="true"
-                              >
-                                <path
-                                  d="M400 317.7h73.9V656c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V317.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 163a8 8 0 00-12.6 0l-112 141.7c-4.1 5.3-.4 13 6.3 13zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z"
-                                ></path></svg></span
-                            >Thay đổi ảnh logo
-                          </label>
-                          <input
-                            style="display: none"
-                            type="file"
-                            id="image-logo"
-                          />
-                        </div>
-                        <div class="col-12 col-md-3"></div>
-                        <div class="col-12 col-md-9">
-                          <div class="btn-group-submit">
-                            <button
-                              type="button"
-                              id="submit__update-info-company"
-                              class="btn btn-primary"
-                            >
-                              Cập nhật
-                            </button>
-                            <!-- <button
-                              type="button"
-                              id="cannel__info-company"
-                              class="btn btn-cannel"
-                            >
-                              Hủy bỏ
-                            </button> -->
-                          </div>
-                        </div>
+              <div class="tab2__content-mobile">
+                <div class="news__recruitment">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div
+                      class="news__recruitment_status status-waitting status-accept status-reject"
+                    >
+                      Chờ duyệt
+                    </div>
+                    <div
+                      class="news__recruitment_remove"
+                      data-bs-toggle="modal"
+                      data-bs-target="#removeNewsJobModal"
+                    >
+                      <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="news__recruitment-name">
+                        Tuyển dụng lập trình viên
                       </div>
-                    </form>
+                    </div>
+                    <div class="col-6">
+                      <div class="date-submit-title">Ngày đăng</div>
+                      <div class="date-submit-text">16/9/2022</div>
+                    </div>
+                    <div class="col-6">
+                      <div class="date-submit-title">Thời hạn nộp</div>
+                      <div class="date-submit-text">30/9/2022</div>
+                    </div>
+                    <div class="col-6">
+                      <div class="date-submit-title">Lượt nộp</div>
+                      <div class="date-submit-text">0</div>
+                    </div>
+                    <div class="col-6">
+                      <div class="date-submit-title">Lượt xem</div>
+                      <div class="date-submit-text">4</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="news__recruitment">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div
+                      class="news__recruitment_status status-waitting status-accept status-reject"
+                    >
+                      Chờ duyệt
+                    </div>
+                    <div class="news__recruitment_remove">
+                      <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="news__recruitment-name">
+                        Tuyển dụng lập trình viên
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="date-submit-title">Ngày đăng</div>
+                      <div class="date-submit-text">16/9/2022</div>
+                    </div>
+                    <div class="col-6">
+                      <div class="date-submit-title">Thời hạn nộp</div>
+                      <div class="date-submit-text">30/9/2022</div>
+                    </div>
+                    <div class="col-6">
+                      <div class="date-submit-title">Lượt nộp</div>
+                      <div class="date-submit-text">0</div>
+                    </div>
+                    <div class="col-6">
+                      <div class="date-submit-title">Lượt xem</div>
+                      <div class="date-submit-text">4</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="tab3__content"></div>
           </div>
         </div>
       </div>
     </div>
     <!-- footer -->
     <footer style=""></footer>
+    <!-- modal xóa tin tuyển dụng -->
+    <!-- Button trigger modal -->
 
+    <!-- Modal -->
+    <!-- <modal
+      class="modal fade"
+      id="removeNewsJobModal"
+      tabindex="-1"
+      aria-labelledby="removeNewsJobModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="removeNewsJobModalLabel">
+              Xóa tin tuyển dụng này
+            </h5>
+            <p>Bạn có chắc chắn xóa tin tuyển dụng này không ?</p>
+          </div>
+          <div class="modal-body">
+            <div class="newsJobName">Tuyển dụng lập trình viên</div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Hủy bỏ
+            </button>
+            <button type="button" class="btn btn-primary">Xóa</button>
+          </div>
+        </div>
+      </div>
+    </modal> -->
     <!-- id công ty -->
     <div id="id_company" style="display: none">12</div>
 

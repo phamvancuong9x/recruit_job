@@ -271,7 +271,12 @@ body {
   padding: 30px 0;
   color: #000;
 }
-
+.table-status {
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+  white-space: nowrap;
+}
 /* tab3_content Cập nhật thông tin công ty */
 .tab3__content {
   display: none;
@@ -328,7 +333,72 @@ body {
 .btn-cannel:hover {
   background: #fc3f42 !important;
 }
+
+.tab2__content-mobile {
+  margin-top: 20px;
+  display: none;
+}
+
+/* tab2_content-mobile */
+.news__recruitment {
+  padding: 20px;
+  /* border-top: 1px solid #ccc; */
+  border-bottom: 1px solid #ccc;
+}
+.news__recruitment-name,
+.date-submit-title {
+  font-weight: 500;
+}
+.news__recruitment-name {
+  margin-bottom: 12px;
+}
+.news__recruitment_status {
+  border-radius: 15px;
+  padding: 3px 12px;
+  font-size: 14px;
+}
+.news__recruitment_remove {
+  cursor: pointer;
+  padding: 10px;
+}
+.status-waitting {
+  background-color: rgb(250, 235, 207);
+  color: #d48806;
+}
+.status-accept {
+  color: #096dd9;
+  background: #e6f7ff;
+}
+.status-reject {
+  color: #cf1322;
+  background: #fff1f0;
+}
 /* reposive */
+
+@media (max-width: 767px) {
+  .image-company {
+    margin-top: 0;
+  }
+  .logo_company-title {
+    margin: 20px 0;
+  }
+}
+@media (max-width: 576px) {
+  table {
+    display: none;
+  }
+  .tab2__content-mobile {
+    display: block;
+  }
+  .create-new-content {
+    padding: 24px 20px;
+  }
+}
+@media (max-width: 576px) {
+  .container > .row {
+    padding: 0;
+  }
+}
 @media (max-width: 414px) {
   .menu__featureJob-item {
     font-size: 22px;
@@ -341,6 +411,12 @@ body {
   .image-logo img {
     width: 48px;
     height: 48px;
+  }
+  .create-tab-title__tab1,
+  .create-tab-title__tab2,
+  .create-tab-title__tab3 {
+    font-weight: 700;
+    font-size: 14px;
   }
 }
 @media (max-width: 340px) {

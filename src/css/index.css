@@ -212,6 +212,9 @@ select {
   .menu__featureJob-item {
     font-size: 20px;
   }
+  .panigation {
+    overflow: auto;
+  }
 }
 @media (max-width: 340px) {
   .menu__featureJob-item {
