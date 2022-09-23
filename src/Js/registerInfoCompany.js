@@ -21,6 +21,7 @@ $("#btn-register-info-company").on("click", function () {
   let number_person = $("#number-person").val();
   let address_company = $("#address_company").val();
   let phone_company = $("#phone_company").val();
+  let link_website_company = $("#link_wepsite_company").val();
   if (name_company === "") {
     toastr.warning("Vui lòng nhập tên công ty");
     return;
@@ -38,12 +39,17 @@ $("#btn-register-info-company").on("click", function () {
     toastr.warning("Dịnh dạng số điện thoại không hợp lệ");
     return;
   }
+  if (link_wepsite_company === "") {
+    toastr.warning("Vui lòng nhập link webstite công ty ");
+    return;
+  }
 
   let req = {
     name_company,
     number_person,
     address_company,
     phone_company,
+    link_website_company,
   };
   let myJSON = JSON.stringify(req);
 

@@ -253,7 +253,7 @@ function submitUpdateInfoCompany(url) {
       number_person: $("#number-person").val(),
       address_company: $("#address-company").val(),
       phone_company: $("#phone-company").val(),
-      link_wepsite_company: $("#link_wepsite_company").val(),
+      link_website_company: $("#link_website_company").val(),
       describe_company: dataCheditorDescribeCompany,
       link_image_company: "" ? $(".image-company")[0].src : url,
     };
