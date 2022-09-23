@@ -275,6 +275,11 @@ body {
 #update-file {
   max-width: 85px;
 }
+.modal-content .close {
+  border: none;
+  background-color: #fff;
+  font-size: 30px;
+}
 /* media query */
 @media (max-width: 1024px) {
   .image-logo img {

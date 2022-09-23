@@ -178,6 +178,31 @@ label {
   cursor: pointer;
 }
 
+/* select */
+select {
+  appearance: none;
+}
+@media (max-width: 576px) {
+  .search-location-group {
+    padding: 0;
+  }
+  .search__job > .row {
+    margin: 0;
+  }
+  .btn-search-group {
+    padding-right: 0;
+  }
+  .search-location {
+    width: 100%;
+  }
+  .btn-search {
+    margin-right: -12px;
+  }
+  .search-location,
+  .btn-search {
+    margin-top: 12px;
+  }
+}
 @media (max-width: 414px) {
   .menu__featureJob-item {
     font-size: 22px;

@@ -24,6 +24,7 @@
 .logout-header {
   text-align: center;
   padding-bottom: 30px;
+  font-size: 24px;
 }
 .switch-page-register-group,
 .switch-page-login-group {
@@ -79,4 +80,14 @@
 }
 .text-center {
   text-align: center !important;
+}
+@media (max-width: 480px) {
+  .logout-contain,
+  .login-contain {
+    padding: 0 10px;
+  }
+  #login,
+  #logout {
+    width: 100%;
+  }
 }
