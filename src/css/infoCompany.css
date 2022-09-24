@@ -1,4 +1,15 @@
 /* tab3_content Cập nhật thông tin công ty */
+.infoCompany-content {
+  background-color: #fff;
+  padding: 24px 32px;
+}
+.input__info-company {
+  padding: 8px 15px;
+  border: none;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  width: 100%;
+}
 .tab3__content {
   display: none;
   padding-top: 35px;
@@ -70,13 +81,15 @@
   }
 }
 @media (max-width: 576px) {
+  .container > .row {
+    padding: 0;
+  }
   .create-new-content {
     padding: 24px 20px;
   }
-}
-@media (max-width: 576px) {
-  .container > .row {
-    padding: 0;
+  .infoCompany-content {
+    background-color: #fff;
+    padding: 24px 20px;
   }
 }
 

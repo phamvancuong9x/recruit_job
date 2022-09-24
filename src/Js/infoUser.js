@@ -1,5 +1,3 @@
-CKEDITOR.replace("editor4").setData($("#editor4").val());
-
 // submit update information company
 function previewImage() {
   const [file] = $("#image-logo")[0].files;
@@ -7,23 +5,57 @@ function previewImage() {
   $(".image-company")[0].src = URL.createObjectURL(file);
 }
 
+function validateEmail(email) {
+  var re =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
+function validatePhone(phone) {
+  if (phone.length <= 8 || phone.length > 20) {
+    return false;
+  }
+  var re = /^\d+$/;
+  return re.test(phone);
+}
 function submitUpdateInfoCompany(url) {
   $("#submit__update-info-company")[0].onclick = function (e) {
-    const dataCheditorDescribeCompany = CKEDITOR.instances.editor4.getData();
-    let link_image_company;
+    console.log(url);
+    let full_name = $("#user-name").val();
+    let email = $("#user-email").val();
+    let phone = $("#user-phone").val();
+    let bank_name = $("#bank_name").val();
+    let bank_account = $("#account-number").val();
+    let description = $("#user-descreption").val();
+    if (full_name === "") {
+      toastr.warning("Họ tên không được để trống");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      toastr.warning("Định dạng email không hợp lệ");
+      return;
+    }
+
+    if (!validatePhone(phone)) {
+      toastr.warning("Định dạng số điện thoại không hợp lệ");
+      return;
+    }
+
+    let avatar;
     if (url) {
-      link_image_company = url;
+      avatar = url;
     } else {
-      link_image_company = $(".image-company")[0].src;
+      avatar = $(".image-company")[0].src;
     }
     const data = {
-      name_company: $("#name-company").val(),
-      number_person: $("#number-person").val(),
-      address_company: $("#address-company").val(),
-      phone_company: $("#phone-company").val(),
-      link_website_company: $("#link_website_company").val(),
-      describe_company: dataCheditorDescribeCompany,
-      link_image_company,
+      full_name,
+      email,
+      phone,
+      bank_name,
+      bank_account,
+      description,
+      avatar,
     };
     $.ajax({
       url: "index.html",

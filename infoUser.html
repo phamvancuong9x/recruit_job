@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thông tin công ty</title>
+    <title>Hồ sơ cá nhân</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
@@ -68,7 +68,7 @@
         <div class="col-12">
           <div class="infoCompany-content">
             <!-- Nôi dung tab 1 -->
-            <h4>Thông tin công ty</h4>
+            <h4>Hồ sơ cá nhân</h4>
             <div class="tab3__content" style="display: block">
               <div class="update__info-company">
                 <div class="row">
@@ -76,112 +76,23 @@
                     <form action="" id="form-update-info-company">
                       <div class="row">
                         <label
-                          for="name-company"
-                          class="col-12 col-md-3 info-company__item-title"
-                        >
-                          Tên công ty
-                        </label>
-                        <div class="col-12 col-md-9">
-                          <input
-                            type="text"
-                            placeholder=" Nhập"
-                            class="input__info-company"
-                            value="Công ty TNHH ABC"
-                            id="name-company"
-                            name="name_company"
-                            readonly
-                          />
-                        </div>
-                        <label
-                          for="number-person"
-                          class="col-12 col-md-3 info-company__item-title"
-                        >
-                          Quy mô nhân sự
-                        </label>
-                        <div class="col-12 col-md-9">
-                          <select
-                            class="input__info-company"
-                            id="number-person"
-                            name="number_person"
-                          >
-                            <option value="Dưới 20 người">Dưới 20 người</option>
-                            <option value="20-50 người">20-50 người</option>
-                            <option value="50-100 người">50-100 người</option>
-                            <option value="100-200 người">100-200 người</option>
-                            <option value="200-500 người">200-500 người</option>
-                            <option value="Trên 500 người">
-                              Trên 500 người
-                            </option>
-                          </select>
-                        </div>
-
-                        <label
-                          for="address-company"
-                          class="col-12 col-md-3 info-company__item-title"
-                        >
-                          Địa Chỉ
-                        </label>
-                        <div class="col-12 col-md-9">
-                          <input
-                            type="text"
-                            placeholder=" Nhập"
-                            class="input__info-company"
-                            id="address-company"
-                            name="address_company"
-                          />
-                        </div>
-                        <label
-                          for="phone-company"
-                          class="col-12 col-md-3 info-company__item-title"
-                        >
-                          Điện thoại cố định
-                        </label>
-                        <div class="col-12 col-md-9">
-                          <input
-                            type="number"
-                            placeholder=" Nhập"
-                            class="input__info-company"
-                            id="phone-company"
-                            name="phone_company"
-                          />
-                        </div>
-                        <label
-                          for="link_website_company"
-                          class="col-12 col-md-3 info-company__item-title"
-                          >Link website công ty
-                          <span class="text-red-500"> </span>
-                        </label>
-                        <div class="col-12 col-md-9">
-                          <input
-                            type="text"
-                            placeholder=" Nhập"
-                            class="input__info-company"
-                            id="link_website_company"
-                            name="link_website_company"
-                          />
-                        </div>
-                        <label class="col-12 col-md-3 info-company__item-title">
-                          Mô tả về công ty
-                        </label>
-                        <div class="col-12 col-md-9">
-                          <textarea id="editor4" rows="10" cols="80">
-                          </textarea>
-                        </div>
-
-                        <label
                           class="col-12 col-md-3 info-company__item-title logo_company-title"
                         >
-                          Logo công ty
+                          Avatar
                         </label>
 
                         <div class="col-12 col-md-9">
                           <img
+                            style="width: 200px; height: 200px"
                             class="image-company"
-                            src="src/image/default-thumbnail.jpg"
+                            src="src/image/avatar.png"
                             alt=""
                           />
 
-                          <label for="image-logo" class="change__image-logo"
+                          <label
+                            for="image-logo"
+                            class="change__image-logo"
+                            style="max-width: 200px; margin-bottom: 20px"
                             ><span
                               role="img"
                               aria-label="upload"
@@ -198,7 +109,7 @@
                                 <path
                                   d="M400 317.7h73.9V656c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V317.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 163a8 8 0 00-12.6 0l-112 141.7c-4.1 5.3-.4 13 6.3 13zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z"
                                 ></path></svg></span
-                            >Thay đổi ảnh logo
+                            >Thay đổi ảnh đại diện
                           </label>
                           <input
                             style="display: none"
@@ -206,6 +117,93 @@
                             id="image-logo"
                           />
                         </div>
+                        <label
+                          for="user-name"
+                          class="col-12 col-md-3 info-company__item-title"
+                        >
+                          Họ tên
+                        </label>
+                        <div class="col-12 col-md-9">
+                          <input
+                            type="text"
+                            placeholder=" Nhập"
+                            class="input__info-company"
+                            value="Phạm văn Cường"
+                            id="user-name"
+                          />
+                        </div>
+                        <label
+                          for="user-email"
+                          class="col-12 col-md-3 info-company__item-title"
+                        >
+                          Email
+                        </label>
+                        <div class="col-12 col-md-9">
+                          <input
+                            type="text"
+                            placeholder=" Nhập"
+                            class="input__info-company"
+                            value="anhcuong@gmail.com"
+                            id="user-email"
+                          />
+                        </div>
+
+                        <label
+                          for="user-phone"
+                          class="col-12 col-md-3 info-company__item-title"
+                        >
+                          Số điện thoại
+                        </label>
+                        <div class="col-12 col-md-9">
+                          <input
+                            type="text"
+                            value="0382123456"
+                            class="input__info-company"
+                            id="user-phone"
+                          />
+                        </div>
+                        <label
+                          for="user-bank"
+                          class="col-12 col-md-3 info-company__item-title"
+                        >
+                          Ngân hàng
+                        </label>
+                        <div class="col-12 col-md-9">
+                          <input
+                            type="number"
+                            class="input__info-company"
+                            id="user-bank"
+                          />
+                        </div>
+                        <label
+                          for="account-number"
+                          class="col-12 col-md-3 info-company__item-title"
+                          >Số tài khoản
+                          <span class="text-red-500"> </span>
+                        </label>
+                        <div class="col-12 col-md-9">
+                          <input
+                            type="text"
+                            placeholder=" Nhập"
+                            class="input__info-company"
+                            id="account-number"
+                          />
+                        </div>
+                        <label
+                          for="user-descreption"
+                          class="col-12 col-md-3 info-company__item-title"
+                        >
+                          Giới thiệu
+                        </label>
+                        <div class="col-12 col-md-9">
+                          <textarea
+                            id="user-descreption"
+                            style="width: 100%"
+                            style="border: 1px solid #ccc"
+                          >
+                          </textarea>
+                        </div>
+
                         <div class="col-12 col-md-3"></div>
                         <div class="col-12 col-md-9">
                           <div class="btn-group-submit">
@@ -265,6 +263,6 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="src/Js/base.js"></script>
-    <script src="src/Js/infoCompany.js"></script>
+    <script src="src/Js/infoUser.js"></script>
   </body>
 </html>
