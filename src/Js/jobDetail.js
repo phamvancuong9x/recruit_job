@@ -69,6 +69,7 @@ function getLinkFile() {
           {
             method: "POST",
             body: data,
+            credentials: "include",
           }
         )
           // .then(() => {

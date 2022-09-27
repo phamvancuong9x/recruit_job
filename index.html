@@ -65,11 +65,11 @@
                 <a href="user.html">Thông tin tài khoản</a>
               </li>
               <li class="header__user-item">
-                <a href="infoCmpany.html">Thông tin công ty</a>
+                <a href="infoCompany.html">Thông tin công ty</a>
               </li>
 
               <li class="header__user-item">
-                <span class="logout">Đăng xuất</span>
+                <a class="/logout">Đăng xuất</a>
               </li>
             </ul>
           </div>
@@ -349,7 +349,8 @@
     </div>
     <!-- footer -->
     <footer style=""></footer>
-
+    <span style="display: none" id="googleId">{{.GoogleClientId}}</span>
+    <span style="display: none" id="githubId">{{.GithubClientId}}</span>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -372,6 +373,10 @@
       integrity="sha512-frFP3ZxLshB4CErXkPVEXnd5ingvYYtYhE5qllGdZmcOlRKNEPbufyupfdSTNmoF5ICaQNO6SenXzOZvoGkiIA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://apis.google.com/js/platform.js?onload=init"
+      defer
     ></script>
     <script src="src/Js/base.js"></script>
     <script src="src/Js/index.js"></script>

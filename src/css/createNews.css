@@ -70,7 +70,6 @@ body {
 .create-tab-title__tab2:hover,
 .create-tab-title__tab3:hover {
   color: #505ab4;
-  border-bottom: 3px solid #505ab4;
   cursor: pointer;
 }
 .progres {
@@ -131,7 +130,7 @@ body {
   color: #666;
 }
 .input__describe {
-  padding: 30px 0;
+  padding: 30px 12px 0 12px;
 }
 .info-contact {
   padding: 20px 0;
@@ -261,23 +260,31 @@ body {
 .tab2__content table tr th {
   color: #000;
   font-weight: 700;
-  padding: 10px 0;
+  padding: 16px;
   font-size: 14px;
+  background-color: #fafafa;
 }
 .tab2__content table tr td:first-child {
   width: 30%;
 }
 .tab2__content table tr td {
-  padding: 30px 0;
+  padding: 16px;
   color: #000;
 }
 .table-status {
+  border: none;
   padding: 5px 12px;
   border-radius: 15px;
   font-size: 14px;
   white-space: nowrap;
+  display: inline-block;
+  text-align: center;
+  max-width: 126px;
 }
-
+option {
+  background-color: #fff;
+  color: #000;
+}
 /* tab2_content-mobile */
 .news__recruitment {
   padding: 20px;
@@ -300,6 +307,9 @@ body {
   cursor: pointer;
   padding: 10px;
 }
+.status-recruitment-file {
+  cursor: pointer;
+}
 .status-waitting {
   background-color: rgb(250, 235, 207);
   color: #d48806;
@@ -312,23 +322,131 @@ body {
   color: #cf1322;
   background: #fff1f0;
 }
-/* reposive */
-.tab2__content-mobile {
+.tab2__content-mobile,
+.tab3__content-mobile {
   display: none;
 }
-@media (max-width: 767px) {
-  .image-company {
-    margin-top: 0;
+/* Hồ sơ ứng tuyển*/
+.tab3__content {
+  padding: 30px 0;
+}
+.filter-file-title {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+table.recruitment-file {
+  margin-top: 40px;
+  width: 100%;
+}
+table.recruitment-file th {
+  color: #000;
+  font-weight: 700;
+  padding: 16px;
+  font-size: 14px;
+}
+table.recruitment-file thead tr {
+  border-bottom: 0.5px solid #ccc;
+  background-color: #fafafa;
+}
+
+table.recruitment-file tbody tr {
+  border-bottom: 0.5px solid #ccc;
+}
+.position-apply {
+  width: 30%;
+}
+table.recruitment-file tbody tr td {
+  padding: 20px 16px;
+  color: #000;
+}
+.recruitment-file a,
+.date-submit-text a {
+  color: #0d6efd !important;
+}
+.recruitment-file-moble-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+}
+
+/* modal remove news job */
+#removeNewsJobModal .modal-dialog {
+  max-width: 450px;
+}
+#removeNewsJobModal .modal-content {
+  padding: 36px !important;
+  color: #000;
+}
+#removeNewsJobModal .modal-title {
+  font-weight: 600;
+}
+#removeNewsJobModal .modal-header {
+  padding: 0 0 16px;
+}
+#removeNewsJobModal .modal-header > p {
+  font-size: 14px;
+}
+#removeNewsJobModal .modal-footer {
+  padding: 16px 0 0;
+}
+
+#removeNewsJobModal .modal-body {
+  padding: 32px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+#removeNewsJobModal .newsJobName {
+  font-weight: 600;
+}
+.btn-cannel-remove-job {
+  background-color: rgba(242, 243, 247);
+  color: #000;
+  border: none;
+  width: 49%;
+  margin: 0;
+}
+.btn-cannel-remove-job:hover {
+  background-color: rgba(242, 243, 247) !important;
+  color: #000 !important;
+}
+
+.btn-remove-job {
+  width: 49%;
+  margin: 0;
+  margin-left: 2%;
+}
+/* reposive */
+
+@media (max-width: 997px) {
+  .filter-file-title {
+    padding-right: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
   }
-  .logo_company-title {
-    margin: 20px 0;
+  .container > .row {
+    padding: 0;
+  }
+  .position-apply {
+    width: 25%;
+  }
+  .create-new-content {
+    background-color: #fff;
+    padding: 24px 24px;
+  }
+}
+@media (max-width: 767px) {
+  .filter-time {
+    margin-top: 12px;
   }
 }
 @media (max-width: 576px) {
   table {
     display: none;
   }
-  .tab2__content-mobile {
+  .tab2__content-mobile,
+  .tab3__content-mobile {
     display: block;
   }
   .create-new-content {

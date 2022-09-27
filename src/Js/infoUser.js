@@ -43,11 +43,13 @@ function submitUpdateInfoCompany(url) {
     }
 
     let avatar;
-    if (url) {
-      avatar = url;
-    } else {
+
+    if (!$(".image-company")[0].src.includes("avatar.png") && url === "") {
       avatar = $(".image-company")[0].src;
+    } else {
+      avatar = url;
     }
+
     const data = {
       full_name,
       email,
@@ -95,6 +97,7 @@ function getLinkFile() {
           {
             method: "POST",
             body: data,
+            credentials: "include",
           }
         ).catch(() => toastr.warning("Upload file lỗi. Vui lòng thử lại"));
         const content = await rawResponse.json();

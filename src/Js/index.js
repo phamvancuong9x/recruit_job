@@ -1,6 +1,7 @@
 const ElmInputSelect = document.querySelector("#input__working-form");
 const ElmInputSelectOption = document.querySelector(".input__title-option");
 const ElmPagination = document.querySelector(".pagination");
+
 const url = window.location.href;
 const pageParam = getParameterByName("page", url) || 1;
 const totalPage = +document.querySelector("#total_page").innerText;
@@ -65,7 +66,6 @@ function clearSearch() {
   };
 }
 clearSearch();
-let ElmPageList = document.querySelectorAll(".page-link");
 
 function updateQueryParamPage() {
   const url = window.location.href;
@@ -74,6 +74,7 @@ function updateQueryParamPage() {
   const locationParam = getParameterByName("location", url);
   const pageParam = getParameterByName("page", url);
   const ElmPageCurrent = document.querySelector(`#page${pageParam}`);
+  let ElmPageList = document.querySelectorAll(".page-link");
   const numberOfPage = ElmPageList.length - 2;
 
   ElmPageList.forEach((element) => {
@@ -116,6 +117,5 @@ function getParameterByName(name, url) {
     results = regex.exec(url);
   if (!results) return "";
   if (!results[2]) return "";
-
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }

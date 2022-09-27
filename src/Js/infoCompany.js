@@ -11,10 +11,13 @@ function submitUpdateInfoCompany(url) {
   $("#submit__update-info-company")[0].onclick = function (e) {
     const dataCheditorDescribeCompany = CKEDITOR.instances.editor4.getData();
     let link_image_company;
-    if (url) {
-      link_image_company = url;
-    } else {
+    if (
+      !$(".image-company")[0].src.includes("default-thumbnail.jpg") &&
+      url === ""
+    ) {
       link_image_company = $(".image-company")[0].src;
+    } else {
+      link_image_company = url;
     }
     const data = {
       name_company: $("#name-company").val(),
@@ -23,7 +26,7 @@ function submitUpdateInfoCompany(url) {
       phone_company: $("#phone-company").val(),
       link_website_company: $("#link_website_company").val(),
       describe_company: dataCheditorDescribeCompany,
-      link_image_company,
+      link_image_company: url,
     };
     $.ajax({
       url: "index.html",
@@ -63,6 +66,7 @@ function getLinkFile() {
           {
             method: "POST",
             body: data,
+            credentials: "include",
           }
         ).catch(() => toastr.warning("Upload file lỗi. Vui lòng thử lại"));
         const content = await rawResponse.json();

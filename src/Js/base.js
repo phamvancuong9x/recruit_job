@@ -142,6 +142,9 @@ function signInFunc(e) {
     contentType: "application/json; charset=utf-8",
     data: myJSON,
     dataType: "json",
+    xhrFields: {
+      withCredentials: true,
+    },
     success: function (data) {
       $("#modal-signin").modal("hide");
       toastr.success("Đăng nhập thành công");
@@ -276,3 +279,157 @@ function switchLogoutLogin(classBtnClick, classElm1, classElm2) {
 }
 switchLogoutLogin(".switch-page-register", ".login-contain", ".logout-contain");
 switchLogoutLogin(".switch-page-login", ".logout-contain", ".login-contain");
+
+/*--------------- Đăng nhập bên thứ 3 -----------------*/
+let GoogleClientId = $("#googleId").text();
+let GithubClientId = $("#githubId").text();
+(function (i, s, o, g, r, a, m) {
+  i["GoogleAnalyticsObject"] = r;
+  (i[r] =
+    i[r] ||
+    function () {
+      (i[r].q = i[r].q || []).push(arguments);
+    }),
+    (i[r].l = 1 * new Date());
+  (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m);
+})(window, document, "script", "//www.google-analytics.com/analytics.js", "ga");
+
+ga("create", "UA-31629610-1", "auto");
+ga("send", "pageview");
+!(function (f, b, e, v, n, t, s) {
+  if (f.fbq) return;
+  n = f.fbq = function () {
+    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+  };
+  if (!f._fbq) f._fbq = n;
+  n.push = n;
+  n.loaded = !0;
+  n.version = "2.0";
+  n.queue = [];
+  t = b.createElement(e);
+  t.async = !0;
+  t.src = v;
+  s = b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t, s);
+})(
+  window,
+  document,
+  "script",
+  "https://connect.facebook.net/vi_VN/fbevents.js"
+);
+fbq("init", "1043327282441146");
+fbq("track", "PageView");
+window.fbAsyncInit = function () {
+  FB.init({
+    appId: "382077653781510",
+    autoLogAppEvents: true,
+    xfbml: true,
+    version: "v13.0",
+    channelURL: "",
+    status: true,
+    cookie: true,
+    oauth: true,
+  });
+};
+
+$(".github-sign-in").on("click", function () {
+  window.location.href = `https://github.com/login/oauth/authorize?client_id=${GithubClientId}`;
+});
+
+$(".facebook-sign-in").on("click", function () {
+  FB.getLoginStatus(function (r) {
+    if (r.status === "connected") {
+      var req = {
+        AccessToken: r.authResponse.accessToken,
+      };
+      var myJSON = JSON.stringify(req);
+      $.ajax({
+        url: "/login-facebook",
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        data: myJSON,
+        dataType: "json",
+        success: function (data) {
+          location.reload();
+        },
+        error: function (xhr) {
+          toastr.warning(xhr.responseJSON);
+          $("#modal-signin").modal("hide");
+        },
+      });
+    } else {
+      FB.login(
+        function (response) {
+          if (response.authResponse) {
+            var req = {
+              AccessToken: response.authResponse.accessToken,
+            };
+            var myJSON = JSON.stringify(req);
+            $.ajax({
+              url: "/login-facebook",
+              type: "POST",
+              contentType: "application/json; charset=utf-8",
+              data: myJSON,
+              dataType: "json",
+              success: function (data) {
+                location.reload();
+              },
+              error: function (xhr) {
+                toastr.warning(xhr.responseJSON);
+                $("#modal-signin").modal("hide");
+              },
+            });
+          } else {
+            $("#modal-signin").modal("hide");
+          }
+        },
+        { scope: "email" }
+      );
+    }
+  });
+});
+
+$(".google-sign-in").on("click", function () {
+  gapi.load("auth2", function () {
+    gapi.auth2.authorize(
+      {
+        client_id: `${GoogleClientId}`,
+        scope: "profile email",
+        response_type: "id_token permission",
+      },
+      function (response) {
+        // if (response.error) {
+        //   toastr.warning("Lỗi không thể đăng nhập Google")
+        //   return;
+        // }
+        var req = {
+          AccessToken: response.access_token,
+        };
+        var myJSON = JSON.stringify(req);
+        $.ajax({
+          url: "/login-google",
+          type: "POST",
+          contentType: "application/json; charset=utf-8",
+          data: myJSON,
+          dataType: "json",
+          success: function (data) {
+            location.reload();
+            // if (data == true) {
+            // 	location.reload();
+            // } else {
+            // 	$('#modal-signin').modal('hide')
+            // 	$('#required-info-update').modal('show')
+            // }
+          },
+          error: function (xhr) {
+            toastr.warning(xhr.responseJSON);
+            $("#modal-signin").modal("hide");
+          },
+        });
+      }
+    );
+  });
+});
