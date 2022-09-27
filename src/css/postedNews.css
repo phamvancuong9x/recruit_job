@@ -1,0 +1,77 @@
+/* Phần danh sách tin đã đăng*/
+
+.tab2__content table {
+  width: 100%;
+}
+.tab2__content table tr {
+  border-bottom: 0.5px solid #ccc;
+}
+.tab2__content table tr th {
+  color: #000;
+  font-weight: 700;
+  padding: 16px;
+  font-size: 14px;
+  background-color: #fafafa;
+}
+.tab2__content table tr td:first-child {
+  width: 30%;
+}
+.tab2__content table tr td {
+  padding: 16px;
+  color: #000;
+}
+.table-status {
+  border: none;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+  white-space: nowrap;
+  display: inline-block;
+  text-align: center;
+  max-width: 126px;
+}
+option {
+  background-color: #fff;
+  color: #000;
+}
+/* tab2_content-mobile */
+.news__recruitment {
+  padding: 20px;
+  /* border-top: 1px solid #ccc; */
+  border-bottom: 1px solid #ccc;
+}
+.news__recruitment-name,
+.date-submit-title {
+  font-weight: 500;
+}
+.news__recruitment-name {
+  margin-bottom: 12px;
+}
+.news__recruitment_status {
+  border-radius: 15px;
+  padding: 3px 12px;
+  font-size: 14px;
+}
+.news__recruitment_remove {
+  cursor: pointer;
+  padding: 10px;
+}
+.status-recruitment-file {
+  cursor: pointer;
+}
+.status-waitting {
+  background-color: rgb(250, 235, 207);
+  color: #d48806;
+}
+.status-accept {
+  color: #096dd9;
+  background: #e6f7ff;
+}
+.status-reject {
+  color: #cf1322;
+  background: #fff1f0;
+}
+.tab2__content-mobile,
+.tab3__content-mobile {
+  display: none;
+}

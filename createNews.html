@@ -37,18 +37,18 @@
     <!-- header -->
     <header>
       <div
-        class="header__content head"
+        class="header__content header__content-desktop"
         style="
-          height: 60px;
+          line-height: 60px;
           background-color: #0f5298;
           color: #fff;
           text-align: center;
-          line-height: 70px;
+
           font-size: 20px;
         "
       >
         <div class="logo">
-          <a href="index.html"
+          <a href="https://techmaster.vn/"
             ><img
               src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
               alt=""
@@ -58,7 +58,77 @@
         <div class="nav__menu">
           <a href="index.html">Cơ hội việc làm</a>
           <a href="createNews.html">Nhà tuyển dụng</a>
-          <a href="#"><i class="fa-solid fa-user"></i></a>
+          <span class="login">
+            <a href="loginLogout.html"><i class="fa-solid fa-user"></i></a>
+          </span>
+          <div class="header__user">
+            <div class="header__user-info">
+              <div class="header__user-image">
+                <img src="src/image/avatar.png" alt="user image" />
+              </div>
+            </div>
+            <ul class="header__user-list">
+              <li class="header__user-item">
+                <a href="user.html">Thông tin tài khoản</a>
+              </li>
+              <li class="header__user-item">
+                <a href="infoCompany.html">Thông tin công ty</a>
+              </li>
+
+              <li class="header__user-item">
+                <a class="/logout">Đăng xuất</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="header__content header__content-mobile"
+        style="
+          background-color: #0f5298;
+          color: #fff;
+          text-align: center;
+          font-size: 20px;
+        "
+      >
+        <div class="bar-icon"><i class="fa-solid fa-bars"></i></div>
+        <div class="logo">
+          <a href="index.html"
+            ><img
+              src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="login login-mobile">
+          <a href="loginLogout.html"><i class="fa-solid fa-user"></i></a>
+        </div>
+        <div class="header__user header__user-mobile">
+          <div class="header__user-info">
+            <div class="header__user-image">
+              <img src="src/image/avatar.png" alt="user image" />
+            </div>
+          </div>
+          <ul class="header__user-list header__user-list-mobile">
+            <li class="header__user-item">
+              <a href="user.html">Thông tin tài khoản</a>
+            </li>
+            <!-- <li class="header__user-item">
+              <a href="infoCmpany.html">Thông tin công ty</a>
+            </li> -->
+
+            <li class="header__user-item">
+              <span class="logout logout-mobile">Đăng xuất</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav__menu-mobile">
+        <div class="nav__menu-mobile-item">
+          <a href="index.html">Cơ hội việc làm</a>
+        </div>
+        <div class="nav__menu-mobile-item">
+          <a href="createNews.html">Nhà tuyển dụng</a>
         </div>
       </div>
     </header>
@@ -71,13 +141,13 @@
               <div
                 class="tab__create-job-active create-tab-title__tab create-tab-title__tab1"
               >
-                Tạo tin ứng tuyển
+                <a href="createNews.html">Tạo tin ứng tuyển</a>
               </div>
               <div class="create-tab-title__tab create-tab-title__tab2">
-                Danh sách tin đã đăng
+                <a href="postedNews.html">Danh sách tin đã đăng</a>
               </div>
               <div class="create-tab-title__tab create-tab-title__tab3">
-                Hồ sơ ứng tuyển
+                <a href="fileApply.html">Hồ sơ ứng tuyển</a>
               </div>
             </div>
             <!-- Nôi dung tab 1 -->
@@ -514,373 +584,6 @@
                   </button>
                 </div>
               </div> -->
-            </div>
-            <div class="tab2__content">
-              <table style="margin-top: 24px">
-                <tr>
-                  <th>Tên tin đăng</th>
-                  <th>Ngày đăng</th>
-                  <th>Thời hạn nộp</th>
-                  <th>Lượt nộp</th>
-                  <th>Lượt xem</th>
-                  <th>Trạng thái</th>
-                  <th>Xóa tin</th>
-                </tr>
-                <tr>
-                  <td>Lập trình viên Frontend</td>
-                  <td>16/9/2022</td>
-                  <td>16/10/2022</td>
-                  <td>0</td>
-                  <td>1</td>
-                  <td>
-                    <span
-                      class="table-status status-waitting status-accept status-reject"
-                      >Chờ duyệt</span
-                    >
-                  </td>
-                  <td>
-                    <div class="news__recruitment_remove">
-                      <i class="fa-solid fa-trash-can"></i>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Lập trình viên FullStack PHP</td>
-                  <td>16/9/2022</td>
-                  <td>16/10/2022</td>
-                  <td>0</td>
-                  <td>1</td>
-                  <td>
-                    <span
-                      class="table-status status-waitting status-accept status-reject"
-                      >Chờ duyệt</span
-                    >
-                  </td>
-                  <td>
-                    <div class="news__recruitment_remove">
-                      <i class="fa-solid fa-trash-can"></i>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-              <div class="tab2__content-mobile">
-                <div class="news__recruitment">
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div
-                      class="news__recruitment_status status-waitting status-accept status-reject"
-                    >
-                      Chờ duyệt
-                    </div>
-                    <div
-                      class="news__recruitment_remove-mobile"
-                      data-bs-toggle="modal"
-                      data-bs-target="#removeNewsJobModal"
-                    >
-                      <i class="fa-solid fa-trash-can"></i>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="news__recruitment-name">
-                        Tuyển dụng lập trình viên Frontend
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="date-submit-title">Ngày đăng</div>
-                      <div class="date-submit-text">16/9/2022</div>
-                    </div>
-                    <div class="col-6">
-                      <div class="date-submit-title">Thời hạn nộp</div>
-                      <div class="date-submit-text">30/9/2022</div>
-                    </div>
-                    <div class="col-6">
-                      <div class="date-submit-title">Lượt nộp</div>
-                      <div class="date-submit-text">0</div>
-                    </div>
-                    <div class="col-6">
-                      <div class="date-submit-title">Lượt xem</div>
-                      <div class="date-submit-text">4</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="news__recruitment">
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <div
-                      class="news__recruitment_status status-waitting status-accept status-reject"
-                    >
-                      Chờ duyệt
-                    </div>
-                    <div class="news__recruitment_remove-mobile">
-                      <i class="fa-solid fa-trash-can"></i>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="news__recruitment-name">
-                        Tuyển dụng lập trình viên Fullstack PHP
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="date-submit-title">Ngày đăng</div>
-                      <div class="date-submit-text">16/9/2022</div>
-                    </div>
-                    <div class="col-6">
-                      <div class="date-submit-title">Thời hạn nộp</div>
-                      <div class="date-submit-text">30/9/2022</div>
-                    </div>
-                    <div class="col-6">
-                      <div class="date-submit-title">Lượt nộp</div>
-                      <div class="date-submit-text">0</div>
-                    </div>
-                    <div class="col-6">
-                      <div class="date-submit-title">Lượt xem</div>
-                      <div class="date-submit-text">4</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="tab3__content">
-              <div class="filter-file">
-                <div class="row">
-                  <div
-                    class="col-12 col-md-2 col-lg-2 col-xl-1 filter-file-title"
-                  >
-                    <span class="d-block me-2">Bộ lọc</span>
-                    <i class="fa-solid fa-filter"></i>
-                  </div>
-                  <div class="col-12 col-md-10 col-lg-10 col-xl-11">
-                    <div class="row">
-                      <div class="col-12 col-md-6">
-                        <select class="filter-name" style="max-width: 100%">
-                          <option value="">Tất cả các tin đã đăng</option>
-                          <option value="Vị trí tuyển dụng 1">
-                            Tuyển dụng lập trình viên Fullstack
-                          </option>
-                          <option value="Vị trí tuyển dụng 2">
-                            Tuyển dụng lập trình viên Frontend
-                          </option>
-                        </select>
-                      </div>
-                      <div class="col-12 col-md-4 col-lg-3">
-                        <select class="filter-time">
-                          <option value="">Tất cả thời gian nộp</option>
-                          <option value="3 ngày">3 ngày</option>
-                          <option value="1 tuần">1 tuần</option>
-                          <option value="2 tuần">2 tuần</option>
-                          <option value="1 tháng">1 tháng</option>
-                          <option value="2 tháng">2 tháng</option>
-                          <option value="3 tháng">3 tháng</option>
-                          <option value="Trên 3 tháng">Trên 3 tháng</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <table class="recruitment-file">
-                <thead>
-                  <tr>
-                    <th>Tên ứng viên</th>
-                    <th>Vị trí ứng tuyển</th>
-                    <th>Ngày nộp</th>
-                    <th>Tải xuống CV</th>
-                    <th>
-                      Trạng thái <i class="fa-solid fa-pen-to-square"></i>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Phạm văn Cường</td>
-                    <td class="position-apply">Lập trình viên Frontend</td>
-                    <td>16/10/2022</td>
-                    <td>
-                      <a href="http://localhost:8087/api/download/file/8w_9r0Is"
-                        >FresherFrontend.docx</a
-                      >
-                    </td>
-                    <td>
-                      <select
-                        class="status-recruitment-file table-status status-waitting"
-                      >
-                        <option
-                          class="status-recruitment-file-item"
-                          value="Chưa liên hệ"
-                        >
-                          Chưa liên hệ
-                        </option>
-                        <option
-                          class="status-recruitment-file-item"
-                          value="Đạt"
-                        >
-                          Đạt
-                        </option>
-                        <option
-                          class="status-recruitment-file-item"
-                          value="Không đạt"
-                        >
-                          Không đạt
-                        </option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Phạm văn Cường</td>
-                    <td class="position-apply">Lập trình viên Frontend</td>
-                    <td>16/10/2022</td>
-                    <td>
-                      <a href="http://localhost:8087/api/download/file/8w_9r0Is"
-                        >FresherFrontend.docx</a
-                      >
-                    </td>
-                    <td>
-                      <select
-                        class="status-recruitment-file table-status status-waitting"
-                      >
-                        <option
-                          class="status-recruitment-file-item"
-                          value="Chưa liên hệ"
-                        >
-                          Chưa liên hệ
-                        </option>
-                        <option
-                          class="status-recruitment-file-item"
-                          value="Đạt"
-                        >
-                          Đạt
-                        </option>
-                        <option
-                          class="status-recruitment-file-item"
-                          value="Không đạt"
-                        >
-                          Không đạt
-                        </option>
-                      </select>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="tab3__content-mobile">
-                <h4 style="font-size: 16px; margin: 20px 0">
-                  Danh dách hồ sơ ứng tuyển
-                </h4>
-                <div class="recruitment-file-moble-item">
-                  <div class="row">
-                    <div class="col-8">
-                      <select
-                        class="status-recruitment-file table-status status-waitting"
-                      >
-                        <option
-                          class="status-recruitment-file-item"
-                          value="Chưa liên hệ"
-                        >
-                          Chưa liên hệ
-                        </option>
-                        <option
-                          class="status-recruitment-file-item"
-                          value="Đạt"
-                        >
-                          Đạt
-                        </option>
-                        <option
-                          class="status-recruitment-file-item"
-                          value="Không đạt"
-                        >
-                          Không đạt
-                        </option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="applicant_name mb-1 mt-3">
-                        <span class="fontWeight500">Phạm Văn Cường </span>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="news__recruitment-name">
-                        Tuyển dụng lập trình viên Frontend
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="date-submit-title">Ngày nộp</div>
-                      <div class="date-submit-text">16/9/2022</div>
-                    </div>
-                    <div class="col-6">
-                      <div class="date-submit-title">Tải xuống CV</div>
-                      <div class="date-submit-text">
-                        <a
-                          href="http://localhost:8087/api/download/file/8w_9r0Is"
-                          >FresherFrontend.docx</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="recruitment-file-moble-item">
-                  <div class="row">
-                    <div class="col-8">
-                      <select
-                        class="status-recruitment-file status-recruitment-file table-status status-waitting"
-                      >
-                        <option
-                          class="status-recruitment-file-item"
-                          value="Chưa liên hệ"
-                        >
-                          Chưa liên hệ
-                        </option>
-                        <option
-                          class="status-recruitment-file-item"
-                          value="Đạt"
-                        >
-                          Đạt
-                        </option>
-                        <option
-                          class="status-recruitment-file-item"
-                          value="Không đạt"
-                        >
-                          Không đạt
-                        </option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="applicant_name mb-1 mt-3">
-                        <span class="fontWeight500">Phạm Văn Cường </span>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="news__recruitment-name">
-                        Tuyển dụng lập trình viên Frontend
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="date-submit-title">Ngày nộp</div>
-                      <div class="date-submit-text">16/9/2022</div>
-                    </div>
-                    <div class="col-6">
-                      <div class="date-submit-title">Tải xuống CV</div>
-                      <div class="date-submit-text">
-                        <a
-                          href="http://localhost:8087/api/download/file/8w_9r0Is"
-                          >FresherFrontend.docx</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div style="display: none" id="total_page">10</div>
-
-              <div class="panigation d-flex justify-content-center mt-4">
-                <ul id="pagination-demo" class="pagination-sm"></ul>
-              </div>
             </div>
           </div>
         </div>

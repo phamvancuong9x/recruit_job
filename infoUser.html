@@ -37,18 +37,18 @@
     <!-- header -->
     <header>
       <div
-        class="header__content head"
+        class="header__content header__content-desktop"
         style="
-          height: 60px;
+          line-height: 60px;
           background-color: #0f5298;
           color: #fff;
           text-align: center;
-          line-height: 70px;
+
           font-size: 20px;
         "
       >
         <div class="logo">
-          <a href="index.html"
+          <a href="https://techmaster.vn/"
             ><img
               src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
               alt=""
@@ -58,7 +58,77 @@
         <div class="nav__menu">
           <a href="index.html">Cơ hội việc làm</a>
           <a href="createNews.html">Nhà tuyển dụng</a>
-          <a href="#"><i class="fa-solid fa-user"></i></a>
+          <span class="login">
+            <a href="loginLogout.html"><i class="fa-solid fa-user"></i></a>
+          </span>
+          <div class="header__user">
+            <div class="header__user-info">
+              <div class="header__user-image">
+                <img src="src/image/avatar.png" alt="user image" />
+              </div>
+            </div>
+            <ul class="header__user-list">
+              <li class="header__user-item">
+                <a href="user.html">Thông tin tài khoản</a>
+              </li>
+              <li class="header__user-item">
+                <a href="infoCompany.html">Thông tin công ty</a>
+              </li>
+
+              <li class="header__user-item">
+                <a class="/logout">Đăng xuất</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="header__content header__content-mobile"
+        style="
+          background-color: #0f5298;
+          color: #fff;
+          text-align: center;
+          font-size: 20px;
+        "
+      >
+        <div class="bar-icon"><i class="fa-solid fa-bars"></i></div>
+        <div class="logo">
+          <a href="index.html"
+            ><img
+              src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="login login-mobile">
+          <a href="loginLogout.html"><i class="fa-solid fa-user"></i></a>
+        </div>
+        <div class="header__user header__user-mobile">
+          <div class="header__user-info">
+            <div class="header__user-image">
+              <img src="src/image/avatar.png" alt="user image" />
+            </div>
+          </div>
+          <ul class="header__user-list header__user-list-mobile">
+            <li class="header__user-item">
+              <a href="user.html">Thông tin tài khoản</a>
+            </li>
+            <!-- <li class="header__user-item">
+              <a href="infoCmpany.html">Thông tin công ty</a>
+            </li> -->
+
+            <li class="header__user-item">
+              <span class="logout logout-mobile">Đăng xuất</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav__menu-mobile">
+        <div class="nav__menu-mobile-item">
+          <a href="index.html">Cơ hội việc làm</a>
+        </div>
+        <div class="nav__menu-mobile-item">
+          <a href="createNews.html">Nhà tuyển dụng</a>
         </div>
       </div>
     </header>

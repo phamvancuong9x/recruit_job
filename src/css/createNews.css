@@ -248,9 +248,6 @@ body {
 
 /* Phần danh sách tin đã đăng*/
 
-.tab2__content {
-  display: none;
-}
 .tab2__content table {
   width: 100%;
 }
@@ -448,6 +445,14 @@ table.recruitment-file tbody tr td {
   .tab2__content-mobile,
   .tab3__content-mobile {
     display: block;
+  }
+  .recruitment-file-moble-title {
+    font-size: 16px;
+    margin-top: 20px;
+    background: #fafafa;
+    padding: 20px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #ccc;
   }
   .create-new-content {
     padding: 24px 20px;

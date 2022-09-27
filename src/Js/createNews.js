@@ -22,73 +22,8 @@ const ElmTab3Content = document.querySelector(".tab3__content");
 const ElmOption = document.querySelectorAll(".input__title-option-item");
 const ElmDateline = document.querySelector("#input__submit-deadline");
 
-const url = window.location.href;
-const pageParam = getParameterByName("page", url) || 1;
-const totalPage = +document.querySelector("#total_page").innerText;
 let clickBtnSubmit = false;
 
-function getParameterByName(name, url) {
-  if (!url) url = window.location.href;
-  name = name.replace(/[\[\]]/g, "\\$&");
-  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-    results = regex.exec(url);
-  if (!results) return "";
-  if (!results[2]) return "";
-
-  return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-
-$("#pagination-demo").twbsPagination({
-  totalPages: totalPage,
-  visiblePages: 7,
-  startPage: +pageParam,
-  last: "Cuối",
-  next: "Tiếp",
-  prev: "Trước",
-  first: "Đầu",
-
-  onPageClick: function (event, page) {},
-});
-function updateQueryParamPage() {
-  const pathNameUrl = window.location.pathname;
-  const filter_name = getParameterByName("position_recruit", url);
-  const filter_time = getParameterByName("time_submit", url);
-  const pageParam = getParameterByName("page", url);
-  const ElmPageCurrent = document.querySelector(`#page${pageParam}`);
-  let ElmPageList = document.querySelectorAll(".page-link");
-  const numberOfPage = ElmPageList.length - 2;
-  ElmPageList.forEach((element) => {
-    element.onclick = function () {
-      Number.isInteger(+element.innerText);
-      if (Number.isInteger(+element.innerText)) {
-        window.location.assign(
-          `${pathNameUrl}?position_recruit=${filter_name}&time_submit=${filter_time}&page=${element.innerText}`
-        );
-      } else if (element.innerText === "Trước" && +pageParam > 1) {
-        window.location.assign(
-          `${pathNameUrl}?position_recruit=${filter_name}&time_submit=${filter_time}&page=${
-            +pageParam - 1
-          }`
-        );
-      } else if (element.innerText === "Tiếp" && +pageParam <= +numberOfPage) {
-        window.location.assign(
-          `${pathNameUrl}?position_recruit=${filter_name}&time_submit=${filter_time}&page=${
-            +pageParam + 1
-          }`
-        );
-      } else if (element.innerText === "Cuối") {
-        window.location.assign(
-          `${pathNameUrl}?position_recruit=${filter_name}&time_submit=${filter_time}&page=${totalPage}`
-        );
-      } else if (element.innerText === "Đầu") {
-        window.location.assign(
-          `${pathNameUrl}?position_recruit=${filter_name}&time_submit=${filter_time}&page=${1}`
-        );
-      }
-    };
-  });
-}
-updateQueryParamPage();
 // khởi tạo CKEDITOR
 CKEDITOR.replace("editor1");
 CKEDITOR.replace("editor2");
@@ -106,28 +41,7 @@ function hideOptionSelect() {
 }
 hideOptionSelect();
 // tab
-function tab() {
-  ElmCreateTab.forEach((element, i) => {
-    element.onclick = function () {
-      const ElmTabActive = document.querySelector(".tab__create-job-active");
-      ElmTabActive.classList.remove("tab__create-job-active");
-      ElmTab1Content.style.display = "none";
-      ElmTab2Content.style.display = "none";
-      ElmTab3Content.style.display = "none";
-      if (i === 0) {
-        element.classList.add("tab__create-job-active");
-        ElmTab1Content.style.display = "block";
-      } else if (i === 1) {
-        element.classList.add("tab__create-job-active");
-        ElmTab2Content.style.display = "block";
-      } else {
-        element.classList.add("tab__create-job-active");
-        ElmTab3Content.style.display = "block";
-      }
-    };
-  });
-}
-tab();
+
 // render ra danh sách mức lương
 function renderSalaryList() {
   let html = `<option value=""class="input__title-option-item" style="display:none">Chọn</option>`;
@@ -294,9 +208,6 @@ function submitJob() {
         success: function (data) {
           toastr.success("Tạo tin tuyển dụng thành công. Vui lòng chờ duyệt");
           localStorage.setItem("tab2", "true");
-          setTimeout(() => {
-            window.location.reload();
-          }, 2000);
         },
         error: function (xhr) {
           toastr.warning(xhr.responseJSON);
@@ -320,113 +231,3 @@ submitJob();
     };
   });
 })();
-
-// show modal remove news job
-
-function showModalNewsJob() {
-  document.querySelectorAll(".news__recruitment_remove").forEach((element) => {
-    $(element).on("click", function () {
-      $("#removeNewsJobModal").modal();
-      $(".newsJobName")[0].innerText = $(element)
-        .parent()
-        .parent()
-        .children()
-        .first()[0].innerText;
-    });
-  });
-}
-showModalNewsJob();
-function showModalNewsJobMobile() {
-  document
-    .querySelectorAll(".news__recruitment_remove-mobile")
-    .forEach((element) => {
-      $(element).on("click", function () {
-        $("#removeNewsJobModal").modal();
-
-        $(".newsJobName")[0].innerText = $(element)
-          .parent()
-          .next()
-          .children()
-          .first()[0].innerText;
-      });
-    });
-}
-showModalNewsJobMobile();
-// hide modal removeJob
-function hideModalNewsJob() {
-  $(".btn-cannel-remove-job").on("click", function () {
-    $("#removeNewsJobModal").modal("hide");
-  });
-}
-hideModalNewsJob();
-function renderInfoModalRemoveJob() {}
-renderInfoModalRemoveJob();
-
-//filter recruitment file (lọc danh sách hồ sơ ứng tuyển)
-
-function filterNameRecruitmentFile() {
-  const pathNameUrl = window.location.pathname;
-
-  $(".filter-name").on("change", function () {
-    const filter_name = $(".filter-name").val();
-    const filter_time = $(".filter-time").val();
-
-    window.location.assign(
-      `${pathNameUrl}?position_recruit=${filter_name}&time_submit=${filter_time}`
-    );
-  });
-  $(".filter-time").on("change", function () {
-    const filter_name = $(".filter-name").val();
-    const filter_time = $(".filter-time").val();
-    window.location.assign(
-      `${pathNameUrl}?position_recruit=${filter_name}&time_submit=${filter_time}`
-    );
-  });
-}
-filterNameRecruitmentFile();
-
-// Kiểm tra kiểm tra điều kiện hiển thị tab 2
-
-function checkShowTab2() {
-  if (localStorage.getItem("tab2") == null) return;
-  localStorage.removeItem("tab2");
-  ElmTab1Content.style.display = "none";
-  ElmTab2Content.style.display = "none";
-  ElmTab3Content.style.display = "block";
-  $(".create-tab-title__tab2")[0].classList.add("tab__create-job-active");
-  $(".create-tab-title__tab1")[0].classList.remove("tab__create-job-active");
-}
-checkShowTab2();
-
-// Kiểm tra điều kiện hiển thị tab3
-function checkShowTab3() {
-  const href = window.location.href;
-  if (href.includes("position_recruit") || href.includes("time_submit")) {
-    ElmTab1Content.style.display = "none";
-    ElmTab2Content.style.display = "none";
-    ElmTab3Content.style.display = "block";
-    $(".create-tab-title__tab3")[0].classList.add("tab__create-job-active");
-    $(".create-tab-title__tab1")[0].classList.remove("tab__create-job-active");
-  }
-}
-checkShowTab3();
-
-function changeStatus() {
-  const ElmSelectStatus = document.querySelectorAll(".status-recruitment-file");
-  ElmSelectStatus.forEach((element) => {
-    element.onchange = function () {
-      $(element)
-        .removeClass("status-waitting")
-        .removeClass("status-accept")
-        .removeClass("status-reject");
-      if ($($(element)).val() === "Chưa liên hệ") {
-        $($(element)).addClass("status-waitting");
-      } else if ($($(element)).val() === "Đạt") {
-        $($(element)).addClass("status-accept");
-      } else {
-        $($(element)).addClass("status-reject");
-      }
-    };
-  });
-}
-changeStatus();

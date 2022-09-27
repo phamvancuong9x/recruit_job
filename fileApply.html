@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nhà tuyển dụng</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="src/css/base.css" />
+    <link rel="stylesheet" href="src/css/createNews.css" />
+    <script src="https://cdn.ckeditor.com/4.19.1/basic/ckeditor.js"></script>
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-date-picker/3.2.3/tiny-date-picker.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-date-picker/3.2.3/tiny-date-picker.min.js"></script> -->
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <div
+        class="header__content header__content-desktop"
+        style="
+          line-height: 60px;
+          background-color: #0f5298;
+          color: #fff;
+          text-align: center;
+
+          font-size: 20px;
+        "
+      >
+        <div class="logo">
+          <a href="https://techmaster.vn/"
+            ><img
+              src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="nav__menu">
+          <a href="index.html">Cơ hội việc làm</a>
+          <a href="createNews.html">Nhà tuyển dụng</a>
+          <span class="login">
+            <a href="loginLogout.html"><i class="fa-solid fa-user"></i></a>
+          </span>
+          <div class="header__user">
+            <div class="header__user-info">
+              <div class="header__user-image">
+                <img src="src/image/avatar.png" alt="user image" />
+              </div>
+            </div>
+            <ul class="header__user-list">
+              <li class="header__user-item">
+                <a href="user.html">Thông tin tài khoản</a>
+              </li>
+              <li class="header__user-item">
+                <a href="infoCompany.html">Thông tin công ty</a>
+              </li>
+
+              <li class="header__user-item">
+                <a class="/logout">Đăng xuất</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="header__content header__content-mobile"
+        style="
+          background-color: #0f5298;
+          color: #fff;
+          text-align: center;
+          font-size: 20px;
+        "
+      >
+        <div class="bar-icon"><i class="fa-solid fa-bars"></i></div>
+        <div class="logo">
+          <a href="index.html"
+            ><img
+              src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="login login-mobile">
+          <a href="loginLogout.html"><i class="fa-solid fa-user"></i></a>
+        </div>
+        <div class="header__user header__user-mobile">
+          <div class="header__user-info">
+            <div class="header__user-image">
+              <img src="src/image/avatar.png" alt="user image" />
+            </div>
+          </div>
+          <ul class="header__user-list header__user-list-mobile">
+            <li class="header__user-item">
+              <a href="user.html">Thông tin tài khoản</a>
+            </li>
+            <!-- <li class="header__user-item">
+              <a href="infoCmpany.html">Thông tin công ty</a>
+            </li> -->
+
+            <li class="header__user-item">
+              <span class="logout logout-mobile">Đăng xuất</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav__menu-mobile">
+        <div class="nav__menu-mobile-item">
+          <a href="index.html">Cơ hội việc làm</a>
+        </div>
+        <div class="nav__menu-mobile-item">
+          <a href="createNews.html">Nhà tuyển dụng</a>
+        </div>
+      </div>
+    </header>
+    <!-- content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12 create-new-container">
+          <div class="create-new-content">
+            <div class="create-tab-title">
+              <div class="create-tab-title__tab create-tab-title__tab1">
+                <a href="createNews.html">Tạo tin ứng tuyển</a>
+              </div>
+              <div class="create-tab-title__tab create-tab-title__tab2">
+                <a href="postedNews.html">Danh sách tin đã đăng</a>
+              </div>
+              <div
+                class="tab__create-job-active create-tab-title__tab create-tab-title__tab3"
+              >
+                <a href="fileApply.html">Hồ sơ ứng tuyển</a>
+              </div>
+            </div>
+            <div class="tab3__content">
+              <div class="filter-file">
+                <div class="row">
+                  <div
+                    class="col-12 col-md-2 col-lg-2 col-xl-1 filter-file-title"
+                  >
+                    <span class="d-block me-2">Bộ lọc</span>
+                    <i class="fa-solid fa-filter"></i>
+                  </div>
+                  <div class="col-12 col-md-10 col-lg-10 col-xl-11">
+                    <div class="row">
+                      <div class="col-12 col-md-6">
+                        <select class="filter-name" style="max-width: 100%">
+                          <option value="">Tất cả các tin đã đăng</option>
+                          <option value="Vị trí tuyển dụng 1">
+                            Tuyển dụng lập trình viên Fullstack
+                          </option>
+                          <option value="Vị trí tuyển dụng 2">
+                            Tuyển dụng lập trình viên Frontend
+                          </option>
+                        </select>
+                      </div>
+                      <div class="col-12 col-md-4 col-lg-3">
+                        <select class="filter-time">
+                          <option value="">Tất cả thời gian nộp</option>
+                          <option value="3 ngày">3 ngày</option>
+                          <option value="1 tuần">1 tuần</option>
+                          <option value="2 tuần">2 tuần</option>
+                          <option value="1 tháng">1 tháng</option>
+                          <option value="2 tháng">2 tháng</option>
+                          <option value="3 tháng">3 tháng</option>
+                          <option value="Trên 3 tháng">Trên 3 tháng</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <table class="recruitment-file">
+                <thead>
+                  <tr>
+                    <th>Tên ứng viên</th>
+                    <th>Vị trí ứng tuyển</th>
+                    <th>Ngày nộp</th>
+                    <th>Tải xuống CV</th>
+                    <th>
+                      Trạng thái <i class="fa-solid fa-pen-to-square"></i>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Phạm văn Cường</td>
+                    <td class="position-apply">Lập trình viên Frontend</td>
+                    <td>16/10/2022</td>
+                    <td>
+                      <a href="http://localhost:8087/api/download/file/8w_9r0Is"
+                        >FresherFrontend.docx</a
+                      >
+                    </td>
+                    <td>
+                      <select
+                        class="status-recruitment-file table-status status-waitting"
+                      >
+                        <option
+                          class="status-recruitment-file-item"
+                          value="Chưa liên hệ"
+                        >
+                          Chưa liên hệ
+                        </option>
+                        <option
+                          class="status-recruitment-file-item"
+                          value="Đạt"
+                        >
+                          Đạt
+                        </option>
+                        <option
+                          class="status-recruitment-file-item"
+                          value="Không đạt"
+                        >
+                          Không đạt
+                        </option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Phạm văn Cường</td>
+                    <td class="position-apply">Lập trình viên Frontend</td>
+                    <td>16/10/2022</td>
+                    <td>
+                      <a href="http://localhost:8087/api/download/file/8w_9r0Is"
+                        >FresherFrontend.docx</a
+                      >
+                    </td>
+                    <td>
+                      <select
+                        class="status-recruitment-file table-status status-waitting"
+                      >
+                        <option
+                          class="status-recruitment-file-item"
+                          value="Chưa liên hệ"
+                        >
+                          Chưa liên hệ
+                        </option>
+                        <option
+                          class="status-recruitment-file-item"
+                          value="Đạt"
+                        >
+                          Đạt
+                        </option>
+                        <option
+                          class="status-recruitment-file-item"
+                          value="Không đạt"
+                        >
+                          Không đạt
+                        </option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="tab3__content-mobile">
+                <h4 class="recruitment-file-moble-title">
+                  Danh sách hồ sơ ứng tuyển
+                </h4>
+                <div class="recruitment-file-moble-item">
+                  <div class="row">
+                    <div class="col-8">
+                      <select
+                        class="status-recruitment-file table-status status-waitting"
+                      >
+                        <option
+                          class="status-recruitment-file-item"
+                          value="Chưa liên hệ"
+                        >
+                          Chưa liên hệ
+                        </option>
+                        <option
+                          class="status-recruitment-file-item"
+                          value="Đạt"
+                        >
+                          Đạt
+                        </option>
+                        <option
+                          class="status-recruitment-file-item"
+                          value="Không đạt"
+                        >
+                          Không đạt
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="applicant_name mb-1 mt-3">
+                        <span class="fontWeight500">Phạm Văn Cường </span>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="news__recruitment-name">
+                        Tuyển dụng lập trình viên Frontend
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="date-submit-title">Ngày nộp</div>
+                      <div class="date-submit-text">16/9/2022</div>
+                    </div>
+                    <div class="col-6">
+                      <div class="date-submit-title">Tải xuống CV</div>
+                      <div class="date-submit-text">
+                        <a
+                          href="http://localhost:8087/api/download/file/8w_9r0Is"
+                          >FresherFrontend.docx</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="recruitment-file-moble-item">
+                  <div class="row">
+                    <div class="col-8">
+                      <select
+                        class="status-recruitment-file status-recruitment-file table-status status-waitting"
+                      >
+                        <option
+                          class="status-recruitment-file-item"
+                          value="Chưa liên hệ"
+                        >
+                          Chưa liên hệ
+                        </option>
+                        <option
+                          class="status-recruitment-file-item"
+                          value="Đạt"
+                        >
+                          Đạt
+                        </option>
+                        <option
+                          class="status-recruitment-file-item"
+                          value="Không đạt"
+                        >
+                          Không đạt
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="applicant_name mb-1 mt-3">
+                        <span class="fontWeight500">Phạm Văn Cường </span>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="news__recruitment-name">
+                        Tuyển dụng lập trình viên Frontend
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="date-submit-title">Ngày nộp</div>
+                      <div class="date-submit-text">16/9/2022</div>
+                    </div>
+                    <div class="col-6">
+                      <div class="date-submit-title">Tải xuống CV</div>
+                      <div class="date-submit-text">
+                        <a
+                          href="http://localhost:8087/api/download/file/8w_9r0Is"
+                          >FresherFrontend.docx</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="display: none" id="total_page">10</div>
+
+              <div class="panigation d-flex justify-content-center mt-4">
+                <ul id="pagination-demo" class="pagination-sm"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer style=""></footer>
+    <!-- modal xóa tin tuyển dụng -->
+
+    <!-- Modal -->
+    <modal
+      class="modal fade"
+      id="removeNewsJobModal"
+      tabindex="-1"
+      aria-labelledby="removeNewsJobModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header flex-column align-items-start">
+            <h5 class="modal-title" id="removeNewsJobModalLabel">
+              Xóa tin tuyển dụng này
+            </h5>
+            <p>Bạn có chắc chắn xóa tin tuyển dụng này không ?</p>
+          </div>
+          <div class="modal-body">
+            <div class="newsJobName">Tuyển dụng lập trình viên</div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary btn-cannel-remove-job"
+              data-bs-dismiss="modal"
+            >
+              Hủy bỏ
+            </button>
+            <button type="button" class="btn btn-primary btn-remove-job">
+              Xóa
+            </button>
+          </div>
+        </div>
+      </div>
+    </modal>
+    <!-- id công ty  -->
+    <div id="id_company" style="display: none">12</div>
+    <span style="display: none" id="googleId">{{.GoogleClientId}}</span>
+    <span style="display: none" id="githubId">{{.GithubClientId}}</span>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js"
+      integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"
+      integrity="sha512-frFP3ZxLshB4CErXkPVEXnd5ingvYYtYhE5qllGdZmcOlRKNEPbufyupfdSTNmoF5ICaQNO6SenXzOZvoGkiIA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="src/Js/base.js"></script>
+    <script src="src/Js/pagination.js"></script>
+    <script src="src/Js/fileApply.js"></script>
+  </body>
+</html>
