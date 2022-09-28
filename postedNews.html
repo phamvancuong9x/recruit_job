@@ -57,7 +57,11 @@
         </div>
         <div class="nav__menu">
           <a href="index.html">Cơ hội việc làm</a>
-          <a href="createNews.html">Nhà tuyển dụng</a>
+          <a href="createNews.html">
+            <span style="border-bottom: 2px solid #fff; padding: 3px 0"
+              >Nhà tuyển dụng
+            </span></a
+          >
           <span class="login">
             <a href="loginLogout.html"><i class="fa-solid fa-user"></i></a>
           </span>
@@ -125,10 +129,12 @@
       </div>
       <div class="nav__menu-mobile">
         <div class="nav__menu-mobile-item">
-          <a href="index.html">Cơ hội việc làm</a>
+          <a href="index.html">
+            <span> Cơ hội việc làm </span>
+          </a>
         </div>
         <div class="nav__menu-mobile-item">
-          <a href="createNews.html">Nhà tuyển dụng</a>
+          <a href="createNews.html"> Nhà tuyển dụng </a>
         </div>
       </div>
     </header>
@@ -139,12 +145,12 @@
           <div class="create-new-content">
             <div class="create-tab-title">
               <div class="create-tab-title__tab create-tab-title__tab1">
-                <a href="createNews.html">Tạo tin ứng tuyển</a>
+                <a href="createNews.html">Tạo tin</a>
               </div>
               <div
                 class="tab__create-job-active create-tab-title__tab create-tab-title__tab2"
               >
-                <a href="postedNews.html">Danh sách tin đã đăng</a>
+                <a href="postedNews.html">Tin đã đăng</a>
               </div>
               <div class="create-tab-title__tab create-tab-title__tab3">
                 <a href="fileApply.html">Hồ sơ ứng tuyển</a>
@@ -153,7 +159,36 @@
             <!-- Nôi dung tab 1 -->
 
             <div class="tab2__content">
-              <table style="margin-top: 24px">
+              <div class="filter-posted-new">
+                <div class="row">
+                  <div
+                    class="col-12 col-md-2 col-lg-2 col-xl-1 filter-file-title"
+                  >
+                    <span class="d-block me-2">Bộ lọc</span>
+                    <i class="fa-solid fa-filter"></i>
+                  </div>
+                  <div class="col-12 col-md-10 col-lg-10 col-xl-11">
+                    <div class="row">
+                      <div class="col-12 col-md-6">
+                        <select class="filter-status" style="max-width: 100%">
+                          <option value="">Tất cả trạng thái</option>
+                          <option value="Chờ duyệt">Chờ duyệt</option>
+                          <option value="Đã duyệt">Đã duyệt</option>
+                          <option value="Không duyệt">Không duyệt</option>
+                        </select>
+                      </div>
+                      <div class="col-12 col-md-4 col-lg-3">
+                        <select class="filter-submit-deadline">
+                          <option value="">Tất cả thời hạn nộp</option>
+                          <option value="Còn hạn">Còn hạn</option>
+                          <option value="Hết hạn">Hết hạn</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <table style="margin-top: 40px">
                 <tr>
                   <th>Tên tin đăng</th>
                   <th>Ngày đăng</th>
@@ -176,6 +211,7 @@
                     >
                   </td>
                   <td>
+                    <div class="id_new-job" style="display: none">1</div>
                     <div class="news__recruitment_remove">
                       <i class="fa-solid fa-trash-can"></i>
                     </div>
@@ -194,6 +230,7 @@
                     >
                   </td>
                   <td>
+                    <div class="id_new-job" style="display: none">2</div>
                     <div class="news__recruitment_remove">
                       <i class="fa-solid fa-trash-can"></i>
                     </div>
@@ -201,6 +238,9 @@
                 </tr>
               </table>
               <div class="tab2__content-mobile">
+                <h4 class="recruitment-file-moble-title">
+                  Danh sách tin đã đăng
+                </h4>
                 <div class="news__recruitment">
                   <div
                     class="d-flex justify-content-between align-items-center"
@@ -210,6 +250,7 @@
                     >
                       Chờ duyệt
                     </div>
+                    <div class="id_new-job" style="display: none">1</div>
                     <div
                       class="news__recruitment_remove-mobile"
                       data-bs-toggle="modal"
@@ -251,6 +292,7 @@
                     >
                       Chờ duyệt
                     </div>
+                    <div class="id_new-job" style="display: none">2</div>
                     <div class="news__recruitment_remove-mobile">
                       <i class="fa-solid fa-trash-can"></i>
                     </div>
@@ -279,6 +321,21 @@
                     </div>
                   </div>
                 </div>
+              </div>
+              <div class="table-empty">
+                <div class="table-empty-group">
+                  <h6 class="table-empty-title">
+                    Bạn chưa có tin tuyển dụng nào !
+                  </h6>
+                  <button class="btn btn-primary table-empty-btn">
+                    <a href="fileApply.html">Tạo tin ngay</a>
+                  </button>
+                </div>
+              </div>
+              <div style="display: none" id="total_page">10</div>
+
+              <div class="panigation d-flex justify-content-center mt-4">
+                <ul id="pagination-demo" class="pagination-sm"></ul>
               </div>
             </div>
           </div>
@@ -357,6 +414,7 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="src/Js/base.js"></script>
+    <script src="src/Js/pagination.js"></script>
     <script src="src/Js/postedNews.js"></script>
   </body>
 </html>

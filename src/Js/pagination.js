@@ -24,10 +24,11 @@ $("#pagination-demo").twbsPagination({
 
   onPageClick: function (event, page) {},
 });
-function updateQueryParamPage() {
+
+function updateQueryParamPage(firstParam, secondParam) {
   const pathNameUrl = window.location.pathname;
-  const filter_name = getParameterByName("position_recruit", url);
-  const filter_time = getParameterByName("time_submit", url);
+  const param1 = getParameterByName(firstParam, url);
+  const param2 = getParameterByName(secondParam, url);
   const pageParam = getParameterByName("page", url);
   const ElmPageCurrent = document.querySelector(`#page${pageParam}`);
   let ElmPageList = document.querySelectorAll(".page-link");
@@ -37,30 +38,29 @@ function updateQueryParamPage() {
       Number.isInteger(+element.innerText);
       if (Number.isInteger(+element.innerText)) {
         window.location.assign(
-          `${pathNameUrl}?position_recruit=${filter_name}&time_submit=${filter_time}&page=${element.innerText}`
+          `${pathNameUrl}?${firstParam}=${param1}&${secondParam}=${param2}&page=${element.innerText}`
         );
       } else if (element.innerText === "Trước" && +pageParam > 1) {
         window.location.assign(
-          `${pathNameUrl}?position_recruit=${filter_name}&time_submit=${filter_time}&page=${
+          `${pathNameUrl}?${firstParam}=${param1}&${secondParam}=${param2}&page=${
             +pageParam - 1
           }`
         );
       } else if (element.innerText === "Tiếp" && +pageParam <= +numberOfPage) {
         window.location.assign(
-          `${pathNameUrl}?position_recruit=${filter_name}&time_submit=${filter_time}&page=${
+          `${pathNameUrl}?${firstParam}=${param1}&${secondParam}=${param2}&page=${
             +pageParam + 1
           }`
         );
       } else if (element.innerText === "Cuối") {
         window.location.assign(
-          `${pathNameUrl}?position_recruit=${filter_name}&time_submit=${filter_time}&page=${totalPage}`
+          `${pathNameUrl}?${firstParam}=${param1}&${secondParam}=${param2}&page=${totalPage}`
         );
       } else if (element.innerText === "Đầu") {
         window.location.assign(
-          `${pathNameUrl}?position_recruit=${filter_name}&time_submit=${filter_time}&page=${1}`
+          `${pathNameUrl}?${firstParam}=${param1}&${secondParam}=${param2}&page=${1}`
         );
       }
     };
   });
 }
-updateQueryParamPage();

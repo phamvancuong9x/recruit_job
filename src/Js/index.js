@@ -51,3 +51,7 @@ function clearSearch() {
   };
 }
 clearSearch();
+
+// pagination
+
+updateQueryParamPage("keyword", "location");

@@ -56,8 +56,12 @@
           </a>
         </div>
         <div class="nav__menu">
-          <a href="index.html">Cơ hội việc làm</a>
-          <a href="createNews.html">Nhà tuyển dụng</a>
+          <a href="index.html"> Cơ hội việc làm</a>
+          <a href="createNews.html">
+            <span style="border-bottom: 2px solid #fff; padding: 3px 0"
+              >Nhà tuyển dụng
+            </span></a
+          >
           <span class="login">
             <a href="loginLogout.html"><i class="fa-solid fa-user"></i></a>
           </span>
@@ -141,10 +145,10 @@
               <div
                 class="tab__create-job-active create-tab-title__tab create-tab-title__tab1"
               >
-                <a href="createNews.html">Tạo tin ứng tuyển</a>
+                <a href="createNews.html">Tạo tin</a>
               </div>
               <div class="create-tab-title__tab create-tab-title__tab2">
-                <a href="postedNews.html">Danh sách tin đã đăng</a>
+                <a href="postedNews.html">Tin đã đăng</a>
               </div>
               <div class="create-tab-title__tab create-tab-title__tab3">
                 <a href="fileApply.html">Hồ sơ ứng tuyển</a>
@@ -282,11 +286,11 @@
                     </div>
                   </div>
                   <div class="col-12 col-sm-6 col-md-4">
-                    <div class="input-group">
+                    <div class="input-group" class="d-flex">
                       <p class="input_error input_error-deadline1">
                         Ngày chọn phải lớn hơn ngày hiện tại
                       </p>
-                      <div class="input__title">
+                      <div class="input__title" style="width: 100%">
                         Hạn nộp hồ sơ <span class="text-red-500"> *</span>
                       </div>
                       <input
@@ -294,6 +298,7 @@
                         class="input_create-job"
                         type="date"
                         name="date"
+                        style="flex: 1"
                       />
 
                       <p class="input_error input_error-deadline2">
@@ -373,6 +378,59 @@
                       <p class="input_error">Vui lòng chọn nơi làm việc</p>
                     </div>
                   </div>
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <div class="input-group">
+                      <div class="input__title">
+                        Ngành nghề<span class="text-red-500"> *</span>
+                      </div>
+
+                      <select
+                        id="input__workplace"
+                        class="input-select input_create-job"
+                        name="workplace"
+                      >
+                        <option class="input__title-option-item" value="">
+                          Chọn
+                        </option>
+
+                        <option
+                          class="input__title-option-item"
+                          value="Front-End"
+                        >
+                          Front-End
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          Back-End
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          FullStack
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          ReactJS
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          ReactNative
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          DevOps
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          VueJS
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          GoLang
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          Java
+                        </option>
+                        <option class="input__title-option-item" value="">
+                          C/C++
+                        </option>
+                      </select>
+                      <p class="input_error">Vui lòng chọn ngành nghề</p>
+                    </div>
+                  </div>
+
                   <!-- mô tả công việc -->
 
                   <div class="col-12 input__describe">

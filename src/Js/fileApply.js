@@ -15,10 +15,33 @@ function changeStatus() {
       } else {
         $($(element)).addClass("status-reject");
       }
+      const id = element.previousElementSibling.innerText;
+      const status_file = element.value;
+      var req = {
+        id_file: id,
+        status_file,
+      };
+      var myJSON = JSON.stringify(req);
+      $.ajax({
+        url: "index/html",
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        data: myJSON,
+        dataType: "json",
+
+        success: function (data) {
+          $("#modal-signin").modal("hide");
+          toastr.success("Thay đổi trạng thái hồ sơ thành công ");
+        },
+        error: function (xhr) {
+          toastr.warning(xhr.responseJSON);
+        },
+      });
     };
   });
 }
 changeStatus();
+
 //filter recruitment file (lọc danh sách hồ sơ ứng tuyển)
 
 function filterNameRecruitmentFile() {
@@ -41,3 +64,7 @@ function filterNameRecruitmentFile() {
   });
 }
 filterNameRecruitmentFile();
+
+// pagination
+
+updateQueryParamPage("position_recruit", "time_submit");

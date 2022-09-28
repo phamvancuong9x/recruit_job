@@ -207,7 +207,6 @@ function submitJob() {
         processData: false,
         success: function (data) {
           toastr.success("Tạo tin tuyển dụng thành công. Vui lòng chờ duyệt");
-          localStorage.setItem("tab2", "true");
         },
         error: function (xhr) {
           toastr.warning(xhr.responseJSON);

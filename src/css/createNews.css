@@ -247,7 +247,9 @@ body {
 }
 
 /* Phần danh sách tin đã đăng*/
-
+.tab2__content {
+  padding: 30px 0;
+}
 .tab2__content table {
   width: 100%;
 }
@@ -281,6 +283,7 @@ body {
 option {
   background-color: #fff;
   color: #000;
+  /* text-align: start; */
 }
 /* tab2_content-mobile */
 .news__recruitment {
@@ -293,7 +296,7 @@ option {
   font-weight: 500;
 }
 .news__recruitment-name {
-  margin-bottom: 12px;
+  margin: 12px 0;
 }
 .news__recruitment_status {
   border-radius: 15px;
@@ -322,6 +325,27 @@ option {
 .tab2__content-mobile,
 .tab3__content-mobile {
   display: none;
+}
+.table-empty {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table-empty-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.table-empty-title {
+  margin-bottom: 12px;
+}
+.table-empty-btn {
+  width: 60%;
+}
+.table-empty-btn > a:hover {
+  color: #fff;
 }
 /* Hồ sơ ứng tuyển*/
 .tab3__content {
@@ -434,7 +458,8 @@ table.recruitment-file tbody tr td {
   }
 }
 @media (max-width: 767px) {
-  .filter-time {
+  .filter-time,
+  .filter-submit-deadline {
     margin-top: 12px;
   }
 }
@@ -467,8 +492,14 @@ table.recruitment-file tbody tr td {
   .menu__featureJob-item {
     font-size: 22px;
   }
+  .create-tab-title__tab1,
+  .create-tab-title__tab2,
+  .create-tab-title__tab3 {
+    font-weight: 700;
+    font-size: 16px;
+  }
 }
-@media (max-width: 376px) {
+@media (max-width: 375px) {
   .menu__featureJob-item {
     font-size: 20px;
   }
@@ -486,5 +517,9 @@ table.recruitment-file tbody tr td {
 @media (max-width: 340px) {
   .menu__featureJob-item {
     font-size: 18px;
+  }
+  .create-tab-title__tab1,
+  .create-tab-title__tab2 {
+    margin-right: 10px;
   }
 }
