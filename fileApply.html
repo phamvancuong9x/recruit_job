@@ -97,7 +97,7 @@
       >
         <div class="bar-icon"><i class="fa-solid fa-bars"></i></div>
         <div class="logo">
-          <a href="index.html"
+          <a href="https://techmaster.vn/"
             ><img
               src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
               alt=""
@@ -164,31 +164,50 @@
                     <i class="fa-solid fa-filter"></i>
                   </div>
                   <div class="col-12 col-md-10 col-lg-10 col-xl-11">
-                    <div class="row">
-                      <div class="col-12 col-md-6">
-                        <select class="filter-name" style="max-width: 100%">
-                          <option value="">Tất cả các tin đã đăng</option>
-                          <option value="Vị trí tuyển dụng 1">
-                            Tuyển dụng lập trình viên Fullstack
-                          </option>
-                          <option value="Vị trí tuyển dụng 2">
-                            Tuyển dụng lập trình viên Frontend
-                          </option>
-                        </select>
+                    <form action="fileApply.html">
+                      <div class="row">
+                        <div class="col-12 col-md-3 col-lg-3">
+                          <div class="filter-name">
+                            <input
+                              type="text"
+                              id="input__filter-name"
+                              class="input-select"
+                              placeholder="Tất cả các tin đã đăng"
+                              autocomplete="off"
+                              name="position_recruit"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-3">
+                          <select class="filter-time" name="time_submit">
+                            <option value="">Tất cả thời gian nộp</option>
+                            <option value="3 ngày">3 ngày</option>
+                            <option value="1 tuần">1 tuần</option>
+                            <option value="2 tuần">2 tuần</option>
+                            <option value="1 tháng">1 tháng</option>
+                            <option value="2 tháng">2 tháng</option>
+                            <option value="3 tháng">3 tháng</option>
+                            <option value="Trên 3 tháng">Trên 3 tháng</option>
+                          </select>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-3">
+                          <select class="filter-status" name="status_profile">
+                            <option value="">Tất cả trạng thái hồ sơ</option>
+                            <option value="3 ngày">Chưa liên hệ</option>
+                            <option value="1 tuần">Đạt</option>
+                            <option value="2 tuần">Không đạt</option>
+                          </select>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2">
+                          <button
+                            type="submit"
+                            class="btn btn-primary btn-search-fileApply"
+                          >
+                            Tìm kiếm
+                          </button>
+                        </div>
                       </div>
-                      <div class="col-12 col-md-4 col-lg-3">
-                        <select class="filter-time">
-                          <option value="">Tất cả thời gian nộp</option>
-                          <option value="3 ngày">3 ngày</option>
-                          <option value="1 tuần">1 tuần</option>
-                          <option value="2 tuần">2 tuần</option>
-                          <option value="1 tháng">1 tháng</option>
-                          <option value="2 tháng">2 tháng</option>
-                          <option value="3 tháng">3 tháng</option>
-                          <option value="Trên 3 tháng">Trên 3 tháng</option>
-                        </select>
-                      </div>
-                    </div>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -245,9 +264,9 @@
                     <td>Phạm văn Cường</td>
                     <td class="position-apply">Lập trình viên Frontend</td>
                     <td>16/10/2022</td>
-                    <td>
+                    <td class="file-cv">
                       <a href="http://localhost:8087/api/download/file/8w_9r0Is"
-                        >FresherFrontend.docx</a
+                        >FresherFrontendABCXYZaadadAVCCSCasasjjaddddddddd.docx</a
                       >
                     </td>
                     <td>
@@ -331,7 +350,7 @@
                       <div class="date-submit-text">
                         <a
                           href="http://localhost:8087/api/download/file/8w_9r0Is"
-                          >FresherFrontend.docx</a
+                          >FresherFrontendABCXYZaadadAVCCSCasasjjaddddddddd.docx</a
                         >
                       </div>
                     </div>
@@ -385,7 +404,7 @@
                       <div class="date-submit-text">
                         <a
                           href="http://localhost:8087/api/download/file/8w_9r0Is"
-                          >FresherFrontend.docx</a
+                          >FresherFrontendABCXYZaadadAVCCSCasasjjaddddddddd.docx</a
                         >
                       </div>
                     </div>

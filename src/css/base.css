@@ -242,6 +242,7 @@ header {
 .tab-content-active {
   display: block !important;
 }
+/*  */
 
 @media (max-width: 576px) {
   header {
@@ -258,5 +259,10 @@ header {
   }
   .header__content {
     padding: 0 15px;
+  }
+}
+@media (max-width: 375px) {
+  .panigation {
+    overflow: auto;
   }
 }

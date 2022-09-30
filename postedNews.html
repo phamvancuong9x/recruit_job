@@ -97,7 +97,7 @@
       >
         <div class="bar-icon"><i class="fa-solid fa-bars"></i></div>
         <div class="logo">
-          <a href="index.html"
+          <a href="https://techmaster.vn/"
             ><img
               src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
               alt=""
@@ -168,23 +168,40 @@
                     <i class="fa-solid fa-filter"></i>
                   </div>
                   <div class="col-12 col-md-10 col-lg-10 col-xl-11">
-                    <div class="row">
-                      <div class="col-12 col-md-6">
-                        <select class="filter-status" style="max-width: 100%">
-                          <option value="">Tất cả trạng thái</option>
-                          <option value="Chờ duyệt">Chờ duyệt</option>
-                          <option value="Đã duyệt">Đã duyệt</option>
-                          <option value="Không duyệt">Không duyệt</option>
-                        </select>
+                    <form action="postedNews.html">
+                      <div class="row">
+                        <div class="col-12 col-md-3 col-lg-3">
+                          <select
+                            class="filter-status"
+                            style="max-width: 100%"
+                            name="posting_status"
+                          >
+                            <option value="">Tất cả trạng thái</option>
+                            <option value="Chờ duyệt">Chờ duyệt</option>
+                            <option value="Đã duyệt">Đã duyệt</option>
+                            <option value="Không duyệt">Không duyệt</option>
+                          </select>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3">
+                          <select
+                            class="filter-submit-deadline"
+                            name="submit_deadline"
+                          >
+                            <option value="">Tất cả thời hạn nộp</option>
+                            <option value="Còn hạn">Còn hạn</option>
+                            <option value="Hết hạn">Hết hạn</option>
+                          </select>
+                        </div>
+                        <div class="col-6 col-md-3 col-lg-2">
+                          <button
+                            type="submit"
+                            class="btn btn-primary btn-search-fileApply"
+                          >
+                            Tìm kiếm
+                          </button>
+                        </div>
                       </div>
-                      <div class="col-12 col-md-4 col-lg-3">
-                        <select class="filter-submit-deadline">
-                          <option value="">Tất cả thời hạn nộp</option>
-                          <option value="Còn hạn">Còn hạn</option>
-                          <option value="Hết hạn">Hết hạn</option>
-                        </select>
-                      </div>
-                    </div>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -328,7 +345,7 @@
                     Bạn chưa có tin tuyển dụng nào !
                   </h6>
                   <button class="btn btn-primary table-empty-btn">
-                    <a href="fileApply.html">Tạo tin ngay</a>
+                    <a href="createNews.html">Tạo tin ngay</a>
                   </button>
                 </div>
               </div>

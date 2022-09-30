@@ -15,7 +15,7 @@ function getParameterByName(name, url) {
 
 $("#pagination-demo").twbsPagination({
   totalPages: totalPage,
-  visiblePages: 7,
+  visiblePages: 6,
   startPage: +pageParam,
   last: "Cuối",
   next: "Tiếp",
@@ -25,42 +25,94 @@ $("#pagination-demo").twbsPagination({
   onPageClick: function (event, page) {},
 });
 
-function updateQueryParamPage(firstParam, secondParam) {
+function updateQueryParamPage(firstParam, secondParam, thirdParam) {
   const pathNameUrl = window.location.pathname;
   const param1 = getParameterByName(firstParam, url);
   const param2 = getParameterByName(secondParam, url);
+  const param3 = getParameterByName(thirdParam, url);
   const pageParam = getParameterByName("page", url);
-  const ElmPageCurrent = document.querySelector(`#page${pageParam}`);
   let ElmPageList = document.querySelectorAll(".page-link");
   const numberOfPage = ElmPageList.length - 2;
   ElmPageList.forEach((element) => {
     element.onclick = function () {
       Number.isInteger(+element.innerText);
       if (Number.isInteger(+element.innerText)) {
-        window.location.assign(
-          `${pathNameUrl}?${firstParam}=${param1}&${secondParam}=${param2}&page=${element.innerText}`
+        directUrl(
+          pathNameUrl,
+          firstParam,
+          param1,
+          secondParam,
+          param2,
+          thirdParam,
+          param3,
+          element.innerText
         );
       } else if (element.innerText === "Trước" && +pageParam > 1) {
-        window.location.assign(
-          `${pathNameUrl}?${firstParam}=${param1}&${secondParam}=${param2}&page=${
-            +pageParam - 1
-          }`
+        directUrl(
+          pathNameUrl,
+          firstParam,
+          param1,
+          secondParam,
+          param2,
+          thirdParam,
+          param3,
+          +pageParam - 1
         );
       } else if (element.innerText === "Tiếp" && +pageParam <= +numberOfPage) {
-        window.location.assign(
-          `${pathNameUrl}?${firstParam}=${param1}&${secondParam}=${param2}&page=${
-            +pageParam + 1
-          }`
+        directUrl(
+          pathNameUrl,
+          firstParam,
+          param1,
+          secondParam,
+          param2,
+          thirdParam,
+          param3,
+          +pageParam + 1
         );
       } else if (element.innerText === "Cuối") {
-        window.location.assign(
-          `${pathNameUrl}?${firstParam}=${param1}&${secondParam}=${param2}&page=${totalPage}`
+        directUrl(
+          pathNameUrl,
+          firstParam,
+          param1,
+          secondParam,
+          param2,
+          thirdParam,
+          param3,
+          totalPage
         );
       } else if (element.innerText === "Đầu") {
-        window.location.assign(
-          `${pathNameUrl}?${firstParam}=${param1}&${secondParam}=${param2}&page=${1}`
+        directUrl(
+          pathNameUrl,
+          firstParam,
+          param1,
+          secondParam,
+          param2,
+          thirdParam,
+          param3,
+          1
         );
       }
     };
   });
+}
+
+function directUrl(
+  pathNameUrl,
+  name_param1,
+  text_param1,
+  name_param2,
+  text_param2,
+  name_param3,
+  text_param3,
+  page
+) {
+  if (name_param3 !== "") {
+    window.location.assign(
+      `${pathNameUrl}?${name_param1}=${text_param1}&${name_param2}=${text_param2}&${name_param3}=${text_param3}&page=${page}`
+    );
+  } else {
+    window.location.assign(
+      `${pathNameUrl}?${name_param1}=${text_param1}&${name_param2}=${text_param2}&page=${page}`
+    );
+  }
 }

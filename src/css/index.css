@@ -139,6 +139,10 @@ label {
   padding: 4px;
   background-color: #ffff;
 }
+.image-logo > img {
+  height: 100%;
+  object-fit: cover;
+}
 .job__list {
   --bs-gutter-x: 12px;
   --bs-gutter-y: 12px;
@@ -211,9 +215,6 @@ select {
 @media (max-width: 375px) {
   .menu__featureJob-item {
     font-size: 20px;
-  }
-  .panigation {
-    overflow: auto;
   }
 }
 @media (max-width: 340px) {

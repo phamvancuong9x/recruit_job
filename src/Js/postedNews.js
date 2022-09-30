@@ -43,32 +43,9 @@ function hideModalNewsJob() {
 }
 hideModalNewsJob();
 
-//filter recruitment file (lọc danh sách hồ sơ ứng tuyển)
-
-function filterPostedNews() {
-  const pathNameUrl = window.location.pathname;
-
-  $(".filter-status").on("change", function () {
-    const filter_status = $(".filter-status").val();
-    const filter_submit_deadline = $(".filter-submit-deadline").val();
-
-    window.location.assign(
-      `${pathNameUrl}?posting_status=${filter_status}&submit_deadline=${filter_submit_deadline}`
-    );
-  });
-  $(".filter-submit-deadline").on("change", function () {
-    const filter_status = $(".filter-status").val();
-    const filter_submit_deadline = $(".filter-submit-deadline").val();
-    window.location.assign(
-      `${pathNameUrl}?posting_status=${filter_status}&submit_deadline=${filter_submit_deadline}`
-    );
-  });
-}
-filterPostedNews();
-
 // pagination
 
-updateQueryParamPage("posting_status", "submit_deadline");
+updateQueryParamPage("posting_status", "submit_deadline", "");
 
 function removeJob(id, ElmRemove) {
   var req = {
@@ -92,3 +69,6 @@ function removeJob(id, ElmRemove) {
     },
   });
 }
+// pagination
+
+updateQueryParamPage("posting_status", "submit_deadline", "");

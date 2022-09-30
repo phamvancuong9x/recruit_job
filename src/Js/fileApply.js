@@ -42,29 +42,6 @@ function changeStatus() {
 }
 changeStatus();
 
-//filter recruitment file (lọc danh sách hồ sơ ứng tuyển)
-
-function filterNameRecruitmentFile() {
-  const pathNameUrl = window.location.pathname;
-
-  $(".filter-name").on("change", function () {
-    const filter_name = $(".filter-name").val();
-    const filter_time = $(".filter-time").val();
-
-    window.location.assign(
-      `${pathNameUrl}?position_recruit=${filter_name}&time_submit=${filter_time}`
-    );
-  });
-  $(".filter-time").on("change", function () {
-    const filter_name = $(".filter-name").val();
-    const filter_time = $(".filter-time").val();
-    window.location.assign(
-      `${pathNameUrl}?position_recruit=${filter_name}&time_submit=${filter_time}`
-    );
-  });
-}
-filterNameRecruitmentFile();
-
 // pagination
 
-updateQueryParamPage("position_recruit", "time_submit");
+updateQueryParamPage("position_recruit", "time_submit", "status_profile");
