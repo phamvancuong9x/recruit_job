@@ -1,7 +1,6 @@
 const ElmInputSelect = document.querySelectorAll(".input-select");
 const ElmInput = document.querySelectorAll(".input_create-job");
 const ElmBtnSubmit = document.querySelector(".btn-submit-job");
-// mức lương
 const ElmInputMinSalary = document.querySelector("#input__min-salary");
 const ElmInputMaxSalary = document.querySelector("#input__max-salary");
 const ElmInputSalary = document.querySelectorAll(".input__salary");
@@ -169,8 +168,12 @@ function formatDate(stringDate) {
 // }
 // previewSwitchCreateJob();
 
+// Tạo mới tin tuyển dụng
+
 function submitJob() {
-  ElmBtnSubmit.addEventListener("click", function (e) {
+  const ElmBtnSubmitCreate = document.querySelector("#btn-submit-new-job");
+  if (!ElmBtnSubmitCreate) return;
+  ElmBtnSubmitCreate.addEventListener("click", function (e) {
     var dataCheditor1 = CKEDITOR.instances.editor1.getData();
     var dataCheditor2 = CKEDITOR.instances.editor2.getData();
     var dataCheditor3 = CKEDITOR.instances.editor3.getData();
@@ -207,6 +210,9 @@ function submitJob() {
         processData: false,
         success: function (data) {
           toastr.success("Tạo tin tuyển dụng thành công. Vui lòng chờ duyệt");
+          setTimeout(() => {
+            window.location.href("postedNews.html");
+          }, 2000);
         },
         error: function (xhr) {
           toastr.warning(xhr.responseJSON);
@@ -217,7 +223,61 @@ function submitJob() {
 }
 submitJob();
 
-(function ckeckInputSalary() {
+// chỉnh sửa tin tuyển dụng
+function submitJobUpdate() {
+  const ElmBtnSubmitUpdate = document.querySelector("#btn-submit-job-update");
+  if (!ElmBtnSubmitUpdate) return;
+  ElmBtnSubmitUpdate.addEventListener("click", function (e) {
+    var dataCheditor1 = CKEDITOR.instances.editor1.getData();
+    var dataCheditor2 = CKEDITOR.instances.editor2.getData();
+    var dataCheditor3 = CKEDITOR.instances.editor3.getData();
+    let checkValidateForm = false;
+
+    getAllElmError.forEach((element) => {
+      if (element.style.display === "block") {
+        checkValidateForm = true;
+        return;
+      }
+    });
+    if (checkValidateForm) {
+      toastr.warning("Vui lòng nhập đầy đủ thông tin ");
+    }
+
+    if (!checkValidateForm) {
+      var formData = new FormData($("#form-tab1")[0]);
+      const dateUtc = moment(ElmDateline.value).toISOString();
+      formData.set("date", dateUtc);
+      formData.set(
+        "salary",
+        ` ${ElmInputMinSalary.value}-${ElmInputMaxSalary.value}`
+      );
+      formData.append("describe_job", dataCheditor1);
+      formData.append("describe_job", dataCheditor2);
+      formData.append("describe_job", dataCheditor3);
+      formData.append("id_company", $("#id_company").text());
+
+      $.ajax({
+        url: "index.html",
+        type: "PUT",
+        contentType: "application/json; charset=utf-8",
+        data: formData,
+        processData: false,
+        success: function (data) {
+          toastr.success("Cập nhật thành công");
+          setTimeout(() => {
+            window.location.href("postedNews.html");
+          }, 2000);
+        },
+        error: function (xhr) {
+          toastr.warning(xhr.responseJSON);
+        },
+      });
+    }
+  });
+}
+submitJob();
+
+function ckeckInputSalary() {
   ElmInputSalary.forEach((element) => {
     element.oninput = function () {
       if (
@@ -229,4 +289,4 @@ submitJob();
       }
     };
   });
-})();
+}

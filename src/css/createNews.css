@@ -49,6 +49,8 @@ body {
 .create-new-content {
   background-color: #fff;
   padding: 24px 32px;
+  min-height: 78vh;
+  margin-bottom: 49px;
 }
 .create-tab-title {
   display: flex;
@@ -141,7 +143,8 @@ body {
   margin-right: 10px;
 }
 .btn-cannel,
-.btn-continue {
+.btn-continue,
+#btn-submit-job-update {
   width: 140px;
 }
 
@@ -168,7 +171,7 @@ body {
 
 /* phần preview */
 .tab1_preview {
-  display: none;
+  /* display: none; */
 }
 .tab1_preview-content {
   position: relative;
@@ -214,19 +217,24 @@ body {
 .tab1_preview-btn {
   display: flex;
   justify-content: end;
-  margin-top: 20px;
+  max-width: 1000px;
+  margin: 20px auto;
 }
 .preview__btn-edit {
   margin-right: 20px;
   background-color: #bcf1ed;
 }
 .preview__btn-edit,
-.preview__btn-submit {
+.preview__btn-submit,
+.btn-submit-job-update {
   font-weight: 600;
   width: 140px;
 }
 
 /* Phần danh sách tin đã đăng*/
+.name-news-job {
+  font-weight: 500;
+}
 .input__title-option {
   display: none;
   max-height: 180px;

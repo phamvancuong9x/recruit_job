@@ -50,6 +50,9 @@ header {
   background-color: #0f5298;
   position: relative;
 }
+.container {
+  min-height: calc(100vh - 110px);
+}
 .text-red-500 {
   color: red;
 }
@@ -242,8 +245,14 @@ header {
 .tab-content-active {
   display: block !important;
 }
-/*  */
 
+/* footer */
+footer {
+  padding: 2rem 0;
+  background-color: #0f5298;
+  color: #fff;
+  text-align: center;
+}
 @media (max-width: 576px) {
   header {
     background-color: #fff;

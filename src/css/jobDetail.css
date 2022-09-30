@@ -57,6 +57,7 @@ body {
 }
 .job__title-img > img {
   width: 60px;
+  height: 60px;
   object-fit: cover;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -165,6 +166,7 @@ body {
 
 .job__list-item:hover {
   box-shadow: 0 3px 6px 0 rgb(0 86 145 / 31%);
+  color: unset;
 }
 .image-logo {
   background-color: #ffff;
@@ -192,6 +194,11 @@ body {
 .workplace-icon,
 .job__time-icon {
   color: rgb(166, 164, 164);
+}
+.expires-apply {
+  display: none;
+  margin-top: 20px;
+  background-color: #ededed !important;
 }
 
 /* modal */

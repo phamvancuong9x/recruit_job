@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nhà tuyển dụng</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="src/css/base.css" />
+    <link rel="stylesheet" href="src/css/createNews.css" />
+    <script src="https://cdn.ckeditor.com/4.19.1/basic/ckeditor.js"></script>
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-date-picker/3.2.3/tiny-date-picker.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-date-picker/3.2.3/tiny-date-picker.min.js"></script> -->
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <div
+        class="header__content header__content-desktop"
+        style="
+          line-height: 60px;
+          background-color: #0f5298;
+          color: #fff;
+          text-align: center;
+
+          font-size: 20px;
+        "
+      >
+        <div class="logo">
+          <a href="https://techmaster.vn/"
+            ><img
+              src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="nav__menu">
+          <a href="index.html"> Cơ hội việc làm </a>
+          <a href="createNews.html">
+            <span style="border-bottom: 2px solid #fff; padding: 3px 0"
+              >Nhà tuyển dụng
+            </span></a
+          >
+          <span class="login">
+            <a href="loginLogout.html"><i class="fa-solid fa-user"></i></a>
+          </span>
+          <div class="header__user">
+            <div class="header__user-info">
+              <div class="header__user-image">
+                <img src="src/image/avatar.png" alt="user image" />
+              </div>
+            </div>
+            <ul class="header__user-list">
+              <li class="header__user-item">
+                <a href="user.html">Thông tin tài khoản</a>
+              </li>
+              <li class="header__user-item">
+                <a href="infoCompany.html">Thông tin công ty</a>
+              </li>
+
+              <li class="header__user-item">
+                <a class="/logout">Đăng xuất</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="header__content header__content-mobile"
+        style="
+          background-color: #0f5298;
+          color: #fff;
+          text-align: center;
+          font-size: 20px;
+        "
+      >
+        <div class="bar-icon"><i class="fa-solid fa-bars"></i></div>
+        <div class="logo">
+          <a href="https://techmaster.vn/"
+            ><img
+              src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="login login-mobile">
+          <a href="loginLogout.html"><i class="fa-solid fa-user"></i></a>
+        </div>
+        <div class="header__user header__user-mobile">
+          <div class="header__user-info">
+            <div class="header__user-image">
+              <img src="src/image/avatar.png" alt="user image" />
+            </div>
+          </div>
+          <ul class="header__user-list header__user-list-mobile">
+            <li class="header__user-item">
+              <a href="user.html">Thông tin tài khoản</a>
+            </li>
+            <!-- <li class="header__user-item">
+              <a href="infoCmpany.html">Thông tin công ty</a>
+            </li> -->
+
+            <li class="header__user-item">
+              <span class="logout logout-mobile">Đăng xuất</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav__menu-mobile">
+        <div class="nav__menu-mobile-item">
+          <a href="index.html">Cơ hội việc làm</a>
+        </div>
+        <div class="nav__menu-mobile-item">
+          <a href="createNews.html">Nhà tuyển dụng</a>
+        </div>
+      </div>
+    </header>
+    <!-- content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12 create-new-container">
+          <div class="create-new-content">
+            <h4 style="padding: 20px 0; max-width: 1000px; margin: auto">
+              Nội dung tin tuyển dụng
+            </h4>
+            <div class="tab1_preview">
+              <div class="tab1_preview-content">
+                <!-- <span class="tag-preview">Xem trước</span> -->
+                <h5 class="preview__position_recruit">Lập trình viên</h5>
+                <div class="row">
+                  <div class="col-md-6 col-lg-5 col-12">
+                    <div class="row pt-1 pb-1">
+                      <div class="col-6">
+                        <div class="preview__title">Hình thức làm việc:</div>
+                      </div>
+                      <div class="col-6">
+                        <div class="preview__working-form">Fulltime</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-5 col-12">
+                    <div class="row pt-1 pb-1">
+                      <div class="col-6">
+                        <div class="preview__title">Bằng cấp :</div>
+                      </div>
+                      <div class="col-6">
+                        <div class="preview_text preview__degree">
+                          Không yêu cầu
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-5 col-12">
+                    <div class="row pt-1 pb-1">
+                      <div class="col-6">
+                        <div class="preview__title">Kinh nghiệm :</div>
+                      </div>
+                      <div class="col-6">
+                        <div class="preview_text preview__experience"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-5 col-12">
+                    <div class="row pt-1 pb-1">
+                      <div class="col-6">
+                        <div class="preview__title">Thời hạn nộp :</div>
+                      </div>
+                      <div class="col-6">
+                        <div
+                          class="preview_text preview__submit-deadline"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-5 col-12">
+                    <div class="row pt-1 pb-1">
+                      <div class="col-6">
+                        <div class="preview__title">Mức lương tối thiểu :</div>
+                      </div>
+                      <div class="col-6">
+                        <div class="preview_text preview__min-salary"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-5 col-12">
+                    <div class="row pt-1 pb-1">
+                      <div class="col-6">
+                        <div class="preview__title">Mức lương tối đa :</div>
+                      </div>
+                      <div class="col-6">
+                        <div class="preview_text preview__max-salary"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-5 col-12">
+                    <div class="row pt-1 pb-1">
+                      <div class="col-6">
+                        <div class="preview__title">Nơi làm việc :</div>
+                      </div>
+                      <div class="col-6">
+                        <div class="preview_text preview__workplace"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-5 col-12">
+                    <div class="row pt-1 pb-1">
+                      <div class="col-6">
+                        <div class="preview__title">Ngành nghề :</div>
+                      </div>
+                      <div class="col-6">
+                        <div class="preview_text preview__profession"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="preview__describe-job">
+                  <h5 class="">Mô tả công việc</h5>
+                  <div class="preview__describe-job-text"></div>
+                </div>
+                <div class="preview__request-job">
+                  <h5 class="">Yêu cầu công việc</h5>
+                  <div class="preview__request-job-text"></div>
+                </div>
+                <div class="preview__benefit-job">
+                  <h5 class="">Quyền lợi</h5>
+                  <div class="preview__benefit-job-text"></div>
+                </div>
+              </div>
+
+              <div class="tab1_preview-btn">
+                <a href="postedNews.html">
+                  <button type="button" class="btn btn-light btn-cannel">
+                    Trở về
+                  </button>
+                </a>
+                <a href="EditNews.html">
+                  <button
+                    type="button"
+                    class="btn btn-primary preview__btn-submit"
+                  >
+                    Chỉnh sửa
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer style=""></footer>
+    <!-- modal xóa tin tuyển dụng -->
+
+    <!-- Modal -->
+    <modal
+      class="modal fade"
+      id="removeNewsJobModal"
+      tabindex="-1"
+      aria-labelledby="removeNewsJobModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header flex-column align-items-start">
+            <h5 class="modal-title" id="removeNewsJobModalLabel">
+              Xóa tin tuyển dụng này
+            </h5>
+            <p>Bạn có chắc chắn xóa tin tuyển dụng này không ?</p>
+          </div>
+          <div class="modal-body">
+            <div class="newsJobName">Tuyển dụng lập trình viên</div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary btn-cannel-remove-job"
+              data-bs-dismiss="modal"
+            >
+              Hủy bỏ
+            </button>
+            <button type="button" class="btn btn-primary btn-remove-job">
+              Xóa
+            </button>
+          </div>
+        </div>
+      </div>
+    </modal>
+    <!-- id công ty  -->
+    <div id="id_company" style="display: none">12</div>
+    <span style="display: none" id="googleId">{{.GoogleClientId}}</span>
+    <span style="display: none" id="githubId">{{.GithubClientId}}</span>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js"
+      integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"
+      integrity="sha512-frFP3ZxLshB4CErXkPVEXnd5ingvYYtYhE5qllGdZmcOlRKNEPbufyupfdSTNmoF5ICaQNO6SenXzOZvoGkiIA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="src/Js/base.js"></script>
+  </body>
+</html>

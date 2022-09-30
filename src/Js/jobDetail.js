@@ -8,7 +8,6 @@ function getID() {
   return (id = array[array.length - 1]);
 }
 
-console.log(getID());
 (function tab() {
   ElmTab2Title.onclick = function tab() {
     $(".job__tab1-content").css("display", "none");
@@ -78,7 +77,6 @@ function getLinkFile() {
           .catch(() => toastr.warning("Upload file lỗi. Vui lòng thử lại"));
         const content = await rawResponse.json();
         const { url } = content;
-
         checkFileUpload(url);
       })();
     } else {
@@ -327,3 +325,21 @@ $("#btn-forgot-password").on("click", function () {
     },
   });
 });
+
+function formatDate(date) {
+  return date.split("/").reverse().join("/");
+}
+
+// hide button apply job
+function hideApplyJob() {
+  const date = new Date();
+  const timedDeadline = new Date(
+    formatDate($(".time_deadline-current").text())
+  );
+  console.log(timedDeadline, $(".time_deadline-current").text());
+  if (timedDeadline < date) {
+    $(".job__submit-file").css("display", "none");
+    $(".expires-apply").css("display", "block");
+  }
+}
+hideApplyJob();
