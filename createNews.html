@@ -294,7 +294,7 @@
                         Hạn nộp hồ sơ <span class="text-red-500"> *</span>
                       </div>
                       <input
-                        id="input__submit-deadline "
+                        id="input__submit-deadline"
                         class="input_create-job"
                         type="date"
                         name="date"
@@ -442,6 +442,40 @@
                     </div>
                   </div>
 
+                  <div class="col-12 col-sm-6 col-md-4">
+                    <div class="input-group">
+                      <div class="input__title">
+                        Hình thức làm việc <span class="text-red-500"> *</span>
+                      </div>
+
+                      <input
+                        type="text"
+                        id="input__working-form"
+                        class="input-select input_create-job"
+                        placeholder="Chọn"
+                        readonly
+                      />
+                      <div class="div">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckDefault"
+                          >
+                            Default checkbox
+                          </label>
+                        </div>
+                      </div>
+                      <p class="input_error">
+                        Vui lòng chọn hình thức làm việc
+                      </p>
+                    </div>
+                  </div>
                   <!-- mô tả công việc -->
 
                   <div class="col-12 input__describe">
@@ -660,6 +694,7 @@
       </div>
     </div>
     <!-- footer -->
+
     <footer style=""></footer>
     <!-- modal xóa tin tuyển dụng -->
 
@@ -727,6 +762,12 @@
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"
       integrity="sha512-frFP3ZxLshB4CErXkPVEXnd5ingvYYtYhE5qllGdZmcOlRKNEPbufyupfdSTNmoF5ICaQNO6SenXzOZvoGkiIA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"
+      integrity="sha512-rMGGF4wg1R73ehtnxXBt5mbUfN9JUJwbk21KMlnLZDJh7BkPmeovBuddZCENJddHYYMkCh9hPFnPmS9sspki8g=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>

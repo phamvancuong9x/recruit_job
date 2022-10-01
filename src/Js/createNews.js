@@ -107,7 +107,7 @@ checkValidate();
 function limitDate() {
   const date = new Date();
   const dateFormat = moment(date).format().slice(0, 10);
-  $("#input__submit-deadline")[0]?.setAttribute("min", dateFormat);
+  $("#input__submit-deadline")[0].setAttribute("min", dateFormat);
 }
 limitDate();
 
@@ -278,10 +278,27 @@ ckeckInputSalary();
 function showTimeDeadline() {
   const timeFormat = $("#time-deadline")
     .text()
-    .split("/")
+    .trim()
+    .split("-")
     .reverse()
-    .join("-")
-    .trim();
+    .join("-");
   $(".time-deadline-edit").val(timeFormat);
 }
 showTimeDeadline();
+function showSelect() {
+  for (let i = 0; i < ElmInputSelect?.length; i++) {
+    ElmInputSelect[i].onclick = function (e) {
+      e.stopPropagation();
+      for (let i = 0; i < ElmInputSelect?.length; i++) {
+        ElmInputSelect[i].nextElementSibling.style.display = "none";
+      }
+
+      if (ElmInputSelect[i].nextElementSibling.style.display === "block") {
+        ElmInputSelect[i].nextElementSibling.style.display = "none";
+      } else {
+        ElmInputSelect[i].nextElementSibling.style.display = "block";
+      }
+    };
+  }
+}
+showSelect();

@@ -2,6 +2,7 @@
 function showModalNewsJob() {
   document.querySelectorAll(".news__recruitment_remove").forEach((element) => {
     element.onclick = function () {
+      console.log(element);
       $("#removeNewsJobModal").modal();
       $(".newsJobName")[0].innerText = $(element)
         .parent()
@@ -22,15 +23,19 @@ function showModalNewsJobMobile() {
     .querySelectorAll(".news__recruitment_remove-mobile")
     .forEach((element) => {
       $(element).on("click", function () {
-        // const id = element.previousElementSibling.innerText;
-        // console.log(id);
+        const id = element.previousElementSibling.innerText;
         $("#removeNewsJobModal").modal();
 
         $(".newsJobName")[0].innerText = $(element)
           .parent()
-          .next()
+          .parent()
           .children()
-          .first()[0].innerText;
+          .first()
+          .children()[0].innerText;
+        const ElmRemove = $(element).parent().parent().parent();
+        $(".btn-remove-job")[0].onclick = function () {
+          removeJob(id, ElmRemove);
+        };
       });
     });
 }
