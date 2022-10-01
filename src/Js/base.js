@@ -35,7 +35,8 @@ toastr.options = {
 
 (function toggleSubMenu() {
   if (!ElmBtnBar) return;
-  ElmBtnBar.onclick = function () {
+  ElmBtnBar.onclick = function (e) {
+    e.stopPropagation();
     ElmNavMenuMobile.classList.toggle("menu__mobile-active");
   };
   ElmBtnLoginMobile.onclick = function (e) {
@@ -52,6 +53,18 @@ function toggleUserList(Btn, ElmChange) {
 toggleUserList(ElmHeaderUser, ElmHeaderUserList);
 toggleUserList(ElmHeaderUserMobile, ElmHeaderUserListMobile);
 
+function hideHeaderUser() {
+  /*Sẽ đóng modal khi nhấp ra ngoài màn hình*/
+  window.onclick = function (event) {
+    if (
+      event.target.closest(".header__user") !==
+      document.querySelector(".header__user")
+    ) {
+      $(".header__user-list")[0].classList.remove("header__user-active");
+    }
+  };
+}
+hideHeaderUser();
 function Logout(Btn, ElmChange) {
   if (!Btn) return;
   Btn.onclick = function (e) {

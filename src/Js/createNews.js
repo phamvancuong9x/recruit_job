@@ -41,17 +41,6 @@ function hideOptionSelect() {
 hideOptionSelect();
 // tab
 
-// render ra danh sách mức lương
-function renderSalaryList() {
-  let html = `<option value=""class="input__title-option-item" style="display:none">Chọn</option>`;
-  for (let i = 1; i < 51; i++) {
-    html += `<option value=${i} class="input__title-option-item  input__title-option-item-min">${i} triệu</option>`;
-  }
-  ElmInputMinSalary.innerHTML = html;
-  ElmInputMaxSalary.innerHTML = html;
-}
-renderSalaryList();
-
 // hàm hiển thị error
 function checkValidate() {
   ElmBtnSubmit.onclick = function (e) {
@@ -100,34 +89,27 @@ function checkValidate() {
 
     if (clickBtnSubmit) {
       for (let i = 0; i < ElmInput?.length; i++) {
-        ElmInput[i].oninput = function () {
+        ElmInput[i].addEventListener("input", function () {
           if (ElmInput[i].value === "") {
             ElmInput[i].nextElementSibling.style.display = "block";
           } else {
             ElmInput[i].nextElementSibling.style.display = "none";
           }
-        };
+        });
       }
     }
   };
 }
 checkValidate();
 
-// hiển thị error khi ngày chọn nhỏ hơn ngày hiện tại
-function checkValidateDateline() {
-  const date = new Date();
+// Giới hạn ngày lựa chọn
 
-  ElmDateline.onchange = function () {
-    let date2 = new Date(`${ElmDateline.value}`);
-    if (date > date2) {
-      document.querySelector(".input_error-deadline1").style.display = "block";
-      document.querySelector(".input_error-deadline2").style.display = "none";
-    } else {
-      document.querySelector(".input_error-deadline1").style.display = "none";
-    }
-  };
+function limitDate() {
+  const date = new Date();
+  const dateFormat = moment(date).format().slice(0, 10);
+  $("#input__submit-deadline")[0]?.setAttribute("min", dateFormat);
 }
-checkValidateDateline();
+limitDate();
 
 // Hiển thị error khi mức lương tối đa nhỏ hon mức lương tối thiểu
 function showErrorSalary() {
@@ -280,6 +262,7 @@ submitJob();
 function ckeckInputSalary() {
   ElmInputSalary.forEach((element) => {
     element.oninput = function () {
+      console.log(element.value, +element.value);
       if (
         !Number.isInteger(+element.value[element.value.length - 1]) ||
         element.value.length > 3 ||
@@ -290,3 +273,15 @@ function ckeckInputSalary() {
     };
   });
 }
+ckeckInputSalary();
+// hàm hiển thị hạn nộp hồ sơ trang editNews
+function showTimeDeadline() {
+  const timeFormat = $("#time-deadline")
+    .text()
+    .split("/")
+    .reverse()
+    .join("-")
+    .trim();
+  $(".time-deadline-edit").val(timeFormat);
+}
+showTimeDeadline();
