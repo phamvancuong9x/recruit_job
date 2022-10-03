@@ -173,7 +173,10 @@ function submitJob() {
 
     if (!checkValidateForm) {
       var formData = new FormData($("#form-tab1")[0]);
-      const dateUtc = moment(ElmDateline.value).toISOString();
+
+      const dateUtc = moment(ElmDateline.value)
+        .format()
+        .replaceAll("+07:00", "Z");
       formData.set("date", dateUtc);
       formData.set(
         "salary",
@@ -227,7 +230,7 @@ function submitJobUpdate() {
 
     if (!checkValidateForm) {
       var formData = new FormData($("#form-tab1")[0]);
-      const dateUtc = moment(ElmDateline.value).toISOString();
+      const dateUtc = moment(ElmDateline.value).format();
       formData.set("date", dateUtc);
       formData.set(
         "salary",
@@ -285,20 +288,3 @@ function showTimeDeadline() {
   $(".time-deadline-edit").val(timeFormat);
 }
 showTimeDeadline();
-function showSelect() {
-  for (let i = 0; i < ElmInputSelect?.length; i++) {
-    ElmInputSelect[i].onclick = function (e) {
-      e.stopPropagation();
-      for (let i = 0; i < ElmInputSelect?.length; i++) {
-        ElmInputSelect[i].nextElementSibling.style.display = "none";
-      }
-
-      if (ElmInputSelect[i].nextElementSibling.style.display === "block") {
-        ElmInputSelect[i].nextElementSibling.style.display = "none";
-      } else {
-        ElmInputSelect[i].nextElementSibling.style.display = "block";
-      }
-    };
-  }
-}
-showSelect();

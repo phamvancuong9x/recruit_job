@@ -154,6 +154,8 @@ label {
   border: 1px solid #0069db47;
   cursor: pointer;
   align-items: center;
+  height: 100%;
+  align-self: start;
 }
 .job__list-item:first-child {
   margin: 0;
@@ -165,6 +167,10 @@ label {
 .job-item__name-job {
   font-size: 18px;
   font-weight: 500;
+  word-wrap: break-all;
+}
+.job-item__name-company {
+  word-wrap: break-all;
 }
 .workplace {
   display: inline-block;

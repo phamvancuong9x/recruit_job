@@ -220,6 +220,7 @@ body {
   max-width: 1000px;
   margin: 20px auto;
 }
+
 .preview__btn-edit {
   margin-right: 20px;
   background-color: #bcf1ed;
@@ -330,15 +331,15 @@ option {
 .status-recruitment-file {
   cursor: pointer;
 }
-.status-waitting {
+.pending {
   background-color: rgb(250, 235, 207);
   color: #d48806;
 }
-.status-accept {
+.approve {
   color: #096dd9;
   background: #e6f7ff;
 }
-.status-reject {
+.reject {
   color: #cf1322;
   background: #fff1f0;
 }
@@ -521,16 +522,36 @@ table.recruitment-file tbody tr td {
     padding: 20px;
     margin-bottom: 0;
     border-bottom: 1px solid #ccc;
+    text-align: center;
   }
   .create-new-content {
-    padding: 24px 20px;
+    padding: 24px 12px;
   }
-}
-@media (max-width: 576px) {
   .container > .row {
     padding: 0;
   }
+  .btn-submit-job {
+    width: 100%;
+  }
+  .tab1_preview-content {
+    padding: 32px 14px;
+  }
+  .tab1_preview-btn,
+  .btn-edit-group {
+    display: flex;
+    justify-content: end;
+    max-width: 1000px;
+    margin: 20px auto;
+    gap: 12px;
+  }
+  .tab1_preview-btn a,
+  .tab1_preview-btn button,
+  .btn-edit-group a,
+  .btn-edit-group button {
+    width: 100% !important;
+  }
 }
+
 @media (max-width: 414px) {
   .menu__featureJob-item {
     font-size: 22px;

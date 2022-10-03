@@ -63,7 +63,6 @@ function removeJob(id, ElmRemove) {
     contentType: "application/json; charset=utf-8",
     data: myJSON,
     dataType: "json",
-
     success: function (data) {
       ElmRemove.remove();
       $("#removeNewsJobModal").modal("hide");
@@ -77,3 +76,14 @@ function removeJob(id, ElmRemove) {
 // pagination
 
 updateQueryParamPage("posting_status", "submit_deadline", "");
+
+function showSearchEmpty() {
+  const url = window.location.href;
+  const ELmTrTable = document.querySelectorAll("tr");
+
+  if (url.includes("status") && ELmTrTable.length == 1) {
+    $(".search-empty").css("display", "block");
+    $(".table-empty").css("display", "none");
+  }
+}
+showSearchEmpty();

@@ -46,6 +46,10 @@ body {
 }
 
 /*  */
+
+.job__content {
+  min-height: 400px;
+}
 .job__header,
 .job__content,
 .job-similar {
@@ -162,6 +166,8 @@ body {
   border: 1px solid #0069db47;
   cursor: pointer;
   margin-top: 12px;
+  height: 100%;
+  align-self: start;
 }
 
 .job__list-item:hover {
@@ -182,6 +188,21 @@ body {
 .job-item__name-job {
   font-size: 18px;
   font-weight: 500;
+  word-wrap: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.job-item__name-company {
+  word-wrap: break-all;
+  word-wrap: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .workplace {
   display: inline-block;

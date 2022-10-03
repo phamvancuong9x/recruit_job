@@ -5,15 +5,15 @@ function changeStatus() {
   ElmSelectStatus.forEach((element) => {
     element.onchange = function () {
       $(element)
-        .removeClass("status-waitting")
-        .removeClass("status-accept")
-        .removeClass("status-reject");
+        .removeClass("pending")
+        .removeClass("approve")
+        .removeClass("reject");
       if ($($(element)).val() === "Chưa liên hệ") {
-        $($(element)).addClass("status-waitting");
+        $($(element)).addClass("pending");
       } else if ($($(element)).val() === "Đạt") {
-        $($(element)).addClass("status-accept");
+        $($(element)).addClass("approve");
       } else {
-        $($(element)).addClass("status-reject");
+        $($(element)).addClass("reject");
       }
       const id = element.previousElementSibling.innerText;
       const status_file = element.value;
@@ -45,3 +45,13 @@ changeStatus();
 // pagination
 
 updateQueryParamPage("position_recruit", "time_submit", "status_profile");
+function showSearchEmpty() {
+  const url = window.location.href;
+  const ELmTrTable = document.querySelectorAll("tbody tr");
+
+  if (url.includes("status") && ELmTrTable.length == 0) {
+    $(".search-empty").css("display", "block");
+    $(".table-empty").css("display", "none");
+  }
+}
+showSearchEmpty();

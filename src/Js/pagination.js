@@ -12,18 +12,19 @@ function getParameterByName(name, url) {
 
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+if (totalPage !== "0") {
+  $("#pagination-demo").twbsPagination({
+    totalPages: totalPage,
+    visiblePages: 6,
+    startPage: +pageParam,
+    last: "Cuối",
+    next: "Tiếp",
+    prev: "Trước",
+    first: "Đầu",
 
-$("#pagination-demo").twbsPagination({
-  totalPages: totalPage,
-  visiblePages: 6,
-  startPage: +pageParam,
-  last: "Cuối",
-  next: "Tiếp",
-  prev: "Trước",
-  first: "Đầu",
-
-  onPageClick: function (event, page) {},
-});
+    onPageClick: function (event, page) {},
+  });
+}
 
 function updateQueryParamPage(firstParam, secondParam, thirdParam) {
   const pathNameUrl = window.location.pathname;
@@ -110,6 +111,8 @@ function directUrl(
     window.location.assign(
       `${pathNameUrl}?${name_param1}=${text_param1}&${name_param2}=${text_param2}&${name_param3}=${text_param3}&page=${page}`
     );
+  } else if (name_param2 === "") {
+    window.location.assign(`${pathNameUrl}?${name_param1}=${text_param1}`);
   } else {
     window.location.assign(
       `${pathNameUrl}?${name_param1}=${text_param1}&${name_param2}=${text_param2}&page=${page}`
