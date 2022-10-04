@@ -26,3 +26,13 @@ clearSearch();
 // pagination
 
 updateQueryParamPage("keyword", "location", "");
+
+function showSearchEmpty() {
+  const url = window.location.href;
+  const ELmTrTable = document.querySelector(".job__list > div");
+  if (url.includes("?") && ELmTrTable === null) {
+    $(".search-empty").css("display", "block");
+    $(".table-empty").css("display", "none");
+  }
+}
+showSearchEmpty();

@@ -1,4 +1,7 @@
 /* tab3_content Cập nhật thông tin công ty */
+.user-descreption {
+}
+
 .infoCompany-content {
   background-color: #fff;
   padding: 24px 32px;
@@ -27,10 +30,16 @@
   /* background-color: rgb(243, 243, 243); */
 }
 .image-company {
-  width: 180px;
   height: 180px;
-  object-fit: cover;
   margin-top: 20px;
+  object-fit: contain;
+  width: 180px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.user-descreption {
+  border-color: #ccc;
+  padding: 10px;
 }
 .change__image-logo {
   display: flex;

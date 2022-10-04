@@ -253,14 +253,14 @@ body {
   color: rgba(182, 182, 184);
   font-size: 12px;
 }
-#user-name,
 #user-email,
+#user-name,
 #user-phone {
-  display: block;
-  width: 100%;
   border: none;
-  border: 1px solid #ccc;
+  display: block;
   padding: 7px 10px;
+  width: 100%;
+  background-color: #eeeeee54;
 }
 .btn-upload-file {
   padding: 3px 20px;
