@@ -66,9 +66,12 @@ body {
   object-fit: contain;
   width: 60px;
   aspect-ratio: 1 / 1;
+  width: 60px;
+  padding: 4px;
 }
 .job__title-img {
   margin-right: 15px;
+  flex-shrink: 0;
 }
 .job__title-company-name {
   font-size: 18px;
@@ -189,6 +192,8 @@ body {
   object-fit: contain;
   width: 100%;
   aspect-ratio: 1 / 1;
+  width: 100%;
+  padding: 4px;
 }
 .job-item__name-job {
   font-size: 18px;

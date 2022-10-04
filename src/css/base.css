@@ -192,6 +192,9 @@ header {
 .fab {
   cursor: pointer;
 }
+.panigation {
+  margin-bottom: 24px;
+}
 /* modal forgot password */
 #forgot-password .modal-content {
   padding: 3rem;

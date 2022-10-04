@@ -60,6 +60,7 @@ body {
 }
 .filter {
   border: 1px solid rgba(0, 0, 0, 0.125);
+  max-width: calc(100% - 12px);
 }
 .search-location-group {
   position: relative;
@@ -202,13 +203,17 @@ label {
 }
 
 /* select */
-select {
-  appearance: none;
-}
-@media (max-width: 576px) {
+
+@media (max-width: 767px) {
   .search-location-group {
     padding: 0;
   }
+  .search-location,
+  .btn-search {
+    margin-top: 12px;
+  }
+}
+@media (max-width: 576px) {
   .search__job > .row {
     margin: 0;
   }
@@ -221,12 +226,13 @@ select {
   .btn-search {
     margin-right: -12px;
   }
-  .search-location,
-  .btn-search {
-    margin-top: 12px;
-  }
+
   .job-item__name-job {
     -webkit-line-clamp: 2;
+  }
+  .filter {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    max-width: 100%;
   }
 }
 @media (max-width: 414px) {
