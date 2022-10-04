@@ -138,10 +138,11 @@ label {
   border-radius: 5px;
   padding: 4px;
   background-color: #ffff;
+  display: flex;
 }
 .image-logo > img {
-  height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  margin: auto;
 }
 .job__list {
   --bs-gutter-x: 12px;
@@ -221,6 +222,11 @@ select {
 @media (max-width: 375px) {
   .menu__featureJob-item {
     font-size: 20px;
+  }
+}
+@media (max-width: 375px) {
+  .workplace {
+    margin-left: 0 !important ;
   }
 }
 @media (max-width: 340px) {

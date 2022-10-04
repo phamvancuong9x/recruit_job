@@ -1,6 +1,4 @@
-/* css */
-
-a {
+css a {
   color: unset;
 }
 a:hover {
@@ -56,15 +54,18 @@ body {
   background-color: #ffffff;
   padding: 20px 30px;
 }
+.job__content {
+  padding-bottom: 40px;
+}
 .job__title {
   padding-bottom: 20px;
 }
 .job__title-img > img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
   border: 1px solid #ccc;
   border-radius: 5px;
+  object-fit: contain;
+  width: 60px;
+  aspect-ratio: 1 / 1;
 }
 .job__title-img {
   margin-right: 15px;
@@ -124,6 +125,7 @@ body {
 .job__content-tab {
   font-size: 20px;
   font-weight: 600;
+  margin-bottom: 12px;
 }
 .tab-active {
   /* padding-bottom: 2px; */
@@ -141,6 +143,9 @@ body {
 }
 .job__content {
   margin-top: 24px;
+}
+.describe_job:first-child {
+  border-top: thin solid #cff6ed;
 }
 .describe_job-title {
   font-size: 18px;
@@ -181,9 +186,9 @@ body {
 .image-logo img {
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
+  object-fit: contain;
+  width: 100%;
+  aspect-ratio: 1 / 1;
 }
 .job-item__name-job {
   font-size: 18px;
@@ -455,8 +460,12 @@ body {
     height: 48px;
   }
 }
+
 @media (max-width: 340px) {
   .menu__featureJob-item {
     font-size: 18px;
+  }
+  .workplace {
+    margin-left: 0 !important ;
   }
 }

@@ -33,17 +33,15 @@ toastr.options = {
   hideMethod: "fadeOut",
 };
 
-(function toggleSubMenu() {
+function toggleSubMenu() {
   if (!ElmBtnBar) return;
   ElmBtnBar.onclick = function (e) {
     e.stopPropagation();
     ElmNavMenuMobile.classList.toggle("menu__mobile-active");
   };
-  ElmBtnLoginMobile.onclick = function (e) {
-    e.stopPropagation();
-    ElmNavMenuMobile.classList.remove("menu__mobile-active");
-  };
-})();
+}
+toggleSubMenu();
+
 function toggleUserList(Btn, ElmChange) {
   if (!Btn) return;
   Btn.onclick = function () {
@@ -62,9 +60,22 @@ function hideHeaderUser() {
     ) {
       $(".header__user-list")[0].classList.remove("header__user-active");
     }
+    console.log(event.target.closest(".header__user-mobile"));
+    if (
+      event.target.closest(".header__user-mobile") !==
+      document.querySelector(".header__user-mobile")
+    ) {
+      $(".header__user-list-mobile")[0].classList.remove("header__user-active");
+    }
+    if (
+      event.target.closest(".bar-icon") !== document.querySelector(".bar-icon")
+    ) {
+      ElmNavMenuMobile.classList.remove("menu__mobile-active");
+    }
   };
 }
 hideHeaderUser();
+
 function Logout(Btn, ElmChange) {
   if (!Btn) return;
   Btn.onclick = function (e) {
