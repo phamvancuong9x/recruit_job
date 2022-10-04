@@ -131,8 +131,6 @@ label {
   line-height: 24px;
 }
 .image-logo {
-  width: 90px;
-  height: 90px;
   object-fit: cover;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -143,6 +141,7 @@ label {
 .image-logo > img {
   object-fit: contain;
   margin: auto;
+  aspect-ratio: 1 / 1;
 }
 .job__list {
   --bs-gutter-x: 12px;
@@ -156,6 +155,11 @@ label {
   cursor: pointer;
   height: 100%;
 }
+.job__list-item > div:first-child {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: 90px;
+}
 .job__list-item:first-child {
   margin: 0;
 }
@@ -166,7 +170,6 @@ label {
 .job-item__name-job {
   font-size: 18px;
   font-weight: 500;
-  word-break: break-all;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -174,16 +177,17 @@ label {
   text-overflow: ellipsis;
 }
 .job-item__name-company {
-  word-break: break-all;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.job-salary {
+  margin-right: 10px;
+}
 .workplace {
   display: inline-block;
-  margin-left: 10px;
 }
 .job-salary__text {
   color: rgb(15, 97, 238);

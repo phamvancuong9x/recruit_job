@@ -193,7 +193,6 @@ body {
 .job-item__name-job {
   font-size: 18px;
   font-weight: 500;
-  word-break: break-all;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -201,16 +200,17 @@ body {
   text-overflow: ellipsis;
 }
 .job-item__name-company {
-  word-break: break-all;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.job-salary {
+  margin-right: 10px;
+}
 .workplace {
   display: inline-block;
-  margin-left: 10px;
 }
 .job-salary__text {
   color: rgb(15, 97, 238);
@@ -447,8 +447,5 @@ body {
 @media (max-width: 340px) {
   .menu__featureJob-item {
     font-size: 18px;
-  }
-  .workplace {
-    margin-left: 0 !important ;
   }
 }
