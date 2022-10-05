@@ -53,7 +53,7 @@ function saveJob() {
         success: function (data) {
           $(element).css("display", "none");
           $(element).next().css("display", "block");
-          toastr.success("Đã lưu việc làm thành công");
+          toastr.success("Đã lưu việc làm thành công !");
         },
         error: function (xhr) {
           toastr.warning(xhr.responseJSON);
@@ -78,7 +78,7 @@ function removeJob() {
         success: function (data) {
           $(element).css("display", "none");
           $(element).prev().css("display", "block");
-          toastr.success("Đã bỏ lưu");
+          toastr.success("Đã bỏ lưu !");
         },
         error: function (xhr) {
           toastr.warning(xhr.responseJSON);

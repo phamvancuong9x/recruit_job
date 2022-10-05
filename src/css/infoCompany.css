@@ -29,13 +29,18 @@
   margin-bottom: 20px;
   /* background-color: rgb(243, 243, 243); */
 }
-.image-company {
+.image-company,
+.image-avatar {
   height: 180px;
   margin-top: 20px;
   object-fit: contain;
   width: 180px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  padding: 10px;
+}
+.image-avatar {
+  padding: 10px;
 }
 .user-descreption {
   border-color: #ccc;
@@ -82,7 +87,8 @@
 /* reposive */
 
 @media (max-width: 767px) {
-  .image-company {
+  .image-company,
+  .image-avatar {
     margin-top: 0;
   }
   .logo_company-title {
