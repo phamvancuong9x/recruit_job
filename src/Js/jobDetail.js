@@ -343,3 +343,56 @@ function hideApplyJob() {
   }
 }
 hideApplyJob();
+
+function getID() {
+  const url = window.location.pathname;
+  const array = url.split("/");
+
+  return array[array.length - 1];
+}
+function saveJob() {
+  $(".save-no-job").on("click", function () {
+    data = { id: getID() };
+
+    $.ajax({
+      url: "index.html",
+      type: "POST",
+      contentType: "application/json; charset=utf-8",
+      data: JSON.stringify(data),
+      dataType: "json",
+      processData: false,
+      success: function (data) {
+        $(".save-no-job").css("display", "none");
+        $(".save-job").css("display", "block");
+        toastr.success("Đã lưu việc làm thành công !");
+      },
+      error: function (xhr) {
+        toastr.warning(xhr.responseJSON);
+      },
+    });
+  });
+}
+saveJob();
+function removeJob() {
+  $(".save-job").on("click", function () {
+    data = { id: getID() };
+
+    $.ajax({
+      url: "index.html",
+      type: "POST",
+      contentType: "application/json; charset=utf-8",
+      data: JSON.stringify(data),
+      dataType: "json",
+      processData: false,
+      success: function (data) {
+        $(".save-no-job").css("display", "block");
+        $(".save-job").css("display", "none");
+        toastr.success("Đã bỏ lưu !");
+      },
+      error: function (xhr) {
+        toastr.warning(xhr.responseJSON);
+      },
+    });
+  });
+}
+removeJob();

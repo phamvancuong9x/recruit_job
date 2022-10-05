@@ -62,7 +62,7 @@
           <span class="login">
             <a href="loginLogout.html"><i class="fa-solid fa-user"></i></a>
           </span>
-          <div class="header__user">
+          <div class="header__user" style="display: none">
             <div class="header__user-info">
               <div class="header__user-image">
                 <img src="src/image/avatar.png" alt="user image" />
@@ -74,9 +74,6 @@
               </li>
               <li class="header__user-item">
                 <a href="infoCompany.html">Thông tin công ty</a>
-              </li>
-              <li class="header__user-item">
-                <a href="saveJob.html">Việc làm đã lưu</a>
               </li>
 
               <li class="header__user-item">
@@ -117,12 +114,9 @@
             <li class="header__user-item">
               <a href="user.html">Thông tin tài khoản</a>
             </li>
-            <li class="header__user-item">
+            <!-- <li class="header__user-item">
               <a href="infoCmpany.html">Thông tin công ty</a>
-            </li>
-            <li class="header__user-item">
-              <a href="saveJob.html">Việc làm đã lưu</a>
-            </li>
+            </li> -->
 
             <li class="header__user-item">
               <span class="logout logout-mobile">Đăng xuất</span>
@@ -141,57 +135,9 @@
     </header>
     <!-- content -->
     <div class="container">
-      <div class="search__job">
-        <form action="index.html" class="row margin-left-0">
-          <div class="col-12 col-sm-12 col-md-8 filter">
-            <div id="search-form">
-              <div class="form-search">
-                <label class="label-search" for="keyword">
-                  <i class="fas fa-search"></i
-                ></label>
-                <input
-                  name="keyword"
-                  id="keyword"
-                  placeholder="Tìm kiếm cơ hội việc làm"
-                />
-                <div class="clear-search">
-                  <i class="fa-sharp fa-solid fa-xmark"></i>
-                </div>
-              </div>
-              <div class="remove-search-keyword">
-                <i class="fas fa-times fa-2x"></i>
-              </div>
-            </div>
-          </div>
-          <div class="col-7 col-sm-6 col-md-2 search-location-group">
-            <select
-              type="text"
-              id="input__working-form"
-              name="location"
-              class="input-select input_create-job search-location"
-            >
-              <option value="">Tất cả địa điểm</option>
-              <option value="">Hà Nội</option>
-              <option value="">Hồ Chí Minh</option>
-              <option value="">Đà Nẵng</option>
-              <option value="">Quy Nhơn</option>
-              <option value="">Quảng Ninh</option>
-              <option value="">Hải Phòng</option>
-            </select>
-          </div>
-          <div class="col-5 col-sm-6 col-md-2 btn-search-group">
-            <button type="submit" class="btn btn-primary btn-search">
-              Tìm kiếm
-            </button>
-          </div>
-        </form>
-      </div>
-
       <div class="list__job">
-        <h3 class="list__job-title">Tin tuyển dụng, việc làm tốt nhất</h3>
-        <h3 class="list__job-title">
-          Kết quả tìm kiếm (<span>10 </span> tin đăng)
-        </h3>
+        <h3 class="list__job-title">Danh sách tin tuyển dụng đã lưu</h3>
+
         <div class="list__job-content">
           <div class="row job__list">
             <div class="col-12 col-md-6" style="position: relative">
@@ -238,13 +184,15 @@
               </a>
               <div class="id-job" style="display: none">1</div>
               <span class="saveJob">
-                <div class="icon-no-save">
+                <div class="icon-no-save" style="display: none">
                   <i class="fa-regular fa-heart"></i>
                 </div>
-                <div class="icon-save"><i class="fa-solid fa-heart"></i></div>
+                <div class="icon-save" style="display: block">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
               </span>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6" style="position: relative">
               <a class="row job__list-item" href="jobDetail.html">
                 <div class="col-3 col-sm-4 col-md-3 col-lg-2">
                   <div class="image-logo">
@@ -286,6 +234,15 @@
                   </div>
                 </div>
               </a>
+              <div class="id-job" style="display: none">2</div>
+              <span class="saveJob">
+                <div class="icon-no-save" style="display: none">
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="icon-save" style="display: block">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+              </span>
             </div>
             <div class="col-12 col-md-6">
               <a class="row job__list-item" href="jobDetail.html">
@@ -375,7 +332,7 @@
             </div>
           </div>
           <div
-            class="search-empty"
+            class="job-empty"
             style="
               display: none;
               text-align: center;
@@ -383,7 +340,7 @@
               font-size: 18px;
             "
           >
-            Không có kết quả tìm kiếm phù hợp !
+            Không có tin tuyển dụng nào được lưu !
           </div>
           <div style="display: none" id="total_page">10</div>
 
@@ -423,6 +380,6 @@
 
     <script src="src/Js/base.js"></script>
     <script src="src/Js/pagination.js"></script>
-    <script src="src/Js/index.js"></script>
+    <script src="src/Js/saveJob.js"></script>
   </body>
 </html>

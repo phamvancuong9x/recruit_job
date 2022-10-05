@@ -172,13 +172,15 @@
                       <i class="fa-regular fa-clock"></i>
                     </span>
                     <span>Đăng ngày : </span>
-                    <span class="job__dateSubmit-text"> 10/09/2022</span>
+                    <span class="job__dateSubmit-text"> 12/10/2022</span>
                   </div>
                 </div>
+                <div class="d-flex gap-3 p-0"> 
                 <button
                   type="button"
                   class="job__submit-file btn btn-primary"
                   data-toggle="modal"
+                  style="display: block !important"
                 >
                   Nộp hồ sơ
                 </button>
@@ -186,10 +188,15 @@
                   type="button"
                   class="expires-apply btn btn-light"
                   disabled
-                  
-                >
-                  Hết hạn nộp
+                  style="padding:6px 12px;"
+                > 
+                  <span>Hết hạn nộp</span> 
                 </button>
+                <button type="button" class="btn btn-outline-primary btn-save-job" style="width: 138px;height:42px; padding: 0;margin-top: 20px;">
+                  <div class="save-no-job"  style="padding:6px 12px">  <i class="fa-regular fa-heart"></i> <span class='ps-2'>Lưu</span ></div>
+                  <div class="save-job" style="padding:6px 12px;display: none;"><i class="fa-solid fa-heart"></i> <span class='ps-2'>Đã lưu</span> </div>
+                </button>
+              </div>
               </div>
               <div class="job__info-base-list row">
                 <div class="job__info-base-item col-sm-3 col-6">

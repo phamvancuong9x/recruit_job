@@ -226,9 +226,10 @@ body {
   color: rgb(166, 164, 164);
 }
 .expires-apply {
-  display: none;
   margin-top: 20px;
   background-color: #ededed !important;
+  padding: 0 !important;
+  width: 138px;
 }
 
 /* modal */
@@ -433,6 +434,11 @@ body {
   .job__header,
   .job__content {
     padding: 20px;
+  }
+  .job__submit-file,
+  .btn-save-job,
+  .expires-apply {
+    width: 100% !important;
   }
 }
 @media (max-width: 414px) {
