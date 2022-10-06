@@ -23,6 +23,30 @@ const ElmDateline = document.querySelector("#input__submit-deadline");
 
 let clickBtnSubmit = false;
 
+$("#skills").filterMultiSelect({
+  placeholderText: "Chọn",
+  filterText: "Tìm kiếm",
+  selectAllText: "Chọn tất cả",
+  labelText: "",
+  selectionLimit: 0,
+  caseSensitive: false,
+  allowEnablingAndDisabling: true,
+});
+let valueSkill = [];
+function getValueSelect() {
+  $("#skills").on("optionselected", function (e) {
+    valueSkill.push(e.detail.value);
+  });
+}
+getValueSelect();
+function getValueDeSelect() {
+  $("#skills").on("optiondeselected ", function (e) {
+    valueSkill = valueSkill.filter((item) => {
+      return item !== e.detail.value;
+    });
+  });
+}
+getValueDeSelect();
 // khởi tạo CKEDITOR
 CKEDITOR.replace("editor1");
 CKEDITOR.replace("editor2");
@@ -178,6 +202,7 @@ function submitJob() {
         .format()
         .replaceAll("+07:00", "Z");
       formData.set("date", dateUtc);
+      formData.set("skills", valueSkill);
       formData.set(
         "salary",
         ` ${ElmInputMinSalary.value}-${ElmInputMaxSalary.value}`
@@ -265,7 +290,6 @@ submitJob();
 function ckeckInputSalary() {
   ElmInputSalary.forEach((element) => {
     element.oninput = function () {
-      console.log(element.value, +element.value);
       if (
         !Number.isInteger(+element.value[element.value.length - 1]) ||
         element.value.length > 3 ||

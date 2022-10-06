@@ -52,6 +52,14 @@ hideModalNewsJob();
 
 updateQueryParamPage("posting_status", "submit_deadline", "");
 
+function tableEmpty() {
+  const ELmTrTable = document.querySelectorAll("tr");
+  if (ELmTrTable.length == 1) {
+    $(".table-empty").css("display", "block");
+    $(".pagination").css("display", "none");
+  }
+}
+
 function removeJob(id, ElmRemove) {
   var req = {
     id,
@@ -65,6 +73,7 @@ function removeJob(id, ElmRemove) {
     dataType: "json",
     success: function (data) {
       ElmRemove.remove();
+      tableEmpty();
       $("#removeNewsJobModal").modal("hide");
       toastr.success("Xóa tin tuyển dụng thành công !");
     },

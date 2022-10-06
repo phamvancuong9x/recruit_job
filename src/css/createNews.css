@@ -19,6 +19,22 @@ select {
   border-radius: 2px;
   width: 100%;
 }
+#skills {
+  width: 100%;
+}
+.item {
+  padding: 0 10px !important;
+}
+.item button {
+  padding-left: 8px !important;
+}
+.viewbar {
+  padding: 9px 15px !important;
+}
+.dropdown-menu {
+  width: 100%;
+  max-height: 205px !important;
+}
 .margin-left-0 {
   margin-left: 0;
 }

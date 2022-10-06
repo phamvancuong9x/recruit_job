@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nhà tuyển dụng</title>
 
-    <link
+    <!-- <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     />
     <link
       rel="stylesheet"
@@ -23,10 +27,16 @@
       href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="./src/fillter_milti_select/filter_multi_select.css"
+    />
 
     <link rel="stylesheet" href="src/css/base.css" />
     <link rel="stylesheet" href="src/css/createNews.css" />
     <script src="https://cdn.ckeditor.com/4.19.1/basic/ckeditor.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+
     <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/tiny-date-picker/3.2.3/tiny-date-picker.min.css"
@@ -394,10 +404,25 @@
                   <div class="col-12 col-sm-6 col-md-4">
                     <div class="input-group">
                       <div class="input__title">
-                        Ngành nghề<span class="text-red-500"> *</span>
+                        Nơi làm việc <span class="text-red-500"> *</span>
                       </div>
-
                       <select
+                        class="filter-multi-select"
+                        multiple
+                        id="skills"
+                        name="skills"
+                      >
+                        <option value="a">Doge</option>
+                        <option value="b">Keyboard Cat</option>
+                        <option value="c">Keyboard Cat</option>
+                        <option value="d">Keyboard Cat</option>
+                        <option value="e">Badger Badger Badger</option>
+                      </select>
+                      <!-- <div class="input__title">
+                        Ngành nghề<span class="text-red-500"> *</span>
+                      </div> -->
+
+                      <!-- <select
                         id="input__profession"
                         class="input-select input_create-job"
                         name="profession"
@@ -439,7 +464,7 @@
                         <option class="input__title-option-item" value="">
                           C/C++
                         </option>
-                      </select>
+                      </select> -->
                       <p class="input_error">Vui lòng chọn ngành nghề</p>
                     </div>
                   </div>
@@ -739,6 +764,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="/src/fillter_milti_select/filter-multi-select-bundle.min.js"></script>
     <script src="src/Js/base.js"></script>
     <script src="src/Js/createNews.js"></script>
   </body>

@@ -107,12 +107,16 @@ function directUrl(
   text_param3,
   page
 ) {
-  if (name_param3 !== "") {
+  if (name_param2 === "" && name_param3 === "" && name_param1 === "") {
+    window.location.assign(`${pathNameUrl}?page=${page}`);
+  } else if (name_param3 !== "") {
     window.location.assign(
       `${pathNameUrl}?${name_param1}=${text_param1}&${name_param2}=${text_param2}&${name_param3}=${text_param3}&page=${page}`
     );
   } else if (name_param2 === "") {
-    window.location.assign(`${pathNameUrl}?${name_param1}=${text_param1}`);
+    window.location.assign(
+      `${pathNameUrl}?${name_param1}=${text_param1}&page=${page}`
+    );
   } else {
     window.location.assign(
       `${pathNameUrl}?${name_param1}=${text_param1}&${name_param2}=${text_param2}&page=${page}`

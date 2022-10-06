@@ -350,10 +350,10 @@ function getID() {
 
   return array[array.length - 1];
 }
-function saveJob() {
-  $(".save-no-job").on("click", function () {
-    data = { id: getID() };
 
+function saveJob(selector1, selector2, infoSuccess) {
+  $(selector1).on("click", function () {
+    data = { id: getID() };
     $.ajax({
       url: "index.html",
       type: "POST",
@@ -362,7 +362,7 @@ function saveJob() {
       dataType: "json",
       processData: false,
       success: function (data) {
-        $(".save-no-job").css("display", "none");
+        $(selector1).css("display", "none");
         $(".save-job").css("display", "block");
         toastr.success("Đã lưu việc làm thành công !");
       },
@@ -396,55 +396,3 @@ function removeJob() {
   });
 }
 removeJob();
-
-// save
-function saveJob1() {
-  const ELmBtnSaveJob = document.querySelectorAll(".icon-no-save");
-  ELmBtnSaveJob.forEach((element) => {
-    element.onclick = function () {
-      data = { id: $(element).parent().prev().text() };
-      $.ajax({
-        url: "index.html",
-        type: "POST",
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(data),
-        dataType: "json",
-        processData: false,
-        success: function (data) {
-          $(element).css("display", "none");
-          $(element).next().css("display", "block");
-          toastr.success("Đã lưu việc làm thành công !");
-        },
-        error: function (xhr) {
-          toastr.warning(xhr.responseJSON);
-        },
-      });
-    };
-  });
-}
-saveJob1();
-function removeJob1() {
-  const ELmBtnSaveJob = document.querySelectorAll(".icon-save");
-  ELmBtnSaveJob.forEach((element) => {
-    element.onclick = function () {
-      data = { id: $(element).parent().prev().text() };
-      $.ajax({
-        url: "index.html",
-        type: "POST",
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(data),
-        dataType: "json",
-        processData: false,
-        success: function (data) {
-          $(element).css("display", "none");
-          $(element).prev().css("display", "block");
-          toastr.success("Đã bỏ lưu !");
-        },
-        error: function (xhr) {
-          toastr.warning(xhr.responseJSON);
-        },
-      });
-    };
-  });
-}
-removeJob1();

@@ -88,3 +88,12 @@ function removeJob() {
   });
 }
 removeJob();
+
+function showPageEmpty() {
+  const url = window.location.href;
+  const JobList = document.querySelector(".job__list");
+  if (!url.includes("?") && JobList === null) {
+    $(".page-empty").css("display", "block");
+  }
+}
+showPageEmpty();

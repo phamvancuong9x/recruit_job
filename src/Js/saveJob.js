@@ -35,3 +35,4 @@ function showJobEmpty() {
   }
 }
 showJobEmpty();
+updateQueryParamPage("", "", "");
