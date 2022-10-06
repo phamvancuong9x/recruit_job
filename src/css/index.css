@@ -148,6 +148,10 @@ label {
   --bs-gutter-x: 12px;
   --bs-gutter-y: 12px;
 }
+.job__list > div {
+  margin-top: 12px;
+  padding: 0 6px;
+}
 .job__list-item {
   background-color: #fff;
   border-radius: 5px;

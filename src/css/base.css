@@ -39,11 +39,20 @@ a {
   text-decoration: none;
   color: #000;
 }
+a:hover {
+  text-decoration: none;
+}
 p {
   margin: 0;
 }
+.gap-3 {
+  gap: 18px;
+}
 ul {
   list-style-type: none;
+}
+.row > div {
+  padding: 0 12px;
 }
 header {
   margin: auto;
