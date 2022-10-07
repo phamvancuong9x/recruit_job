@@ -32,7 +32,6 @@
 .image-company,
 .image-avatar {
   height: 180px;
-  margin-top: 20px;
   object-fit: contain;
   width: 180px;
   border: 1px solid #ccc;

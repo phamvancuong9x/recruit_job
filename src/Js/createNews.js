@@ -33,22 +33,22 @@ $("#skills").filterMultiSelect({
   allowEnablingAndDisabling: true,
 });
 
-function getValueSelect(callback = () => {}) {
-  $("#skills").on("optionselected", function (e) {
-    valueSkill.push(e.detail.value);
-    callback();
-  });
-}
-getValueSelect();
-function getValueDeSelect(callback = () => {}) {
-  $("#skills").on("optiondeselected ", function (e) {
-    valueSkill = valueSkill.filter((item) => {
-      return item !== e.detail.value;
-    });
-    callback();
-  });
-}
-getValueDeSelect();
+// function getValueSelect(callback = () => {}) {
+//   $("#skills").on("optionselected", function (e) {
+//     valueSkill.push(e.detail.value);
+//     callback();
+//   });
+// }
+// getValueSelect();
+// function getValueDeSelect(callback = () => {}) {
+//   $("#skills").on("optiondeselected ", function (e) {
+//     valueSkill = valueSkill.filter((item) => {
+//       return item !== e.detail.value;
+//     });
+//     callback();
+//   });
+// }
+// getValueDeSelect();
 // khởi tạo CKEDITOR
 CKEDITOR.replace("editor1");
 CKEDITOR.replace("editor2");
@@ -67,11 +67,17 @@ function hideOptionSelect() {
 hideOptionSelect();
 // tab
 function showErrorSkill() {
-  if (valueSkill.length === 0) {
+  const ElmItemSkill = document.querySelector(".item");
+  if (ElmItemSkill === null) {
     $(".viewbar").parent().next().css("display", "block");
   } else {
     $(".viewbar").parent().next().css("display", "none");
   }
+}
+function checkValidateSkill(event, callback = () => {}) {
+  $("#skills").on(event, function (e) {
+    callback();
+  });
 }
 // hàm hiển thị error
 function checkValidate() {
@@ -115,8 +121,8 @@ function checkValidate() {
           }
         });
       }
-      getValueSelect(showErrorSkill);
-      getValueDeSelect(showErrorSkill);
+      checkValidateSkill("optionselected", showErrorSkill);
+      checkValidateSkill("optiondeselected", showErrorSkill);
     }
   };
 }

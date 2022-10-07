@@ -132,27 +132,41 @@ body {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #ccc;
 }
-.tab-active {
-  /* padding-bottom: 2px; */
-  color: #505ab4;
-  border-bottom: 3px solid #505ab4;
-  cursor: pointer;
+
+.job__content-tab1,
+.job__content-tab2 {
+  position: relative;
 }
 .job__content-tab1:hover,
 .job__content-tab2:hover {
   color: #505ab4;
   cursor: pointer;
 }
+.tab-active {
+  color: #505ab4;
+}
+.tab-active::before {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 3px;
+
+  background: #505ab4;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+}
+
 .job__content-tab1 {
   margin-right: 15px;
 }
 .job__content {
   margin-top: 24px;
 }
-.describe_job:first-child {
-  border-top: thin solid #cff6ed;
-}
+
 .describe_job-title {
   font-size: 18px;
   font-weight: 700;

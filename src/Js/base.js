@@ -60,7 +60,6 @@ function hideHeaderUser() {
     ) {
       $(".header__user-list")[0].classList.remove("header__user-active");
     }
-    console.log(event.target.closest(".header__user-mobile"));
     if (
       event.target.closest(".header__user-mobile") !==
       document.querySelector(".header__user-mobile")
