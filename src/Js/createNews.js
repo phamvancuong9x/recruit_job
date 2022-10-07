@@ -22,7 +22,7 @@ const ElmOption = document.querySelectorAll(".input__title-option-item");
 const ElmDateline = document.querySelector("#input__submit-deadline");
 
 let clickBtnSubmit = false;
-
+let valueSkill = [];
 $("#skills").filterMultiSelect({
   placeholderText: "Chọn",
   filterText: "Tìm kiếm",
@@ -32,18 +32,20 @@ $("#skills").filterMultiSelect({
   caseSensitive: false,
   allowEnablingAndDisabling: true,
 });
-let valueSkill = [];
-function getValueSelect() {
+
+function getValueSelect(callback = () => {}) {
   $("#skills").on("optionselected", function (e) {
     valueSkill.push(e.detail.value);
+    callback();
   });
 }
 getValueSelect();
-function getValueDeSelect() {
+function getValueDeSelect(callback = () => {}) {
   $("#skills").on("optiondeselected ", function (e) {
     valueSkill = valueSkill.filter((item) => {
       return item !== e.detail.value;
     });
+    callback();
   });
 }
 getValueDeSelect();
@@ -64,7 +66,13 @@ function hideOptionSelect() {
 }
 hideOptionSelect();
 // tab
-
+function showErrorSkill() {
+  if (valueSkill.length === 0) {
+    $(".viewbar").parent().next().css("display", "block");
+  } else {
+    $(".viewbar").parent().next().css("display", "none");
+  }
+}
 // hàm hiển thị error
 function checkValidate() {
   ElmBtnSubmit.onclick = function (e) {
@@ -95,21 +103,7 @@ function checkValidate() {
     } else {
       ElmErrorEditor3.style.display = "none";
     }
-    // getAllElmError.forEach((element) => {
-    //   if (element.style.display === "block") {
-    //     checkNextPreview = false;
-
-    //     return;
-    //   }
-    // });
-
-    // if (checkNextPreview) {
-    //   ElmFormTab1.style.display = "none";
-    //   tab1Preview.style.display = "block";
-    //   ElmProgesNumber2.style =
-    //     "background-color: rgb(183, 250, 233) ;color: #451da0";
-    //   ElmProgesText2.style = "color:#451da0";
-    // }
+    showErrorSkill();
 
     if (clickBtnSubmit) {
       for (let i = 0; i < ElmInput?.length; i++) {
@@ -121,6 +115,8 @@ function checkValidate() {
           }
         });
       }
+      getValueSelect(showErrorSkill);
+      getValueDeSelect(showErrorSkill);
     }
   };
 }

@@ -155,10 +155,12 @@ body {
 }
 .describe_job-title {
   font-size: 18px;
-  font-weight: 600;
-  padding: 20px 0 10px;
+  font-weight: 700;
+  margin: 20px 0 10px;
 }
-
+.describe_job-text {
+  padding-left: 16px;
+}
 .job__tab2-content {
   display: none;
 }
@@ -187,7 +189,7 @@ body {
 }
 .image-logo {
   background-color: #ffff;
-  padding: 0;
+  padding: 0 !important;
 }
 .image-logo img {
   border: 1px solid #ccc;
@@ -227,6 +229,9 @@ body {
 .workplace-icon,
 .job__time-icon {
   color: rgb(166, 164, 164);
+  width: 20px;
+  text-align: center;
+  display: inline-block;
 }
 .expires-apply {
   margin-top: 20px;

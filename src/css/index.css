@@ -216,6 +216,9 @@ label {
 .workplace-icon,
 .job__time-icon {
   color: rgb(166, 164, 164);
+  width: 24px;
+  text-align: center;
+  display: inline-block;
 }
 .page-link {
   cursor: pointer;
