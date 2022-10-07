@@ -225,14 +225,19 @@ label {
 }
 
 /* select */
-
+.btn-search-group {
+  padding-left: 0 !important;
+}
 @media (max-width: 767px) {
   .search-location-group {
-    padding: 0;
+    padding: 0 !important;
   }
   .search-location,
   .btn-search {
     margin-top: 12px;
+  }
+  .btn-search-group {
+    padding-left: 12px !important;
   }
 }
 @media (max-width: 576px) {
@@ -240,7 +245,7 @@ label {
     margin: 0;
   }
   .btn-search-group {
-    padding-right: 0;
+    padding-right: 0 !important;
   }
   .search-location {
     width: 100%;
