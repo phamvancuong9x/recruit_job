@@ -260,6 +260,9 @@ header {
 .bar-icon {
   cursor: pointer;
 }
+.nav-padding {
+  margin-right: 20px;
+}
 /* footer */
 footer {
   padding: 2rem 0;
@@ -288,8 +291,4 @@ footer {
   .panigation {
     overflow: auto;
   }
-}
-
-.nav-padding {
-  margin-right: 20px;
 }
