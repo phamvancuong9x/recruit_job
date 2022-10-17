@@ -74,6 +74,33 @@ function showErrorSkill() {
     $(".viewbar").parent().next().css("display", "none");
   }
 }
+function changeShowSkill() {
+  const ElmItemAll = document.querySelectorAll(".item");
+  if (ElmItemAll.length > 0 && ElmItemAll.length < 3) {
+    $(".viewbar")[0].style = "padding:5px 15px !important";
+  } else {
+    $(".viewbar")[0].style = "padding:9px 15px !important";
+  }
+  if ($(".elm-selected")[0] !== undefined) {
+    $(".elm-selected").text(`Đã chọn ( ${ElmItemAll.length} ) `);
+  }
+  if (ElmItemAll.length > 2 && $(".elm-selected")[0] === undefined) {
+    const ElmNew = document.createElement("span");
+    ElmNew.innerText = `Đã chọn ( ${ElmItemAll.length} ) `;
+    ElmNew.classList.add("elm-selected");
+    $(".viewbar")[0].appendChild(ElmNew);
+    $(".selected-items").css("display", "none");
+    $(".viewbar")[0].style = "padding:9px 15px !important";
+  } else if (ElmItemAll.length <= 2) {
+    $(".viewbar")[0].style.lineHeight = "auto";
+    $(".selected-items").css("display", "block");
+    $(".elm-selected").remove();
+  }
+}
+changeShowSkill();
+checkValidateSkill("optionselected", changeShowSkill);
+checkValidateSkill("optiondeselected", changeShowSkill);
+
 function checkValidateSkill(event, callback = () => {}) {
   $("#skills").on(event, function (e) {
     callback();
@@ -163,18 +190,6 @@ showErrorSalary();
 function formatDate(stringDate) {
   return stringDate.split("-").reverse().join("/");
 }
-
-// chuyển từ trang preview về phần tạo tin tuyển dung
-
-// function previewSwitchCreateJob() {
-//   previewBtnEdit.onclick = function () {
-//     ElmFormTab1.style.display = "block";
-//     tab1Preview.style.display = "none";
-//     ElmProgesNumber2.style = "";
-//     ElmProgesText2.style = "";
-//   };
-// }
-// previewSwitchCreateJob();
 
 // Tạo mới tin tuyển dụng
 
