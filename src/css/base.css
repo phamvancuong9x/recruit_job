@@ -257,7 +257,9 @@ header {
 .tab-content-active {
   display: block !important;
 }
-
+.bar-icon {
+  cursor: pointer;
+}
 /* footer */
 footer {
   padding: 2rem 0;
@@ -286,4 +288,8 @@ footer {
   .panigation {
     overflow: auto;
   }
+}
+
+.nav-padding {
+  margin-right: 20px;
 }
