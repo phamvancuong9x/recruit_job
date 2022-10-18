@@ -62,6 +62,7 @@ showSubMenu4();
 function showSubMenuMobile() {
   $(".bar-icon").on("click", function () {
     $(".parent-menu").toggleClass("parent-menu-active");
+    $(".overlay").addClass("overlay-active");
   });
 }
 showSubMenuMobile();
@@ -104,6 +105,11 @@ function hideSubMenu1(classSubMenu, classBtnShow, classActive) {
     } else {
       $(".parent-menu").addClass(classActive);
     }
+    console.log(ElmBtnShowMenuMobile);
+  });
+
+  $(".overlay").on("click", function () {
+    $(".overlay").removeClass("overlay-active");
   });
 }
 hideSubMenu1(".parent-menu", ".bar-icon", "parent-menu-active");

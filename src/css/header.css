@@ -236,6 +236,11 @@ header {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.387);
+    display: none;
+    z-index: 100;
+  }
+  .overlay-active {
+    display: block;
   }
 
   .parent-menu-active {
