@@ -238,9 +238,13 @@ header {
     background-color: rgba(0, 0, 0, 0.387);
     display: none;
     z-index: 100;
+    display: none;
+    z-index: 100;
   }
   .overlay-active {
     display: block;
+  }
+  .a {
   }
 
   .parent-menu-active {
