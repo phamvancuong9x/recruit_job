@@ -395,16 +395,17 @@
       <div class="parent-menu mobile" id="mySidenav" style="overflow-y: auto">
         <ul>
           <li class="parent-menu-item">
-            <a href="/"><span>Trang chủ</span></a>
+            <a href="index.html"><span>Trang chủ</span></a>
           </li>
           <!-- khóa học -->
           <li
-            class="parent-menu-item"
+            class="parent-menu-item menu-ranks-1"
             onclick="ShowSubMenu(this)"
             data-dropdown="submenu-dropdown-mobile-2"
           >
             <a
-              ><span>Khóa học&ensp;<i class="fas fa-caret-down"></i></span
+              ><span
+                >Khóa học&ensp;<i class="fa-solid fa-chevron-right"></i></span
             ></a>
           </li>
           <!-- sub menu của khóa học -->
@@ -413,27 +414,55 @@
             id="submenu-dropdown-mobile-2"
             data-name="submenu-dropdown-mobile"
           >
-            <div style="padding-left: 1.5rem">
+            <div class="menu-ranks-1-content">
               <div>
+                <div class="menu-ranks-title" style="padding-bottom: 1.5rem">
+                  <div class="menu-ranks-icon">
+                    <i class="fa-solid fa-arrow-left"></i>
+                  </div>
+                  <span style="text-align: center"> Khóa học </span>
+                </div>
                 <div class="menu-ranks-2" style="padding-bottom: 1.5rem">
-                  <span>Chuyên ngành <i class="fas fa-caret-down"></i></span>
+                  <span
+                    >Chuyên ngành <i class="fa-solid fa-chevron-right"></i
+                  ></span>
                 </div>
                 <div class="menu-ranks-2-content">
-                  <div style="padding-left: 1.5rem">
+                  <div style="">
+                    <div
+                      class="menu-ranks-title"
+                      style="padding-bottom: 1.5rem"
+                    >
+                      <div class="menu-ranks-icon">
+                        <i class="fa-solid fa-arrow-left"></i>
+                      </div>
+                      <span style="text-align: center"> Chuyên ngành </span>
+                    </div>
                     <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
                       <span
-                        >Web Front End <i class="fas fa-caret-down"></i
+                        >Web Front End <i class="fa-solid fa-chevron-right"></i
                       ></span>
                     </div>
                     <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
+                        <div
+                          class="menu-ranks-title"
+                          style="padding-bottom: 1.5rem"
+                        >
+                          <div class="menu-ranks-icon">
+                            <i class="fa-solid fa-arrow-left"></i>
+                          </div>
+                          <span style="text-align: center">
+                            Web Front End
+                          </span>
+                        </div>
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://web.techmaster.vn/"
                             >Bootcamp Web Front End</a
                           >
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://frontend.techmaster.vn/"
                             >Web Front End + React</a
@@ -442,47 +471,65 @@
                       </div>
                     </div>
                   </div>
-                  <div style="padding-left: 1.5rem">
+                  <div style="">
                     <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
                       <span
-                        >Web Back End <i class="fas fa-caret-down"></i
+                        >Web Back End <i class="fa-solid fa-chevron-right"></i
                       ></span>
                     </div>
                     <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
+                        <div
+                          class="menu-ranks-title"
+                          style="padding-bottom: 1.5rem"
+                        >
+                          <div class="menu-ranks-icon">
+                            <i class="fa-solid fa-arrow-left"></i>
+                          </div>
+                          <span style="text-align: center"> Web Back End </span>
+                        </div>
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://java.techmaster.vn/"
                             >Fullstack Java Spring Boot</a
                           >
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://php.techmaster.vn/"
                             >Fullstack PHP Laravel</a
                           >
                         </div>
                       </div>
-                      <!-- <div style="padding-left: 1.5rem">
+                      <!-- <div style="">
                       <div style="padding-bottom: 1.5rem">
                         <span>Fullstack Node</span>
                       </div>
                     </div> -->
                     </div>
                   </div>
-                  <div style="padding-left: 1.5rem">
+                  <div style="">
                     <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
                       <span
-                        >DevOps & AWS <i class="fas fa-caret-down"></i
+                        >DevOps & AWS <i class="fa-solid fa-chevron-right"></i
                       ></span>
                     </div>
                     <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
+                        <div
+                          class="menu-ranks-title"
+                          style="padding-bottom: 1.5rem"
+                        >
+                          <div class="menu-ranks-icon">
+                            <i class="fa-solid fa-arrow-left"></i>
+                          </div>
+                          <span style="text-align: center"> DevOps & AWS </span>
+                        </div>
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://devops.techmaster.vn/">DevOps</a>
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://aws.techmaster.vn/"
                             >Amazon Web Service</a
@@ -491,17 +538,28 @@
                       </div>
                     </div>
                   </div>
-                  <div style="padding-left: 1.5rem">
+                  <div style="">
                     <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span>Mobile <i class="fas fa-caret-down"></i></span>
+                      <span
+                        >Mobile <i class="fa-solid fa-chevron-right"></i
+                      ></span>
                     </div>
                     <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
+                        <div
+                          class="menu-ranks-title"
+                          style="padding-bottom: 1.5rem"
+                        >
+                          <div class="menu-ranks-icon">
+                            <i class="fa-solid fa-arrow-left"></i>
+                          </div>
+                          <span style="text-align: center"> Mobile </span>
+                        </div>
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://ios.techmaster.vn/">Apple iOS</a>
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://flutter.techmaster.vn/">
                             Google Flutter</a
@@ -510,12 +568,23 @@
                       </div>
                     </div>
                   </div>
-                  <div style="padding-left: 1.5rem">
+                  <div style="">
                     <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span>STEM <i class="fas fa-caret-down"></i></span>
+                      <span
+                        >STEM <i class="fa-solid fa-chevron-right"></i
+                      ></span>
                     </div>
                     <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
+                        <div
+                          class="menu-ranks-title"
+                          style="padding-bottom: 1.5rem"
+                        >
+                          <div class="menu-ranks-icon">
+                            <i class="fa-solid fa-arrow-left"></i>
+                          </div>
+                          <span style="text-align: center"> STEM </span>
+                        </div>
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://lego.techmaster.vn/"
                             >Lego Robot Inventor</a
@@ -528,57 +597,91 @@
               </div>
               <div>
                 <div class="menu-ranks-2" style="padding-bottom: 1.5rem">
-                  <span>Đối tượng <i class="fas fa-caret-down"></i></span>
+                  <span
+                    >Đối tượng <i class="fa-solid fa-chevron-right"></i
+                  ></span>
                 </div>
                 <div class="menu-ranks-2-content">
-                  <div style="padding-left: 1.5rem">
+                  <div style="">
+                    <div
+                      class="menu-ranks-title"
+                      style="padding-bottom: 1.5rem"
+                    >
+                      <div class="menu-ranks-icon">
+                        <i class="fa-solid fa-arrow-left"></i>
+                      </div>
+                      <span style="text-align: center"> Đối tượng </span>
+                    </div>
                     <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
                       <span
-                        >Người mới bắt đầu <i class="fas fa-caret-down"></i
+                        >Người mới bắt đầu
+                        <i class="fa-solid fa-chevron-right"></i
                       ></span>
                     </div>
                     <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
+                        <div
+                          class="menu-ranks-title"
+                          style="padding-bottom: 1.5rem"
+                        >
+                          <div class="menu-ranks-icon">
+                            <i class="fa-solid fa-arrow-left"></i>
+                          </div>
+                          <span style="text-align: center">
+                            Người mới bắt đầu
+                          </span>
+                        </div>
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://web.techmaster.vn/"
                             >Bootcamp Web Front End</a
                           >
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://frontend.techmaster.vn/"
                             >Web Front End + React</a
                           >
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://java.techmaster.vn/"
                             >Fullstack Java Spring Boot</a
                           >
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="#">Fullstack Node</a>
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://ios.techmaster.vn/">Apple iOS</a>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div style="padding-left: 1.5rem">
+                  <div style="">
                     <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
                       <span
-                        >Sinh viên CNTT <i class="fas fa-caret-down"></i
+                        >Sinh viên CNTT <i class="fa-solid fa-chevron-right"></i
                       ></span>
                     </div>
                     <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
+                        <div
+                          class="menu-ranks-title"
+                          style="padding-bottom: 1.5rem"
+                        >
+                          <div class="menu-ranks-icon">
+                            <i class="fa-solid fa-arrow-left"></i>
+                          </div>
+                          <span style="text-align: center">
+                            Sinh viên CNTT
+                          </span>
+                        </div>
                         <div style="padding-bottom: 1.5rem">
                           <a
                             href="https://techmaster.vn/course-detail/r7w/spring-boot-web-back-end"
@@ -586,17 +689,17 @@
                           </a>
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://php.techmaster.vn/">PHP Laravel</a>
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="#">Fullstack Node</a>
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a
                             href="https://techmaster.vn/course-detail/25518/web-frontend-nang-cao-voi-react"
@@ -606,19 +709,30 @@
                       </div>
                     </div>
                   </div>
-                  <div style="padding-left: 1.5rem">
+                  <div style="">
                     <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
                       <span
-                        >Lập trình viên <i class="fas fa-caret-down"></i
+                        >Lập trình viên <i class="fa-solid fa-chevron-right"></i
                       ></span>
                     </div>
                     <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
+                        <div
+                          class="menu-ranks-title"
+                          style="padding-bottom: 1.5rem"
+                        >
+                          <div class="menu-ranks-icon">
+                            <i class="fa-solid fa-arrow-left"></i>
+                          </div>
+                          <span style="text-align: center">
+                            Lập trình viên
+                          </span>
+                        </div>
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://devops.techmaster.vn/">DevOps</a>
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://aws.techmaster.vn/"
                             >Amazon Web Service</a
@@ -627,29 +741,40 @@
                       </div>
                     </div>
                   </div>
-                  <!-- <div style="padding-left: 1.5rem">
+                  <!-- <div style="">
                     <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span>Mobile <i class="fas fa-caret-down"></i></span>
+                      <span>Mobile <i class="fa-solid fa-chevron-right"></i></span>
                     </div>
                     <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://ios.techmaster.vn/">Apple iOS</a>
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://flutter.techmaster.vn/">Flutter</a>
                         </div>
                       </div>
                     </div>
                   </div> -->
-                  <div style="padding-left: 1.5rem">
+                  <div style="">
                     <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span>Học sinh <i class="fas fa-caret-down"></i></span>
+                      <span
+                        >Học sinh <i class="fa-solid fa-chevron-right"></i
+                      ></span>
                     </div>
                     <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
+                        <div
+                          class="menu-ranks-title"
+                          style="padding-bottom: 1.5rem"
+                        >
+                          <div class="menu-ranks-icon">
+                            <i class="fa-solid fa-arrow-left"></i>
+                          </div>
+                          <span style="text-align: center">Học sinh </span>
+                        </div>
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://lego.techmaster.vn/"
                             >Lego Robot Inventor</a
@@ -662,53 +787,86 @@
               </div>
               <div>
                 <div class="menu-ranks-2" style="padding-bottom: 1.5rem">
-                  <span>Hình thức học <i class="fas fa-caret-down"></i></span>
+                  <span
+                    >Hình thức học <i class="fa-solid fa-chevron-right"></i
+                  ></span>
                 </div>
                 <div class="menu-ranks-2-content">
-                  <div style="padding-left: 1.5rem">
+                  <div style="">
+                    <div
+                      class="menu-ranks-title"
+                      style="padding-bottom: 1.5rem"
+                    >
+                      <div class="menu-ranks-icon">
+                        <i class="fa-solid fa-arrow-left"></i>
+                      </div>
+                      <span style="text-align: center"> Hình thức học </span>
+                    </div>
                     <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span>Dài hạn <i class="fas fa-caret-down"></i></span>
+                      <span
+                        >Dài hạn <i class="fa-solid fa-chevron-right"></i
+                      ></span>
                     </div>
                     <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
+                        <div
+                          class="menu-ranks-title"
+                          style="padding-bottom: 1.5rem"
+                        >
+                          <div class="menu-ranks-icon">
+                            <i class="fa-solid fa-arrow-left"></i>
+                          </div>
+                          <span style="text-align: center"> Dài hạn </span>
+                        </div>
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://web.techmaster.vn/"
                             >Bootcamp Web Front End</a
                           >
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://frontend.techmaster.vn/"
                             >Web Front End + React</a
                           >
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://java.techmaster.vn/"
                             >Fullstack Java Spring Boot</a
                           >
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="#">Fullstack Node</a>
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://ios.techmaster.vn/">Apple iOS</a>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div style="padding-left: 1.5rem">
+                  <div style="">
                     <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span>Ngắn hạn <i class="fas fa-caret-down"></i></span>
+                      <span
+                        >Ngắn hạn <i class="fa-solid fa-chevron-right"></i
+                      ></span>
                     </div>
                     <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
+                        <div
+                          class="menu-ranks-title"
+                          style="padding-bottom: 1.5rem"
+                        >
+                          <div class="menu-ranks-icon">
+                            <i class="fa-solid fa-arrow-left"></i>
+                          </div>
+                          <span style="text-align: center"> Ngắn hạn </span>
+                        </div>
                         <div style="padding-bottom: 1.5rem">
                           <a
                             href="https://techmaster.vn/course-detail/r7w/spring-boot-web-back-end"
@@ -717,7 +875,7 @@
                         </div>
                       </div>
 
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a
                             href="https://techmaster.vn/course-detail/25608/thiet-ke-lap-trinh-co-so-du-lieu"
@@ -726,7 +884,7 @@
                           >
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a
                             href="https://techmaster.vn/course-detail/25606/thiet-ke-ui-ux-cho-phan-mem"
@@ -735,7 +893,7 @@
                           >
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a
                             href="https://techmaster.vn/course-detail/25518/web-frontend-nang-cao-voi-react"
@@ -743,7 +901,7 @@
                           >
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://techmaster.vn/khoa-hoc/onlab"
                             >Xem thêm</a
@@ -752,13 +910,24 @@
                       </div>
                     </div>
                   </div>
-                  <div style="padding-left: 1.5rem">
+                  <div style="">
                     <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span>Online <i class="fas fa-caret-down"></i></span>
+                      <span
+                        >Online <i class="fa-solid fa-chevron-right"></i
+                      ></span>
                     </div>
 
                     <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
+                        <div
+                          class="menu-ranks-title"
+                          style="padding-bottom: 1.5rem"
+                        >
+                          <div class="menu-ranks-icon">
+                            <i class="fa-solid fa-arrow-left"></i>
+                          </div>
+                          <span style="text-align: center"> Online</span>
+                        </div>
                         <div style="padding-bottom: 1.5rem">
                           <a
                             href="https://techmaster.vn/course-detail/25572/hoc-lap-trinh-java-truc-tuyen"
@@ -766,7 +935,7 @@
                           >
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a
                             href="https://techmaster.vn/course-detail/2l6/lap-trinh-web-voi-spring-boot-online"
@@ -774,7 +943,7 @@
                           >
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a
                             href="https://techmaster.vn/course-detail/38y/lap-trinh-di-dong-da-nen-tang-react-native-online-cap-nhat-2022"
@@ -782,7 +951,7 @@
                           >
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a
                             href="https://techmaster.vn/course-detail/xxd/lap-trinh-di-dong-ios-swift-online"
@@ -790,7 +959,7 @@
                           >
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://techmaster.vn/khoa-hoc/online"
                             >Xem thêm</a
@@ -799,17 +968,17 @@
                       </div>
                     </div>
                   </div>
-                  <!-- <div style="padding-left: 1.5rem">
+                  <!-- <div style="">
                     <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span>Mobile <i class="fas fa-caret-down"></i></span>
+                      <span>Mobile <i class="fa-solid fa-chevron-right"></i></span>
                     </div>
                     <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://ios.techmaster.vn/">Apple iOS</a>
                         </div>
                       </div>
-                      <div style="padding-left: 1.5rem">
+                      <div style="">
                         <div style="padding-bottom: 1.5rem">
                           <a href="https://flutter.techmaster.vn/">Flutter</a>
                         </div>
@@ -823,7 +992,9 @@
                   href="https://techmaster.vn/trungtam/dao-tao-doanh-nghiep"
                   style="padding-bottom: 1.5rem"
                 >
-                  <span>Doanh nghiệp </span>
+                  <span style="line-height: 60px; padding: 0 25px"
+                    >Doanh nghiệp
+                  </span>
                 </a>
               </div>
             </div>
@@ -850,21 +1021,28 @@
             >
           </li>
           <li
-            class="parent-menu-item"
+            class="parent-menu-item parent-menu-2"
             onclick="ShowSubMenu(this)"
             data-dropdown="submenu-dropdown-mobile-8"
           >
             <a
-              ><span>Chúng tôi&ensp;<i class="fas fa-caret-down"></i></span
+              ><span
+                >Chúng tôi&ensp;<i class="fa-solid fa-chevron-right"></i></span
             ></a>
           </li>
           <li
             class="parent-menu-item"
-            style="height: auto; padding-top: 0; display: none"
+            style="height: auto; padding-top: 0"
             id="submenu-dropdown-mobile-8"
             data-name="submenu-dropdown-mobile"
           >
-            <div style="padding-left: 1.5rem">
+            <div class="parent-menu-2__submenu">
+              <div class="menu-ranks-title" style="padding-bottom: 1.5rem">
+                <div class="menu-ranks-icon">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </div>
+                <span style="text-align: center"> Chúng tôi </span>
+              </div>
               <a href="/trungtam/trung-tam"
                 ><div style="padding-bottom: 1.5rem">
                   <span>Trung tâm</span>
