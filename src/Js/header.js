@@ -92,3 +92,19 @@ function touchEventLeft() {
   });
 }
 touchEventLeft();
+function hideSubMenu1(classSubMenu, classBtnShow, classActive) {
+  const ElmMenuMobile = document.querySelector(classSubMenu);
+  const ElmBtnShowMenuMobile = document.querySelector(classBtnShow);
+  window.addEventListener("click", function (e) {
+    if (
+      e.target.closest(classSubMenu) !== ElmMenuMobile &&
+      e.target.closest(classBtnShow) !== ElmBtnShowMenuMobile
+    ) {
+      $(ElmMenuMobile).removeClass(classActive);
+    } else {
+      $(".parent-menu").addClass(classActive);
+    }
+  });
+}
+hideSubMenu1(".parent-menu", ".bar-icon", "parent-menu-active");
+hideSubMenu1(".dropdown-menu-full", ".nav__menu-item", "sub-menu-active");
