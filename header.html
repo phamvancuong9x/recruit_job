@@ -42,7 +42,7 @@
   </head>
   <body style="background-color: #fff">
     <!-- header -->
-    <header>
+    <header id="header">
       <div
         class="header__content header__content-desktop"
         style="
@@ -385,7 +385,11 @@
             ><span class="badge badge-success count-cart-item">0</span>
           </div>
           <span class="login">
-            <a href="loginLogout.html"><i class="fa-solid fa-user"></i></a>
+            <i
+              class="fas fa-user user-top-menu"
+              data-toggle="modal"
+              data-target="#modal-signin"
+            ></i>
           </span>
           <div class="header__user parent-menu-nav parent-menu-nav2">
             <div class="header__user-info">
@@ -1092,7 +1096,7 @@
       <div
         class="header__content header__content-mobile"
         style="
-          background-color: #0f5298;
+          background-color: #30598c;
           color: #fff;
           text-align: center;
           font-size: 20px;
@@ -1108,28 +1112,33 @@
           </a>
         </div>
         <div class="login login-mobile">
-          <a href="loginLogout.html"><i class="fa-solid fa-user"></i></a>
+          <i
+            class="fas fa-user user-top-menu"
+            data-toggle="modal"
+            data-target="#modal-signin"
+          ></i>
         </div>
-        <div class="header__user header__user-mobile">
+        <div
+          class="header__user header__user-mobile parent-menu-nav parent-menu-nav3"
+        >
           <div class="header__user-info">
             <div class="header__user-image">
               <img src="src/image/avatar.png" alt="user image" />
             </div>
           </div>
-          <ul class="header__user-list header__user-list-mobile">
-            <li class="header__user-item">
-              <a href="user.html">Thông tin tài khoản</a>
+          <ul class="dropdown-menu sub-menu-nav" id="dropdown-user-menu-mobile">
+            <li class="admin-page" style="display: none">
+              <span>Trang quản trị</span>
             </li>
-            <li class="header__user-item">
-              <a href="infoCmpany.html">Thông tin công ty</a>
+            <li class="teacher-page" style="display: none">
+              <span>Trang giảng viên</span>
             </li>
-            <li class="header__user-item">
-              <a href="saveJob.html">Việc làm đã lưu</a>
+            <li class="choose-user-classes"><span>Lớp học của tôi</span></li>
+            <li class="choose-history-transaction">
+              <span>Lịch sử giao dịch</span>
             </li>
-
-            <li class="header__user-item">
-              <span class="logout logout-mobile">Đăng xuất</span>
-            </li>
+            <li class="choose-user-profile"><span>Hồ sơ cá nhân</span></li>
+            <li class="choose-sign-out"><span>Đăng xuất</span></li>
           </ul>
         </div>
       </div>

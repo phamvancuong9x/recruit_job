@@ -101,6 +101,8 @@ function hideSubMenu1(classSubMenu, classBtnShow, classActive) {
   const ElmBtnmenu1 = document.querySelector(".parent-menu-nav1");
   const Elmmenu2 = document.querySelector("#dropdown-user-menu");
   const ElmBtnmenu2 = document.querySelector(".parent-menu-nav2");
+  const Elmmenu3 = document.querySelector("#dropdown-user-menu-mobile");
+  const ElmBtnmenu3 = document.querySelector(".parent-menu-nav3");
   window.addEventListener("click", function (e) {
     if (
       e.target.closest(classSubMenu) !== ElmMenuMobile &&
@@ -116,7 +118,9 @@ function hideSubMenu1(classSubMenu, classBtnShow, classActive) {
       e.target.closest("#submenu-dropdown-8") !== Elmmenu1 &&
       e.target.closest(".parent-menu-nav1") !== ElmBtnmenu1 &&
       e.target.closest("#dropdown-user-menu") !== Elmmenu2 &&
-      e.target.closest(".parent-menu-nav2") !== ElmBtnmenu2
+      e.target.closest(".parent-menu-nav2") !== ElmBtnmenu2 &&
+      e.target.closest("#dropdown-user-menu-mobile") !== Elmmenu3 &&
+      e.target.closest(".parent-menu-nav3") !== ElmBtnmenu3
     ) {
       $(".sub-menu-nav").removeClass("active");
     }
