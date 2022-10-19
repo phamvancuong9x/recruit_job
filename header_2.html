@@ -53,906 +53,743 @@
   </head>
   <body style="background-color: #fff">
     <!-- header -->
-    <header>
-      <div
-        class="header__content header__content-desktop"
-        style="
-          line-height: 60px;
-          background-color: #0f5298;
-          color: #fff;
-          text-align: center;
-          max-width: none !important;
-          font-size: 20px;
-        "
-      >
-        <div class="logo">
-          <a href="https://techmaster.vn/"
-            ><img
-              src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
-              alt=""
-            />
-          </a>
-        </div>
-        <div class="nav__menu">
-          <div class="nav__menu-item">
-            <a class="nav-padding"
-              ><span>Khóa học&ensp;<i class="fas fa-caret-down"></i></span>
-            </a>
-
-            <div
-              class="dropdown-menu-full dropdown-menu"
-              id="submenu-dropdown-2"
+    <div class="container-fluid" id="header">
+      <header>
+        <div class="nav-bar">
+          <nav class="navbar navbar-expand-lg">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarTogglerDemo01"
             >
-              <div class="sub-nav">
-                <div class="container d-flex">
-                  <div class="sub-nav-item sub-nav-item1 sub-nav-item-active">
-                    Chuyên ngành
-                  </div>
-                  <div class="sub-nav-item sub-nav-item2">Đối tượng</div>
-                  <div class="sub-nav-item sub-nav-item3">Hình thức học</div>
-                  <a
-                    href="https://techmaster.vn/trungtam/dao-tao-doanh-nghiep"
-                    class="sub-nav-item sub-nav-item4"
-                    >Doanh nghiệp</a
+              <i class="fas fa-bars" style="color: white"></i>
+            </button>
+            <div class="logo-brand">
+              <a href="/"
+                ><img
+                  src="/resources/image/logo-techmaster/white/white_200x74.png"
+                  alt="logo"
+              /></a>
+            </div>
+            <div class="user-nav mobile">
+              <div
+                class="user-dropdown-avatar"
+                data-dropdown="dropdown-user-menu-mobile"
+              >
+                <img
+                  src="https://media.techmaster.vn/api/static/crop/c59bbck51co3oo919rig"
+                  onerror="this.onerror=null;this.src='/resources/image/anonymous-user.jpg';"
+                  alt="Avatar"
+                  class="navbar-user-avatar-img"
+                />
+              </div>
+              <ul
+                class="dropdown-menu"
+                id="dropdown-user-menu-mobile"
+                style="margin-right: 15px; display: none"
+              >
+                <li class="admin-page" style="display: none">
+                  <span>Trang quản trị</span>
+                </li>
+                <li class="teacher-page" style="display: none">
+                  <span>Trang giảng viên</span>
+                </li>
+                <li class="choose-user-classes">
+                  <span>Lớp học của tôi</span>
+                </li>
+                <li class="choose-history-transaction">
+                  <span>Lịch sử giao dịch</span>
+                </li>
+                <li class="choose-user-profile"><span>Hồ sơ cá nhân</span></li>
+                <li class="choose-sign-out"><span>Đăng xuất</span></li>
+              </ul>
+            </div>
+            <div class="btn mobile shopping-cart-mobile" style="display: none">
+              <a href="/gio-hang" style="color: white"
+                ><div style="position: relative; line-height: 75px">
+                  <i class="fas fa-shopping-cart"></i>
+                  <span class="count-cart-item count-cart-item-mobile">0</span>
+                </div></a
+              >
+            </div>
+            <div class="parent-menu desktop">
+              <ul class="list-menu">
+                <li
+                  class="parent-menu-item"
+                  onclick="ShowSubMenu(this)"
+                  data-dropdown="submenu-dropdown-0"
+                >
+                  <a class="nav-padding"
+                    ><span
+                      >Lộ trình&ensp;<i class="fas fa-caret-down"></i
+                    ></span>
+                  </a>
+                  <ul
+                    class="dropdown-menu"
+                    id="submenu-dropdown-0"
+                    style="display: none"
                   >
-                </div>
-              </div>
-              <div class="container">
-                <div class="sub-content sub-content1">
-                  <div class="row">
-                    <div class="col-2">
-                      <div class="sub-group-item">
-                        <div class="sub-group-item-title">Web Front End</div>
-                        <a
-                          href="https://web.techmaster.vn/"
-                          class="sub-group-item-text"
-                        >
-                          Bootcamp Web Front End
-                        </a>
-                        <a
-                          href="https://frontend.techmaster.vn/"
-                          class="sub-group-item-text"
-                        >
-                          Web Front End + React
-                        </a>
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="sub-group-item">
-                        <div class="sub-group-item-title">Web Back End</div>
-                        <a
-                          href="https://java.techmaster.vn/"
-                          class="sub-group-item-text"
-                        >
-                          Fullstack Java Spring Boot
-                        </a>
-                        <a
-                          href="https://php.techmaster.vn/"
-                          class="sub-group-item-text"
-                        >
-                          Fullstack PHP Laravel
-                        </a>
-                        <a href="#" class="sub-group-item-text"
-                          >Fullstack Node</a
-                        >
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="sub-group-item">
-                        <div class="sub-group-item-title">DevOps & AWS</div>
-                        <a
-                          href="https://devops.techmaster.vn/"
-                          class="sub-group-item-text"
-                          >DevOps</a
-                        >
-                        <a
-                          href="https://aws.techmaster.vn/"
-                          class="sub-group-item-text"
-                          >Amazon Web Service</a
-                        >
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="sub-group-item">
-                        <div class="sub-group-item-title">Mobile</div>
-                        <a
-                          href="https://ios.techmaster.vn/"
-                          class="sub-group-item-text"
-                          >Apple iOS</a
-                        >
-                        <a
-                          href="https://flutter.techmaster.vn/"
-                          class="sub-group-item-text"
-                          >Google Flutter</a
-                        >
-                      </div>
-                    </div>
-                    <div class="col-2">
-                      <div class="sub-group-item">
-                        <div class="sub-group-item-title">STEM</div>
-                        <a
-                          href="https://lego.techmaster.vn/"
-                          class="sub-group-item-text"
-                          >Lego Robot Inventor</a
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="sub-content sub-content2">
-                  <div class="sub-content-group">
-                    <div class="sub-group-item">
-                      <div class="sub-group-item-title">Người mới bắt đầu</div>
-                      <a
-                        href="https://web.techmaster.vn/"
-                        class="sub-group-item-text"
-                      >
-                        Bootcamp Web Front End
-                      </a>
-                      <a
-                        href="https://frontend.techmaster.vn/"
-                        class="sub-group-item-text"
-                      >
-                        Web Front End + React
-                      </a>
-                      <a
-                        href="https://java.techmaster.vn/"
-                        class="sub-group-item-text"
-                      >
-                        Fullstack Java Spring Boot
-                      </a>
-                      <a
-                        href="https://ios.techmaster.vn/"
-                        class="sub-group-item-text"
-                      >
-                        Apple iOS
-                      </a>
-                    </div>
-                    <div class="sub-group-item">
-                      <div class="sub-group-item-title">Sinh viên CNTT</div>
-                      <a
-                        href="https://techmaster.vn/course-detail/r7w/spring-boot-web-back-end"
-                        class="sub-group-item-text"
-                      >
-                        Java Spring Boot
-                      </a>
-                      <a
-                        href="https://php.techmaster.vn/"
-                        class="sub-group-item-text"
-                      >
-                        PHP Laravel
-                      </a>
-                      <a href="#" class="sub-group-item-text">Fullstack Node</a>
-                      <a
-                        href="https://techmaster.vn/course-detail/25518/web-frontend-nang-cao-voi-react"
-                        class="sub-group-item-text"
-                        >ReactJs</a
-                      >
-                    </div>
-                    <div class="sub-group-item">
-                      <div class="sub-group-item-title">Lập trình viên</div>
-                      <a
-                        href="https://devops.techmaster.vn/"
-                        class="sub-group-item-text"
-                        >DevOps</a
-                      >
-                      <a
-                        href="https://aws.techmaster.vn/"
-                        class="sub-group-item-text"
-                        >Amazon Web Service</a
-                      >
-                    </div>
-
-                    <div class="sub-group-item">
-                      <div class="sub-group-item-title">Học sinh</div>
-
-                      <a
-                        href="https://lego.techmaster.vn/"
-                        class="sub-group-item-text"
-                        >Lego Robot Inventor</a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="sub-content sub-content3">
-                  <div class="sub-content-group">
-                    <div class="sub-group-item">
-                      <div class="sub-group-item-title">Dài hạn</div>
-                      <a
-                        href="https://web.techmaster.vn/"
-                        class="sub-group-item-text"
-                      >
-                        Bootcamp Web Front End
-                      </a>
-                      <a
-                        href="https://frontend.techmaster.vn/"
-                        class="sub-group-item-text"
-                      >
-                        Web Front End + React
-                      </a>
-                      <a
-                        href="https://java.techmaster.vn/"
-                        class="sub-group-item-text"
-                      >
-                        Fullstack Java Spring Boot
-                      </a>
-                      <a
-                        href="https://php.techmaster.vn/"
-                        class="sub-group-item-text"
-                      >
-                        Fullstack PHP Laravel
-                      </a>
-                      <a href="#" class="sub-group-item-text">
-                        Fullstack Node</a
-                      >
-                      <a
-                        href="https://ios.techmaster.vn/"
-                        class="sub-group-item-text"
-                      >
-                        Apple iOS
-                      </a>
-                      <a
-                        href="https://flutter.techmaster.vn/"
-                        class="sub-group-item-text"
-                      >
-                        Google Flutter
-                      </a>
-                    </div>
-
-                    <div class="sub-group-item">
-                      <div class="sub-group-item-title">Ngắn hạn</div>
-                      <a
-                        href="https://techmaster.vn/course-detail/r7w/spring-boot-web-back-end"
-                        class="sub-group-item-text"
-                        >Java Spring Boot</a
-                      >
-                      <a
-                        href="https://techmaster.vn/course-detail/25608/thiet-ke-lap-trinh-co-so-du-lieu"
-                        class="sub-group-item-text"
-                        >Thiết kế cơ sở dữ liệu</a
-                      >
-                      <a
-                        href="https://techmaster.vn/course-detail/25606/thiet-ke-ui-ux-cho-phan-mem"
-                        class="sub-group-item-text"
-                        >Thiết Kế UI/UX</a
-                      >
-                      <a
-                        href="https://techmaster.vn/course-detail/25518/web-frontend-nang-cao-voi-react"
-                        class="sub-group-item-text"
-                        >ReactJs</a
-                      >
-                      <a
-                        href="https://techmaster.vn/khoa-hoc/onlab"
-                        class="sub-group-item-text"
-                        >Xem thêm
-                      </a>
-                    </div>
-
-                    <div class="sub-group-item">
-                      <div class="sub-group-item-title">Online</div>
-
-                      <a
-                        href="https://techmaster.vn/course-detail/25572/hoc-lap-trinh-java-truc-tuyen"
-                        class="sub-group-item-text"
-                        >Java cơ bản</a
-                      >
-                      <a
-                        href="https://techmaster.vn/course-detail/2l6/lap-trinh-web-voi-spring-boot-online"
-                        class="sub-group-item-text"
-                        >Spring Boot
-                      </a>
-                      <a
-                        href="https://techmaster.vn/course-detail/38y/lap-trinh-di-dong-da-nen-tang-react-native-online-cap-nhat-2022"
-                        class="sub-group-item-text"
-                        >React Native</a
-                      >
-                      <a
-                        href="https://techmaster.vn/course-detail/xxd/lap-trinh-di-dong-ios-swift-online"
-                        class="sub-group-item-text"
-                        >IOS Swift
-                      </a>
-                      <a
-                        href="https://techmaster.vn/khoa-hoc/online"
-                        class="sub-group-item-text"
-                        >Xem thêm
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!-- <a href="/khoa-hoc/onlab"
-                  ><li><span>Onlab</span></li></a
+                    <a href="https://web.techmaster.vn/"
+                      ><li><span>Bootcamp Full Stack Web</span></li></a
+                    >
+                    <a href="https://frontend.techmaster.vn/"
+                      ><li><span>Web Front End + React.js</span></li></a
+                    >
+                    <a href="https://java.techmaster.vn/"
+                      ><li><span>Java Spring Boot FullStack</span></li></a
+                    >
+                    <a href="https://flutter.techmaster.vn/"
+                      ><li><span>Google Flutter</span></li></a
+                    >
+                    <a href="https://ios.techmaster.vn/"
+                      ><li><span>Apple iOS</span></li></a
+                    >
+                    <a href="https://devops.techmaster.vn/"
+                      ><li><span>DevOps</span></li></a
+                    >
+                    <a href="https://aws.techmaster.vn/"
+                      ><li><span>Amazon Web Service</span></li></a
+                    >
+                  </ul>
+                </li>
+                <li
+                  class="parent-menu-item"
+                  onclick="GoToSite(this)"
+                  data-href="/trungtam/dao-tao-doanh-nghiep"
                 >
-                <a href="/khoa-hoc/online"
-                  ><li><span>Trực tuyến</span></li></a
-                > -->
-              </div>
-            </div>
-          </div>
-          <a class="nav-padding"><span>Sản phẩm học viên</span> </a>
-          <a class="nav-padding"><span>Khai giảng</span> </a>
-          <a class="nav-padding"><span>Blog</span> </a>
-          <a class="nav-padding"><span>Trải nghiệm</span> </a>
-          <a class="nav-padding"><span>Việc làm</span> </a>
-          <a class="nav-padding"
-            ><span>Chúng tôi&ensp;<i class="fas fa-caret-down"></i></span>
-          </a>
-          <span class="login">
-            <a href="loginLogout.html"><i class="fa-solid fa-user"></i></a>
-          </span>
-          <div class="header__user" style="display: none">
-            <div class="header__user-info">
-              <div class="header__user-image">
-                <img src="src/image/avatar.png" alt="user image" />
-              </div>
-            </div>
-            <ul class="header__user-list">
-              <li class="header__user-item">
-                <a href="user.html">Thông tin tài khoản</a>
-              </li>
-              <li class="header__user-item">
-                <a href="infoCompany.html">Thông tin công ty</a>
-              </li>
-              <li class="header__user-item">
-                <a href="saveJob.html">Việc làm đã lưu</a>
-              </li>
-
-              <li class="header__user-item">
-                <a class="/logout">Đăng xuất</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="parent-menu mobile" id="mySidenav" style="overflow-y: auto">
-        <ul>
-          <li class="parent-menu-item">
-            <a href="/"><span>Trang chủ</span></a>
-          </li>
-          <!-- khóa học -->
-          <li
-            class="parent-menu-item"
-            onclick="ShowSubMenu(this)"
-            data-dropdown="submenu-dropdown-mobile-2"
-          >
-            <a
-              ><span>Khóa học&ensp;<i class="fas fa-caret-down"></i></span
-            ></a>
-          </li>
-          <!-- sub menu của khóa học -->
-          <li
-            class="parent-menu-item"
-            id="submenu-dropdown-mobile-2"
-            data-name="submenu-dropdown-mobile"
-          >
-            <div style="padding-left: 1.5rem">
-              <div>
-                <div class="menu-ranks-2" style="padding-bottom: 1.5rem">
-                  <span>Chuyên ngành <i class="fas fa-caret-down"></i></span>
-                </div>
-                <div class="menu-ranks-2-content">
-                  <div style="padding-left: 1.5rem">
-                    <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span
-                        >Web Front End <i class="fas fa-caret-down"></i
-                      ></span>
-                    </div>
-                    <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://web.techmaster.vn/"
-                            >Bootcamp Web Front End</a
-                          >
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://frontend.techmaster.vn/"
-                            >Web Front End + React</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div style="padding-left: 1.5rem">
-                    <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span
-                        >Web Back End <i class="fas fa-caret-down"></i
-                      ></span>
-                    </div>
-                    <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://java.techmaster.vn/"
-                            >Fullstack Java Spring Boot</a
-                          >
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://php.techmaster.vn/"
-                            >Fullstack PHP Laravel</a
-                          >
-                        </div>
-                      </div>
-                      <!-- <div style="padding-left: 1.5rem">
-                      <div style="padding-bottom: 1.5rem">
-                        <span>Fullstack Node</span>
-                      </div>
-                    </div> -->
-                    </div>
-                  </div>
-                  <div style="padding-left: 1.5rem">
-                    <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span
-                        >DevOps & AWS <i class="fas fa-caret-down"></i
-                      ></span>
-                    </div>
-                    <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://devops.techmaster.vn/">DevOps</a>
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://aws.techmaster.vn/"
-                            >Amazon Web Service</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div style="padding-left: 1.5rem">
-                    <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span>Mobile <i class="fas fa-caret-down"></i></span>
-                    </div>
-                    <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://ios.techmaster.vn/">Apple iOS</a>
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://flutter.techmaster.vn/">
-                            Google Flutter</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div style="padding-left: 1.5rem">
-                    <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span>STEM <i class="fas fa-caret-down"></i></span>
-                    </div>
-                    <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://lego.techmaster.vn/"
-                            >Lego Robot Inventor</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div class="menu-ranks-2" style="padding-bottom: 1.5rem">
-                  <span>Đối tượng <i class="fas fa-caret-down"></i></span>
-                </div>
-                <div class="menu-ranks-2-content">
-                  <div style="padding-left: 1.5rem">
-                    <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span
-                        >Người mới bắt đầu <i class="fas fa-caret-down"></i
-                      ></span>
-                    </div>
-                    <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://web.techmaster.vn/"
-                            >Bootcamp Web Front End</a
-                          >
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://frontend.techmaster.vn/"
-                            >Web Front End + React</a
-                          >
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://java.techmaster.vn/"
-                            >Fullstack Java Spring Boot</a
-                          >
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="#">Fullstack Node</a>
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://ios.techmaster.vn/">Apple iOS</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div style="padding-left: 1.5rem">
-                    <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span
-                        >Sinh viên CNTT <i class="fas fa-caret-down"></i
-                      ></span>
-                    </div>
-                    <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a
-                            href="https://techmaster.vn/course-detail/r7w/spring-boot-web-back-end"
-                            >Java Spring Boot
-                          </a>
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://php.techmaster.vn/">PHP Laravel</a>
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="#">Fullstack Node</a>
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a
-                            href="https://techmaster.vn/course-detail/25518/web-frontend-nang-cao-voi-react"
-                            >ReactJs</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div style="padding-left: 1.5rem">
-                    <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span
-                        >Lập trình viên <i class="fas fa-caret-down"></i
-                      ></span>
-                    </div>
-                    <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://devops.techmaster.vn/">DevOps</a>
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://aws.techmaster.vn/"
-                            >Amazon Web Service</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- <div style="padding-left: 1.5rem">
-                    <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span>Mobile <i class="fas fa-caret-down"></i></span>
-                    </div>
-                    <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://ios.techmaster.vn/">Apple iOS</a>
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://flutter.techmaster.vn/">Flutter</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
-                  <div style="padding-left: 1.5rem">
-                    <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span>Học sinh <i class="fas fa-caret-down"></i></span>
-                    </div>
-                    <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://lego.techmaster.vn/"
-                            >Lego Robot Inventor</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div class="menu-ranks-2" style="padding-bottom: 1.5rem">
-                  <span>Hình thức học <i class="fas fa-caret-down"></i></span>
-                </div>
-                <div class="menu-ranks-2-content">
-                  <div style="padding-left: 1.5rem">
-                    <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span>Dài hạn <i class="fas fa-caret-down"></i></span>
-                    </div>
-                    <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://web.techmaster.vn/"
-                            >Bootcamp Web Front End</a
-                          >
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://frontend.techmaster.vn/"
-                            >Web Front End + React</a
-                          >
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://java.techmaster.vn/"
-                            >Fullstack Java Spring Boot</a
-                          >
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="#">Fullstack Node</a>
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://ios.techmaster.vn/">Apple iOS</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div style="padding-left: 1.5rem">
-                    <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span>Ngắn hạn <i class="fas fa-caret-down"></i></span>
-                    </div>
-                    <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a
-                            href="https://techmaster.vn/course-detail/r7w/spring-boot-web-back-end"
-                            >Java Spring Boot
-                          </a>
-                        </div>
-                      </div>
-
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a
-                            href="https://techmaster.vn/course-detail/25608/thiet-ke-lap-trinh-co-so-du-lieu"
-                          >
-                            Thiết kế cơ sở dữ liệu</a
-                          >
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a
-                            href="https://techmaster.vn/course-detail/25606/thiet-ke-ui-ux-cho-phan-mem"
-                          >
-                            Thiết Kế UI/UX</a
-                          >
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a
-                            href="https://techmaster.vn/course-detail/25518/web-frontend-nang-cao-voi-react"
-                            >ReactJs</a
-                          >
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://techmaster.vn/khoa-hoc/onlab"
-                            >Xem thêm</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div style="padding-left: 1.5rem">
-                    <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span>Online <i class="fas fa-caret-down"></i></span>
-                    </div>
-
-                    <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a
-                            href="https://techmaster.vn/course-detail/25572/hoc-lap-trinh-java-truc-tuyen"
-                            >Java cơ bản</a
-                          >
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a
-                            href="https://techmaster.vn/course-detail/2l6/lap-trinh-web-voi-spring-boot-online"
-                            >Spring Boot</a
-                          >
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a
-                            href="https://techmaster.vn/course-detail/38y/lap-trinh-di-dong-da-nen-tang-react-native-online-cap-nhat-2022"
-                            >React Native</a
-                          >
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a
-                            href="https://techmaster.vn/course-detail/xxd/lap-trinh-di-dong-ios-swift-online"
-                            >IOS Swift</a
-                          >
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://techmaster.vn/khoa-hoc/online"
-                            >Xem thêm</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- <div style="padding-left: 1.5rem">
-                    <div class="menu-ranks-3" style="padding-bottom: 1.5rem">
-                      <span>Mobile <i class="fas fa-caret-down"></i></span>
-                    </div>
-                    <div class="menu-ranks-3-content">
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://ios.techmaster.vn/">Apple iOS</a>
-                        </div>
-                      </div>
-                      <div style="padding-left: 1.5rem">
-                        <div style="padding-bottom: 1.5rem">
-                          <a href="https://flutter.techmaster.vn/">Flutter</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
-                </div>
-              </div>
-              <div>
-                <a
-                  href="https://techmaster.vn/trungtam/dao-tao-doanh-nghiep"
-                  style="padding-bottom: 1.5rem"
+                  <a href="/trungtam/dao-tao-doanh-nghiep" class="nav-padding"
+                    ><span>Doanh nghiệp</span>
+                  </a>
+                </li>
+                <li
+                  class="parent-menu-item"
+                  onclick="ShowSubMenu(this)"
+                  data-dropdown="submenu-dropdown-2"
                 >
-                  <span>Doanh nghiệp </span>
-                </a>
+                  <a class="nav-padding"
+                    ><span
+                      >Khóa học&ensp;<i class="fas fa-caret-down"></i
+                    ></span>
+                  </a>
+                  <ul
+                    class="dropdown-menu"
+                    id="submenu-dropdown-2"
+                    style="display: none"
+                  >
+                    <a href="/khoa-hoc/onlab"
+                      ><li><span>Onlab</span></li></a
+                    >
+                    <a href="/khoa-hoc/online"
+                      ><li><span>Trực tuyến</span></li></a
+                    >
+                  </ul>
+                </li>
+                <li
+                  class="parent-menu-item"
+                  onclick="GoToSite(this)"
+                  data-href="/san-pham-hoc-vien"
+                >
+                  <a href="/san-pham-hoc-vien" class="nav-padding"
+                    ><span>Sản phẩm học viên</span>
+                  </a>
+                </li>
+                <li
+                  class="parent-menu-item"
+                  onclick="GoToSite(this)"
+                  data-href="/trungtam/lich-khai-giang"
+                >
+                  <a href="/trungtam/lich-khai-giang" class="nav-padding"
+                    ><span>Khai giảng</span>
+                  </a>
+                </li>
+                <li
+                  class="parent-menu-item"
+                  onclick="GoToSite(this)"
+                  data-href="/posts"
+                >
+                  <a href="/posts" class="nav-padding"><span>Blog</span> </a>
+                </li>
+                <li
+                  class="parent-menu-item"
+                  onclick="GoToSite(this)"
+                  data-href="/trai-nghiem"
+                >
+                  <a href="/trai-nghiem" class="nav-padding"
+                    ><span>Trải nghiệm</span>
+                  </a>
+                </li>
+                <li
+                  class="parent-menu-item"
+                  onclick="GoToSite(this)"
+                  data-href="https://job.techmaster.vn/viec-lam"
+                >
+                  <a
+                    href="https://job.techmaster.vn/viec-lam"
+                    class="nav-padding"
+                    ><span>Việc làm</span>
+                  </a>
+                </li>
+                <li
+                  class="parent-menu-item"
+                  onclick="ShowSubMenu(this)"
+                  data-dropdown="submenu-dropdown-8"
+                >
+                  <a class="nav-padding"
+                    ><span
+                      >Chúng tôi&ensp;<i class="fas fa-caret-down"></i
+                    ></span>
+                  </a>
+                  <ul
+                    class="dropdown-menu"
+                    id="submenu-dropdown-8"
+                    style="display: none"
+                  >
+                    <a href="/trungtam/trung-tam"
+                      ><li><span>Trung tâm</span></li></a
+                    >
+                    <a href="/trungtam/quy-dinh-chung"
+                      ><li><span>Quy định chung</span></li></a
+                    >
+                    <a href="/trungtam/giang-vien"
+                      ><li><span>Giảng viên</span></li></a
+                    >
+                    <a href="/trungtam/huong-dan-mua-khoa-hoc"
+                      ><li><span>Hướng dẫn đăng ký học</span></li></a
+                    >
+                  </ul>
+                </li>
+                <li class="parent-menu-item">
+                  <div style="position: relative">
+                    <a href="/gio-hang"
+                      ><i
+                        class="fas fa-shopping-cart shopping-cart-top-menu"
+                      ></i> </a
+                    ><span class="badge badge-success count-cart-item">0</span>
+                  </div>
+                  <div
+                    class="user-dropdown-avatar"
+                    data-dropdown="dropdown-user-menu"
+                  >
+                    <img
+                      src="https://media.techmaster.vn/api/static/crop/c59bbck51co3oo919rig"
+                      onerror="this.onerror=null;this.src='/resources/image/anonymous-user.jpg';"
+                      alt="Avatar"
+                      class="navbar-user-avatar-img"
+                    />
+                  </div>
+                  <ul
+                    class="dropdown-menu"
+                    id="dropdown-user-menu"
+                    style="display: none"
+                  >
+                    <li class="admin-page" style="display: none">
+                      <span>Trang quản trị</span>
+                    </li>
+                    <li class="teacher-page" style="display: none">
+                      <span>Trang giảng viên</span>
+                    </li>
+                    <li class="choose-user-classes">
+                      <span>Lớp học của tôi</span>
+                    </li>
+                    <li class="choose-history-transaction">
+                      <span>Lịch sử giao dịch</span>
+                    </li>
+                    <li class="choose-user-profile">
+                      <span>Hồ sơ cá nhân</span>
+                    </li>
+                    <li class="choose-sign-out"><span>Đăng xuất</span></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="modal fade"
+              id="modal-signin"
+              tabindex="-1"
+              role="dialog"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item" style="flex: 1">
+                      <a
+                        class="nav-link active"
+                        id="sign-in-tab"
+                        data-toggle="tab"
+                        href="#sign-in-div"
+                        role="tab"
+                        >Đăng nhập</a
+                      >
+                    </li>
+                    <li class="nav-item" style="flex: 1">
+                      <a
+                        class="nav-link"
+                        id="sign-up-tab"
+                        data-toggle="tab"
+                        href="#sign-up-div"
+                        role="tab"
+                        >Đăng ký</a
+                      >
+                    </li>
+                  </ul>
+                  <div class="tab-content">
+                    <div
+                      class="tab-pane fade show active"
+                      id="sign-in-div"
+                      role="tabpanel"
+                    >
+                      <form>
+                        <div class="modal-login-item">
+                          <input
+                            placeholder="Email"
+                            id="sign-in-email"
+                            required=""
+                          />
+                        </div>
+                        <div class="modal-login-item">
+                          <input
+                            type="password"
+                            placeholder="Password"
+                            id="sign-in-password"
+                            required=""
+                          />
+                        </div>
+                        <div class="modal-login-item-half">
+                          <label
+                            style="display: none"
+                            class="checkbox-remember-me"
+                            >Nhớ tài khoản
+                            <input type="checkbox" id="sign-in-remember" />
+                            <span class="checkmark"></span
+                          ></label>
+                          <div
+                            style="cursor: pointer"
+                            class="forgot-password-toggler"
+                          >
+                            <i class="fas fa-question-circle"></i> Quên mật khẩu
+                          </div>
+                        </div>
+                        <div style="margin-bottom: 2rem">
+                          <button
+                            type="button"
+                            class="btn btn-green btn-login-modal"
+                            id="btn-sign-in"
+                          >
+                            Đăng nhập
+                          </button>
+                        </div>
+                        <div class="text-center" style="margin-bottom: 1rem">
+                          Hoặc đăng nhập bằng
+                        </div>
+                        <div class="text-center">
+                          <div class="fab google-sign-in">
+                            <img
+                              src="/resources/image/google.png"
+                              alt="google_sign_in"
+                            />
+                          </div>
+                          <div class="fab facebook-sign-in">
+                            <img
+                              src="/resources/image/facebook.jpg"
+                              alt="facebook_sign_in"
+                            />
+                          </div>
+                          <div class="fab github-sign-in">
+                            <img
+                              src="/resources/image/github-sign.svg"
+                              alt="github_sign_in"
+                            />
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div
+                      class="tab-pane fade show"
+                      id="sign-up-div"
+                      role="tabpanel"
+                    >
+                      <form>
+                        <div class="modal-login-item">
+                          <input
+                            placeholder="Họ tên"
+                            id="sign-up-fullname"
+                            required=""
+                          />
+                        </div>
+                        <div class="modal-login-item">
+                          <input
+                            placeholder="Email"
+                            id="sign-up-email"
+                            required=""
+                          />
+                        </div>
+                        <div class="modal-login-item">
+                          <input
+                            placeholder="Điện thoại"
+                            id="sign-up-phone"
+                            required=""
+                          />
+                        </div>
+                        <div class="modal-login-item">
+                          <input
+                            type="password"
+                            placeholder="Mật khẩu"
+                            id="sign-up-password"
+                            required=""
+                          />
+                        </div>
+                        <div class="modal-login-item">
+                          <input
+                            type="password"
+                            placeholder="Nhập lại mật khẩu"
+                            id="sign-up-retype-password"
+                            required=""
+                          />
+                        </div>
+                        <div class="modal-login-item">
+                          <button
+                            type="button"
+                            class="btn btn-green btn-login-modal"
+                            id="btn-sign-up"
+                          >
+                            Đăng ký
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </li>
-          <li class="parent-menu-item">
-            <a href="/san-pham-hoc-vien"
-              ><span>Sản phẩm học viên&ensp;</span></a
+            <div
+              class="modal fade"
+              id="forgot-password"
+              tabindex="-1"
+              role="dialog"
             >
-          </li>
-          <li class="parent-menu-item">
-            <a href="/trungtam/lich-khai-giang"
-              ><span>Khai giảng&ensp;</span></a
-            >
-          </li>
-          <li class="parent-menu-item">
-            <a href="/posts"><span>Blog&ensp;</span></a>
-          </li>
-          <li class="parent-menu-item">
-            <a href="/trai-nghiem"><span>Trải nghiệm&ensp;</span></a>
-          </li>
-          <li class="parent-menu-item">
-            <a href="https://job.techmaster.vn/viec-lam"
-              ><span>Việc làm&ensp;</span></a
-            >
-          </li>
-          <li
-            class="parent-menu-item"
-            onclick="ShowSubMenu(this)"
-            data-dropdown="submenu-dropdown-mobile-8"
-          >
-            <a
-              ><span>Chúng tôi&ensp;<i class="fas fa-caret-down"></i></span
-            ></a>
-          </li>
-          <li
-            class="parent-menu-item"
-            style="height: auto; padding-top: 0; display: none"
-            id="submenu-dropdown-mobile-8"
-            data-name="submenu-dropdown-mobile"
-          >
-            <div style="padding-left: 1.5rem">
-              <a href="/trungtam/trung-tam"
-                ><div style="padding-bottom: 1.5rem">
-                  <span>Trung tâm</span>
-                </div></a
-              >
-              <a href="/trungtam/quy-dinh-chung"
-                ><div style="padding-bottom: 1.5rem">
-                  <span>Quy định chung</span>
-                </div></a
-              >
-              <a href="/trungtam/giang-vien"
-                ><div style="padding-bottom: 1.5rem">
-                  <span>Giảng viên</span>
-                </div></a
-              >
-              <a href="/trungtam/huong-dan-mua-khoa-hoc"
-                ><div style="padding-bottom: 1.5rem">
-                  <span>Hướng dẫn đăng ký học</span>
-                </div></a
-              >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <form class="modal-login-form">
+                    <div
+                      style="padding-top: 1px"
+                      class="modal-login-item text-center"
+                    >
+                      <h2>Quên mật khẩu</h2>
+                    </div>
+                    <div class="modal-login-item">
+                      <input
+                        placeholder="Email"
+                        id="forgot-password-email"
+                        required=""
+                      />
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-green btn-login-modal"
+                      id="btn-forgot-password"
+                    >
+                      Gửi mail trợ giúp
+                    </button>
+                  </form>
+                </div>
+              </div>
             </div>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="header__content header__content-mobile"
-        style="
-          background-color: #0f5298;
-          color: #fff;
-          text-align: center;
-          font-size: 20px;
-        "
-      >
-        <div class="bar-icon"><i class="fa-solid fa-bars"></i></div>
-        <div class="logo">
-          <a href="https://techmaster.vn/"
-            ><img
-              src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
-              alt=""
-            />
-          </a>
+            <div
+              class="parent-menu mobile"
+              id="mySidenav"
+              style="overflow-y: auto"
+            >
+              <ul>
+                <li class="parent-menu-item">
+                  <a href="/"><span>Trang chủ</span></a>
+                </li>
+                <li
+                  class="parent-menu-item"
+                  onclick="ShowSubMenu(this)"
+                  data-dropdown="submenu-dropdown-mobile-0"
+                >
+                  <a
+                    ><span>Lộ trình&ensp;<i class="fas fa-caret-down"></i></span
+                  ></a>
+                </li>
+                <li
+                  class="parent-menu-item"
+                  style="height: auto; padding-top: 0; display: none"
+                  id="submenu-dropdown-mobile-0"
+                  data-name="submenu-dropdown-mobile"
+                >
+                  <div style="padding-left: 1.5rem">
+                    <a href="https://web.techmaster.vn/"
+                      ><div style="padding-bottom: 1.5rem">
+                        <span>Bootcamp Full Stack Web</span>
+                      </div></a
+                    >
+                    <a href="https://frontend.techmaster.vn/"
+                      ><div style="padding-bottom: 1.5rem">
+                        <span>Web Front End + React.js</span>
+                      </div></a
+                    >
+                    <a href="https://java.techmaster.vn/"
+                      ><div style="padding-bottom: 1.5rem">
+                        <span>Java Spring Boot FullStack</span>
+                      </div></a
+                    >
+                    <a href="https://flutter.techmaster.vn/"
+                      ><div style="padding-bottom: 1.5rem">
+                        <span>Google Flutter</span>
+                      </div></a
+                    >
+                    <a href="https://ios.techmaster.vn/"
+                      ><div style="padding-bottom: 1.5rem">
+                        <span>Apple iOS</span>
+                      </div></a
+                    >
+                    <a href="https://devops.techmaster.vn/"
+                      ><div style="padding-bottom: 1.5rem">
+                        <span>DevOps</span>
+                      </div></a
+                    >
+                    <a href="https://aws.techmaster.vn/"
+                      ><div style="padding-bottom: 1.5rem">
+                        <span>Amazon Web Service</span>
+                      </div></a
+                    >
+                  </div>
+                </li>
+                <li class="parent-menu-item">
+                  <a href="/trungtam/dao-tao-doanh-nghiep"
+                    ><span>Doanh nghiệp&ensp;</span></a
+                  >
+                </li>
+                <li
+                  class="parent-menu-item"
+                  onclick="ShowSubMenu(this)"
+                  data-dropdown="submenu-dropdown-mobile-2"
+                >
+                  <a
+                    ><span>Khóa học&ensp;<i class="fas fa-caret-down"></i></span
+                  ></a>
+                </li>
+                <li
+                  class="parent-menu-item"
+                  style="height: auto; padding-top: 0; display: none"
+                  id="submenu-dropdown-mobile-2"
+                  data-name="submenu-dropdown-mobile"
+                >
+                  <div style="padding-left: 1.5rem">
+                    <a href="/khoa-hoc/onlab"
+                      ><div style="padding-bottom: 1.5rem">
+                        <span>Onlab</span>
+                      </div></a
+                    >
+                    <a href="/khoa-hoc/online"
+                      ><div style="padding-bottom: 1.5rem">
+                        <span>Trực tuyến</span>
+                      </div></a
+                    >
+                  </div>
+                </li>
+                <li class="parent-menu-item">
+                  <a href="/san-pham-hoc-vien"
+                    ><span>Sản phẩm học viên&ensp;</span></a
+                  >
+                </li>
+                <li class="parent-menu-item">
+                  <a href="/trungtam/lich-khai-giang"
+                    ><span>Khai giảng&ensp;</span></a
+                  >
+                </li>
+                <li class="parent-menu-item">
+                  <a href="/posts"><span>Blog&ensp;</span></a>
+                </li>
+                <li class="parent-menu-item">
+                  <a href="/trai-nghiem"><span>Trải nghiệm&ensp;</span></a>
+                </li>
+                <li class="parent-menu-item">
+                  <a href="https://job.techmaster.vn/viec-lam"
+                    ><span>Việc làm&ensp;</span></a
+                  >
+                </li>
+                <li
+                  class="parent-menu-item"
+                  onclick="ShowSubMenu(this)"
+                  data-dropdown="submenu-dropdown-mobile-8"
+                >
+                  <a
+                    ><span
+                      >Chúng tôi&ensp;<i class="fas fa-caret-down"></i></span
+                  ></a>
+                </li>
+                <li
+                  class="parent-menu-item"
+                  style="height: auto; padding-top: 0; display: none"
+                  id="submenu-dropdown-mobile-8"
+                  data-name="submenu-dropdown-mobile"
+                >
+                  <div style="padding-left: 1.5rem">
+                    <a href="/trungtam/trung-tam"
+                      ><div style="padding-bottom: 1.5rem">
+                        <span>Trung tâm</span>
+                      </div></a
+                    >
+                    <a href="/trungtam/quy-dinh-chung"
+                      ><div style="padding-bottom: 1.5rem">
+                        <span>Quy định chung</span>
+                      </div></a
+                    >
+                    <a href="/trungtam/giang-vien"
+                      ><div style="padding-bottom: 1.5rem">
+                        <span>Giảng viên</span>
+                      </div></a
+                    >
+                    <a href="/trungtam/huong-dan-mua-khoa-hoc"
+                      ><div style="padding-bottom: 1.5rem">
+                        <span>Hướng dẫn đăng ký học</span>
+                      </div></a
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="blank_block" id="overlay"></div>
         </div>
-        <div class="login login-mobile">
-          <a href="loginLogout.html"><i class="fa-solid fa-user"></i></a>
-        </div>
-        <div class="header__user header__user-mobile">
-          <div class="header__user-info">
-            <div class="header__user-image">
-              <img src="src/image/avatar.png" alt="user image" />
+        <div
+          class="modal fade"
+          id="advisory-modal"
+          tabindex="-1"
+          role="dialog"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-banner">
+                <img
+                  src="/resources/image/logo-techmaster/white/white_200x74.png"
+                  alt="logo_hoc_la_co_viec"
+                />
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  <span class="modal__main-title">Tư vấn khoá học </span
+                  ><span class="modal__sub-title"
+                    >Điền và gửi thông tin cá nhân để được tư vấn miễn phí về
+                    các chương trình học.</span
+                  >
+                </h5>
+              </div>
+              <div class="modal-body">
+                <div class="input__row">
+                  <input placeholder="Họ tên" id="advisory-name" required="" />
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="input__row">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    id="advisory-email"
+                    required=""
+                  />
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="input__row">
+                  <input
+                    type="phone"
+                    placeholder="Số điện thoại"
+                    id="advisory-phone"
+                    required=""
+                  />
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div class="input__row">
+                  <textarea placeholder="Ghi chú" id="advisory-note"></textarea>
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
+                </div>
+                <div style="text-align: right" class="advisory__btns">
+                  <button
+                    type="button"
+                    class="btn btn-white"
+                    data-dismiss="modal"
+                  >
+                    Huỷ
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-blue btn-submit-advisory"
+                    id="btn-submit-advisory"
+                  >
+                    Gửi
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-          <ul class="header__user-list header__user-list-mobile">
-            <li class="header__user-item">
-              <a href="user.html">Thông tin tài khoản</a>
-            </li>
-            <li class="header__user-item">
-              <a href="infoCmpany.html">Thông tin công ty</a>
-            </li>
-            <li class="header__user-item">
-              <a href="saveJob.html">Việc làm đã lưu</a>
-            </li>
-
-            <li class="header__user-item">
-              <span class="logout logout-mobile">Đăng xuất</span>
-            </li>
-          </ul>
         </div>
-      </div>
-      <div class="nav__menu-mobile">
-        <div class="nav__menu-mobile-item">Cơ hội việc làm</div>
-        <div class="nav__menu-mobile-item">
-          <a href="createNews.html">
-            <span> Nhà tuyển dụng </span>
-          </a>
+        <div
+          class="modal fade"
+          id="required-info-update"
+          tabindex="-1"
+          role="dialog"
+          data-backdrop="static"
+          data-keyboard="false"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="required-info-body">
+                <i class="far fa-user-circle fa-3x required-info-icon"></i>
+                <div class="text-center" style="font-size: 1.1rem">
+                  Cập nhật profile cá nhân
+                </div>
+                <div class="text-center" style="font-weight: 300">
+                  Vui lòng nhập số điện thoại để xác thực tài khoản của bạn
+                </div>
+                <input
+                  id="required-info-input"
+                  class="form-control"
+                  placeholder="Số điện thoại"
+                />
+              </div>
+              <div class="required-info-footer text-right">
+                <button class="btn btn-success btn-sm required-info-btn">
+                  Cập nhật
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </header>
+        <script>
+          function ShowSubMenu(e) {
+            let n = $(e).children(".dropdown-menu"),
+              t = $(e).children(".track-menu"),
+              o = $(e).next(".parent-menu-item");
+            if (
+              ($(n).toggle(), $(t).toggle(), void 0 !== $(o).attr("data-name"))
+            )
+              $(o).toggle();
+          }
+          function GoToSite(e) {
+            window.location.replace($(e).data("href"));
+          }
+        </script>
+      </header>
+    </div>
     <!-- content -->
 
     <div class="container" style="margin-top: 24px">
@@ -1064,6 +901,7 @@
         </div>
       </div>
     </div>
+
     <!-- footer -->
 
     <span style="display: none" id="googleId">{{.GoogleClientId}}</span>
