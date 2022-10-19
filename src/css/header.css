@@ -196,6 +196,9 @@ header {
   padding: 0 !important;
   border-bottom: none;
 }
+.mobile a {
+  display: block;
+}
 /* bỏ qua */
 @media (max-width: 997px) {
   .header__user {
@@ -243,8 +246,6 @@ header {
   }
   .overlay-active {
     display: block;
-  }
-  .a {
   }
 
   .parent-menu-active {
